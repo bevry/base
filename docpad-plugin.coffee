@@ -35,7 +35,7 @@ DOCPAD      = "#{APP_DIR}/docpad#{EXT}"
 pathUtil = require('path')
 {exec,spawn} = require('child_process')
 safe = (next,fn) ->
-  fn ?= next  # support only one argument
+	fn ?= next  # support only one argument
 	return (err) ->
 		# success status code
 		if err is 0
