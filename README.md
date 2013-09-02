@@ -5,20 +5,21 @@ Cakefiles that we use to support compilation, watching, and testing across multi
 
 ## Files
 
-### DocPad Plugin (`docpad-plugin.coffee`)
+### DocPad Plugin: `docpad-plugin.coffee`
 Use this Cakefile for your DocPad Plugins
 
 
-### Core (`core.coffee`)
+### Core: `core.coffee`
 Use this Cakefile your main node.js packages
 
 
 ## Changelog
 
-- DocPad Plugin v1.1.1 June 25, 2013
-  - Initial changelog entry
+- v1.1.2 September 2, 2013
+  - Fixed status codes not being taken into account
+  - `safe` now supports only one argument
 
-- Core v1.1.1 June 25, 2013
+- v1.1.1 June 25, 2013
   - Initial changelog entry
 
 
