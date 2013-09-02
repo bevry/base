@@ -4,10 +4,10 @@ Cakefiles that we use to support compilation, watching, and testing across multi
 
 ## Files
 
-### [Core: `core.coffee`](https://gist.github.com/balupton/6409278/raw/6adcc01e34ace2918c4a9a7892ff7cf2a5e89538/core.coffee)
+### [Core: `core.coffee`](https://gist.github.com/balupton/6409278/raw/core.coffee)
 Use this Cakefile your main node.js packages
 
-### [DocPad Plugin: `docpad-plugin.coffee`](https://gist.github.com/balupton/6409278/raw/5164b0d4c00e72aeaafd7c95e3d6275f3ecc7cb5/docpad-plugin.coffee)
+### [DocPad Plugin: `docpad-plugin.coffee`](https://gist.github.com/balupton/6409278/raw/docpad-plugin.coffee)
 Use this Cakefile for your DocPad Plugins
 
 
