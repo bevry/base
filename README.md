@@ -13,6 +13,9 @@ Use this Cakefile for your DocPad Plugins
 
 ## Changelog
 
+- v1.1.3 October 2, 2013
+  - Don't use the `bare` option to compile coffeescript, it pollutes the global namespace
+
 - v1.1.2 September 2, 2013
   - Fixed status codes not being taken into account
   - `safe` now supports only one argument
