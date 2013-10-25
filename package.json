@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "projectz": "~0.2.3"
-  }
+  },
   "scripts": {
     "preinstall": "node ./cyclic.js",
     "test": "node ./out/test/caterpillar-test.js",
