@@ -11,15 +11,18 @@
   "directories": {
     "lib": "./out/lib"
   },
+  "devDependencies": {
+    "projectz": "~0.2.3"
+  }
   "scripts": {
     "preinstall": "node ./cyclic.js",
     "test": "node ./out/test/caterpillar-test.js",
-    "clean": "rm -Rf build/ components/ bower_components/ node_modules/ **/*.log **/out/",
+    "clean": "rm -Rf **/build **/components **/bower_components **/node_modules **/*.log **/out",
     "compile": "node ./node_modules/coffee-script/bin/coffee -co out src",
     "watch": "node ./node_modules/coffee-script/bin/coffee -cow out src",
     "prestart": "npm run-script compile",
     "pretest": "npm run-script compile",
-    "prepublish": "npm test"
+    "prepublish": "node ./node_modules/projectz/bin/projectz compile; npm test"
   },
   "main": "./out/lib/caterpillar.js",
 }
