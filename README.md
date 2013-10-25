@@ -1,17 +1,66 @@
-# [Bevry's Cakefiles](https://gist.github.com/balupton/6409278)
-Cakefiles that we use to support compilation, watching, and testing across multiple environments
+# Bevry's Project Base Files
+Files we use when scaffolding new projects.
 
 
-## Files
+## Usage
 
-### [Core: `core.coffee`](https://gist.github.com/balupton/6409278/raw/core.coffee)
-Use this Cakefile your main node.js packages
+``` bash
+# Initialise your new project
+npm init
 
-### [DocPad Plugin: `docpad-plugin.coffee`](https://gist.github.com/balupton/6409278/raw/docpad-plugin.coffee)
-Use this Cakefile for your DocPad Plugins
+# Install our special dev dependencies
+# projectz for maintaing our meta data files
+# coffee-script for building our project
+# joe and chai for testing our project
+npm install --save-dev projectz coffee-script joe joe-reporter-console chai
+
+# Download the files into your directory
+# Only run this for the files you want to fetch
+wget https://raw.github.com/bevry/base/master/.gitignore
+wget https://raw.github.com/bevry/base/master/.npmignore
+wget https://raw.github.com/bevry/base/master/.travis.yml
+wget https://raw.github.com/bevry/base/master/cyclic.js
+wget https://raw.github.com/bevry/base/master/Cakefile
+wget https://raw.github.com/bevry/base/master/package.json
+wget https://raw.github.com/bevry/base/master/BACKERS.md
+wget https://raw.github.com/bevry/base/master/CONTRIBUTING.md
+wget https://raw.github.com/bevry/base/master/HISTORY.md
+wget https://raw.github.com/bevry/base/master/LICENSE.md
+```
 
 
-## Changelog
+## Other Files
+
+### `README.md`
+
+``` markdown
+<!-- TITLE -->
+
+<!-- BADGES -->
+
+<!-- DESCRIPTION -->
+
+<!-- INSTALL -->
+
+## Usage
+
+<!-- CONTRIBUTE -->
+
+<!-- HISTORY -->
+
+<!-- BACKERS -->
+
+<!-- LICENSE -->
+```
+
+
+## History
+
+- v1.3.0 October 26, 2013
+  - As the npm package scripts only works on windows, instead lets take the good bits from both solutions
+
+- v1.2.0 October 25, 2013
+  - Abandoned the Cakefile setup for npm package scripts
 
 - v1.1.3 October 2, 2013
   - Don't use the `bare` option to compile coffeescript, it pollutes the global namespace
