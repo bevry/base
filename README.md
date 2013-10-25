@@ -4,6 +4,8 @@ Files we use when scaffolding new projects.
 
 ## Usage
 
+### Setup the Project
+
 ``` bash
 # Initialise your new project
 npm init
@@ -13,7 +15,11 @@ npm init
 # coffee-script for building our project
 # joe and chai for testing our project
 npm install --save-dev projectz coffee-script joe joe-reporter-console chai
+```
 
+### Copy Files
+
+``` bash
 # Download the files into your directory
 # Only run this for the files you want to fetch
 wget https://raw.github.com/bevry/base/master/.gitignore
@@ -28,10 +34,7 @@ wget https://raw.github.com/bevry/base/master/HISTORY.md
 wget https://raw.github.com/bevry/base/master/LICENSE.md
 ```
 
-
-## Other Files
-
-### `README.md`
+### Copy `README.md`
 
 ``` markdown
 <!-- TITLE -->
