@@ -1,0 +1,8 @@
+# Temp Files
+**/*.log
+
+# Build Files
+build/
+components/
+bower_components/
+node_modules/

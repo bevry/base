@@ -1,17 +1,66 @@
-# [Bevry's Cakefiles](https://gist.github.com/balupton/6409278)
-Cakefiles that we use to support compilation, watching, and testing across multiple environments
+# Bevry's Project Scaffold
+
+Files to use for scaffolding a new project.
 
 
-## Files
+## Setup
 
-### [Core: `core.coffee`](https://gist.github.com/balupton/6409278/raw/core.coffee)
-Use this Cakefile your main node.js packages
+``` bash
+# Init (manual)
+npm init
 
-### [DocPad Plugin: `docpad-plugin.coffee`](https://gist.github.com/balupton/6409278/raw/docpad-plugin.coffee)
-Use this Cakefile for your DocPad Plugins
+# Install Dev Dependencies
+npm install --save-dev projectz coffee-script joe joe-reporter-console chai
+```
 
 
-## Changelog
+## `README.md`
+
+``` markdown
+<!-- TITLE -->
+<!-- BADGES -->
+<!-- DESCRIPTION -->
+<!-- INSTALL -->
+## Usage
+<!-- CONTRIBUTE -->
+<!-- HISTORY -->
+<!-- BACKERS -->
+<!-- LICENSE -->
+```
+
+## `LICENSE.md`
+
+``` markdown
+<!-- LICENSEFILE -->
+```
+
+## `BACKERS.md`
+
+``` markdown
+<!-- BACKERSFILE -->
+```
+
+## `HISTORY.MD`
+
+``` markdown
+# History
+
+- v1.0.0 October 25, 2011
+  - Blah
+```
+
+## `CONTRIBUTE.md`
+
+``` markdown
+@TODO
+```
+
+
+
+## History
+
+- v1.2.0 October 25, 2013
+  - Ambandoned the Cakefile setup for npm package scripts
 
 - v1.1.3 October 2, 2013
   - Don't use the `bare` option to compile coffeescript, it pollutes the global namespace

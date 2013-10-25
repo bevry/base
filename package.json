@@ -1,0 +1,23 @@
+{  
+  "license": "MIT",
+  "badges": {
+      "travis": true,
+      "npm": true,
+      "gittip": "bevry",
+      "flattr": "344188/balupton-on-Flattr",
+      "paypal": "QB8GQPZAH84N6"
+  },
+  "directories": {
+    "lib": "./out/lib"
+  },
+  "scripts": {
+    "test": "node ./out/test/caterpillar-test.js",
+    "clean": "rm -Rf build/ components/ bower_components/ node_modules/ **/*.log **/out/",
+    "compile": "./node_modules/.bin/coffee -co out src",
+        "watch": "./node_modules/.bin/coffee -cow out src",
+        "prestart": "npm run-script compile",
+        "pretest": "npm run-script compile",
+        "prepublish": "./node_modules/.bin/projectz compile; npm test"
+  },
+  "main": "./out/lib/caterpillar.js",
+}
