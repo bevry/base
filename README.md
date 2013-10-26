@@ -47,9 +47,9 @@ rm LICENSE.md; wget https://raw.github.com/bevry/base/master/LICENSE.md
 
 ## Usage
 
-<!-- CONTRIBUTE -->
-
 <!-- HISTORY -->
+
+<!-- CONTRIBUTE -->
 
 <!-- BACKERS -->
 
