@@ -65,6 +65,9 @@ git add .gitignore .npmignore .travis.yml BACKERS.md CONTRIBUTING.md Cakefile HI
 
 ## History
 
+- v1.3.2 October 26, 2013
+  - Fixed travis file
+
 - v1.3.1 October 26, 2013
   - Tags should be annotated
   - Don't fail install if test directory is not found
