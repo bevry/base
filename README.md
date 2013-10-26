@@ -56,6 +56,12 @@ rm LICENSE.md; wget https://raw.github.com/bevry/base/master/LICENSE.md
 <!-- LICENSE -->
 ```
 
+### Add the files
+
+``` bash
+git add .gitignore .npmignore .travis.yml BACKERS.md CONTRIBUTING.md Cakefile HISTORY.md LICENSE.md README.md out/ package.json src/
+```
+
 
 ## History
 
