@@ -1,4 +1,4 @@
-# v1.3.0 October 26, 2013
+# v1.3.3 October 26, 2013
 # https://github.com/bevry/base
 
 # Temp Files
@@ -15,7 +15,7 @@ node_modules/
 Cakefile
 Makefile
 BACKERS.md
-CONITRUBING.md
+CONTRIBUTING.md
 HISTORY.md
 **/src/
 **/test/
