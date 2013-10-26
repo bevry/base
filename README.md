@@ -65,6 +65,10 @@ git add .gitignore .npmignore .travis.yml BACKERS.md CONTRIBUTING.md Cakefile HI
 
 ## History
 
+- v1.3.1 October 26, 2013
+  - Tags should be annotated
+  - Don't fail install if test directory is not found
+
 - v1.3.0 October 26, 2013
   - As the npm package scripts only works on windows, instead lets take the good bits from both solutions
 
