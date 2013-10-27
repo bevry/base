@@ -25,13 +25,13 @@ npm install --save-dev projectz coffee-script joe joe-reporter-console chai
 rm .gitignore; wget https://raw.github.com/bevry/base/master/.gitignore
 rm .npmignore; wget https://raw.github.com/bevry/base/master/.npmignore
 rm .travis.yml; wget https://raw.github.com/bevry/base/master/.travis.yml
-rm cyclic.js; wget https://raw.github.com/bevry/base/master/cyclic.js
 rm Cakefile; wget https://raw.github.com/bevry/base/master/Cakefile
 rm LICENSE.md; wget https://raw.github.com/bevry/base/master/LICENSE.md
 rm CONTRIBUTING.md; wget https://raw.github.com/bevry/base/master/CONTRIBUTING.md
 rm BACKERS.md; wget https://raw.github.com/bevry/base/master/BACKERS.md
 rm HISTORY.md; wget https://raw.github.com/bevry/base/master/HISTORY.md
 rm package.json; wget https://raw.github.com/bevry/base/master/package.json
+rm cyclic.js; wget https://raw.github.com/bevry/base/master/cyclic.js
 ```
 
 ### Copy `README.md`
