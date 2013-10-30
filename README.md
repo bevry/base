@@ -65,11 +65,14 @@ git add .gitignore .npmignore .travis.yml BACKERS.md CONTRIBUTING.md Cakefile HI
 
 ## History
 
+- v1.3.4 October 26, 2013
+  - `Cakefile`: push up master and tags after publish
+
 - v1.3.3 October 26, 2013
-  - Fixed typo in `.npmignore`
+  - `.npmignore`: fixed typo
 
 - v1.3.2 October 26, 2013
-  - Fixed travis file
+  - `.travis.yml`: fixed
 
 - v1.3.1 October 26, 2013
   - Tags should be annotated
