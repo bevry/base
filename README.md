@@ -65,6 +65,9 @@ git add .gitignore .npmignore .travis.yml BACKERS.md CONTRIBUTING.md Cakefile HI
 
 ## History
 
+- v1.3.5 October 31, 2013
+  - `.gitignore`: added `out`
+
 - v1.3.4 October 26, 2013
   - `Cakefile`: push up master and tags after publish
 
