@@ -56,6 +56,30 @@ rm cyclic.js; wget https://raw.github.com/bevry/base/master/cyclic.js
 <!-- LICENSE -->
 ```
 
+### Copy relevant parts from `package.json`
+
+``` json
+{
+  "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "license": "MIT",
+  "badges": {
+    "travis": true,
+    "npm": true,
+    "gittip": "bevry",
+    "flattr": "344188/balupton-on-Flattr",
+    "paypal": "QB8GQPZAH84N6"
+  },
+  "devDependencies": {
+    "projectz": "~0.2.3"
+  },
+  "scripts": {
+    "preinstall": "node ./cyclic.js",
+    "test": "node ./out/test/caterpillar-test.js",
+    "start": "node ./node_modules/coffee-script/bin/cake watch"
+  }
+}
+```
+
 ### Add the files
 
 ``` bash
