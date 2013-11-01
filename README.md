@@ -89,6 +89,9 @@ git add .gitignore .npmignore .travis.yml BACKERS.md CONTRIBUTING.md Cakefile HI
 
 ## History
 
+- v1.3.6 November 1, 2013
+  - `cyclic.js`: don't force install ourselves, if we've already done it previously
+
 - v1.3.5 October 31, 2013
   - `.gitignore`: added `out`
 
