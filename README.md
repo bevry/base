@@ -89,6 +89,12 @@ git add .gitignore .npmignore .travis.yml BACKERS.md CONTRIBUTING.md Cakefile HI
 
 ## History
 
+- v1.3.8 November 7, 2013
+  - `Cakefile`: will now install DocPad dev dependencies if we are using DocPad
+  - `.travis.yml`: `cake install` is now explicitly part of the install process, rather than implied in the test process
+    - Fixes compatibility with DocPad plugins
+      - DocPad plugins still need to define DocPad in `peerDependencies` and `devDependencies`
+
 - v1.3.7 November 1, 2013
   - `cyclic.js`: wrapped in self executing closure to prevent global leaks
 
