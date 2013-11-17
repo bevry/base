@@ -89,49 +89,52 @@ git add .gitignore .npmignore .travis.yml BACKERS.md CONTRIBUTING.md Cakefile HI
 
 ## History
 
+- v1.3.9 November 17, 2013
+	- `CONTRIBUTING.md`: Better structure and more informative
+
 - v1.3.8 November 7, 2013
-  - `Cakefile`: will now install DocPad dev dependencies if we are using DocPad
-  - `.travis.yml`: `cake install` is now explicitly part of the install process, rather than implied in the test process
-    - Fixes compatibility with DocPad plugins
-      - DocPad plugins still need to define DocPad in `peerDependencies` and `devDependencies`
+	- `Cakefile`: will now install DocPad dev dependencies if we are using DocPad
+	- `.travis.yml`: `cake install` is now explicitly part of the install process, rather than implied in the test process
+	- Fixes compatibility with DocPad plugins
+		- DocPad plugins still need to define DocPad in `peerDependencies` and `devDependencies`
 
 - v1.3.7 November 1, 2013
-  - `cyclic.js`: wrapped in self executing closure to prevent global leaks
+	- `cyclic.js`: wrapped in self executing closure to prevent global leaks
 
 - v1.3.6 November 1, 2013
-  - `cyclic.js`: don't force install ourselves, if we've already done it previously
+	- `cyclic.js`: don't force install ourselves, if we've already done it previously
 
 - v1.3.5 October 31, 2013
-  - `.gitignore`: added `out`
+	- `.gitignore`: added `out`
 
 - v1.3.4 October 26, 2013
-  - `Cakefile`: push up master and tags after publish
+	- `Cakefile`: push up master and tags after publish
 
 - v1.3.3 October 26, 2013
-  - `.npmignore`: fixed typo
+	- `.npmignore`: fixed typo
 
 - v1.3.2 October 26, 2013
-  - `.travis.yml`: fixed
+	- `.travis.yml`: fixed
 
 - v1.3.1 October 26, 2013
-  - Tags should be annotated
-  - Don't fail install if test directory is not found
+	- Tags should be annotated
+	- Don't fail install if test directory is not found
 
 - v1.3.0 October 26, 2013
-  - As the npm package scripts only works on windows, instead lets take the good bits from both solutions
+	- As the npm package scripts only works on windows, instead lets take the good bits from both solutions
 
 - v1.2.0 October 25, 2013
-  - Abandoned the Cakefile setup for npm package scripts
+	- Abandoned the Cakefile setup for npm package scripts
 
 - v1.1.3 October 2, 2013
-  - Don't use the `bare` option to compile coffeescript, it pollutes the global namespace
+	- Don't use the `bare` option to compile coffeescript, it pollutes the global namespace
 
 - v1.1.2 September 2, 2013
-  - Fixed status codes not being taken into account
-  - `safe` now supports only one argument
+	- Fixed status codes not being taken into account
+	- `safe` now supports only one argument
 
 - v1.1.1 June 25, 2013
-  - Initial changelog entry
+	- Initial changelog entry
 
 
 ## License
