@@ -89,6 +89,9 @@ git add .gitignore .npmignore .travis.yml BACKERS.md CONTRIBUTING.md Cakefile HI
 
 ## History
 
+- v1.3.10 December 10, 2013
+	- `CONTRIBUTING.md`: Added standards and guideline resources
+
 - v1.3.9 November 17, 2013
 	- `CONTRIBUTING.md`: Better structure and more informative
 
