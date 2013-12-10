@@ -6,6 +6,9 @@ https://github.com/bevry/base
 
 # Contribute
 
+
+## Resources
+
 - [Coding Standards](http://bevry.me/bevry/coding-standards)
 - [Documentation Guidelines](http://bevry.me/bevry/documentation-guidelines)
 - [Support Guidelines](http://bevry.me/bevry/support-guidelines)
