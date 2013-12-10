@@ -1,0 +1,57 @@
+
+{
+  "title": "Base",
+  "name": "base",
+  "version": "1.0.0",
+  "description": "description",
+  "homepage": "https://github.com/bevry/name",
+  "license": {
+    "type": "MIT"
+  },
+  "badges": {
+    "travis": true,
+    "npm": true,
+    "gittip": "bevry",
+    "flattr": "344188/balupton-on-Flattr",
+    "paypal": "QB8GQPZAH84N6"
+  },
+  "keywords": [
+    "a",
+    "b",
+    "c"
+  ],
+  "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "maintainers": [
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+  ],
+  "contributors": [
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+  ],
+  "bugs": {
+    "url": "https://github.com/bevry/name/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/bevry/name.git"
+  },
+  "engines": {
+    "node": ">=0.4"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.2",
+    "joe": "~1.3.0",
+    "joe-reporter-console": "~1.2.1",
+    "chai": "~1.8.1",
+    "projectz": "~0.2.3"
+  },
+  "directories": {
+    "lib": "./out/lib"
+  },
+  "scripts": {
+    "preinstall": "node ./cyclic.js",
+    "test": "node ./out/test/name-test.js"
+  },
+  "main": "./out/lib/name.js"
+}
