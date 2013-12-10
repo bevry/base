@@ -28,7 +28,6 @@ rm .travis.yml; wget https://raw.github.com/bevry/base/master/.travis.yml
 rm Cakefile; wget https://raw.github.com/bevry/base/master/Cakefile
 rm LICENSE.md; wget https://raw.github.com/bevry/base/master/LICENSE.md
 rm CONTRIBUTING.md; wget https://raw.github.com/bevry/base/master/CONTRIBUTING.md
-rm BACKERS.md; wget https://raw.github.com/bevry/base/master/BACKERS.md
 rm HISTORY.md; wget https://raw.github.com/bevry/base/master/HISTORY.md
 rm package.json; wget https://raw.github.com/bevry/base/master/package.json
 rm cyclic.js; wget https://raw.github.com/bevry/base/master/cyclic.js
@@ -83,7 +82,7 @@ rm cyclic.js; wget https://raw.github.com/bevry/base/master/cyclic.js
 ### Add the files
 
 ``` bash
-git add .gitignore .npmignore .travis.yml BACKERS.md CONTRIBUTING.md Cakefile HISTORY.md LICENSE.md README.md out/ package.json src/
+git add .gitignore .npmignore .travis.yml Cakefile LICENSE.md CONTRIBUTING.md HISTORY.md README.md package.json cyclic.js src/
 ```
 
 
