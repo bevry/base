@@ -1,4 +1,4 @@
-# v1.3.8 November 7, 2013
+# v1.3.10 December 10, 2013
 # https://github.com/bevry/base
 
 
@@ -98,17 +98,27 @@ actions =
 
 	compile: (opts,next) ->
 		(next = opts; opts = {})  unless next?
-		# cake install
-		actions.install opts, safe next, ->
+		step1 = ->
+			# cake install
+			actions.install(opts, safe next, step2)
+		step2 = ->
 			# coffee compile
-			spawn(COFFEE, ['-co', OUT_DIR, SRC_DIR], {stdio:'inherit', cwd:APP_DIR}).on('close', safe next)
+			fsUtil.exists COFFEE, (exists) ->
+				return next()  unless exists
+				spawn(COFFEE, ['-co', OUT_DIR, SRC_DIR], {stdio:'inherit', cwd:APP_DIR}).on('close', safe next)
+		step1()
 
 	watch: (opts,next) ->
 		(next = opts; opts = {})  unless next?
-		# cake install
-		actions.install opts, safe next, ->
+		step1 = ->
+			# cake install
+			actions.install(opts, safe next, step2)
+		step2 = ->
 			# coffee watch
-			spawn(COFFEE, ['-wco', OUT_DIR, SRC_DIR], {stdio:'inherit', cwd:APP_DIR}).on('close', safe next)
+			fsUtil.exists COFFEE, (exists) ->
+				return next()  unless exists
+				spawn(COFFEE, ['-wco', OUT_DIR, SRC_DIR], {stdio:'inherit', cwd:APP_DIR}).on('close', safe next)
+		step1()
 
 	test: (opts,next) ->
 		(next = opts; opts = {})  unless next?
