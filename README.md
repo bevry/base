@@ -88,6 +88,11 @@ git add .gitignore .npmignore .travis.yml Cakefile LICENSE.md CONTRIBUTING.md HI
 
 ## History
 
+- v1.3.11 December 11, 2013
+	- `Cakefile`
+		- Supports configuration via `package.json` `cakeConfiguration` property
+		- Supports DocPad compilation when `DOCPAD_SRC_PATH` configuration option is set
+
 - v1.3.10 December 10, 2013
 	- `CONTRIBUTING.md`: Added standards and guideline resources
 	- `.npmignore`, `.gitignore`: added `**/.docpad.db`
