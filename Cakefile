@@ -1,4 +1,4 @@
-# v1.3.11 December 11, 2013
+# v1.3.12 December 13, 2013
 # https://github.com/bevry/base
 
 
@@ -80,7 +80,11 @@ actions =
 	clean: (opts,next) ->
 		# Prepare
 		(next = opts; opts = {})  unless next?
-		args = ['-Rf', config.COFFEE_COFFEE_OUT_PATH]
+		
+		# Add compilation paths
+		args = ['-Rf', config.COFFEE_OUT_PATH, config.DOCPAD_OUT_PATH, config.DOCCO_OUT_PATH]
+		
+		# Add common ignore paths
 		for path in [APP_PATH, config.TEST_PATH]
 			args.push(
 				pathUtil.join(path,  'build')
