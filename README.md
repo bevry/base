@@ -88,6 +88,9 @@ git add .gitignore .npmignore .travis.yml Cakefile LICENSE.md CONTRIBUTING.md HI
 
 ## History
 
+- v1.3.13 December 19, 2013
+	- `Cakefile`: Watching now happens in the background
+
 - v1.3.12 December 13, 2013
 	- `Cakefile`: Better cleaning
 
