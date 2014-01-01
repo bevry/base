@@ -69,7 +69,7 @@ rm cyclic.js; wget https://raw.github.com/bevry/base/master/cyclic.js
     "paypal": "QB8GQPZAH84N6"
   },
   "devDependencies": {
-    "projectz": "~0.2.3"
+    "projectz": "~0.3.5"
   },
   "scripts": {
     "preinstall": "node ./cyclic.js",
