@@ -64,9 +64,12 @@ rm cyclic.js; wget https://raw.github.com/bevry/base/master/cyclic.js
   "badges": {
     "travis": true,
     "npm": true,
+    "david": true,
+    "daviddev": true,
     "gittip": "bevry",
     "flattr": "344188/balupton-on-Flattr",
-    "paypal": "QB8GQPZAH84N6"
+    "paypal": "QB8GQPZAH84N6",
+    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a"
   },
   "devDependencies": {
     "projectz": "~0.3.5"
