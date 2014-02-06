@@ -69,7 +69,8 @@ rm cyclic.js; wget https://raw.github.com/bevry/base/master/cyclic.js
     "gittip": "bevry",
     "flattr": "344188/balupton-on-Flattr",
     "paypal": "QB8GQPZAH84N6",
-    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a"
+    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a",
+    "wishlist": "http://amzn.com/w/2F8TXKSNAFG4V"
   },
   "devDependencies": {
     "projectz": "~0.3.5"
@@ -90,6 +91,10 @@ git add .gitignore .npmignore .travis.yml Cakefile LICENSE.md CONTRIBUTING.md HI
 
 
 ## History
+
+- v1.3.14 February 6, 2014
+	- `.travis.yml`: Added caching of `node_modules` directory
+	- `README.md`: added `"wishlist": "http://amzn.com/w/2F8TXKSNAFG4V"` to badges
 
 - v1.3.13 December 19, 2013
 	- `Cakefile`: Watching now happens in the background
