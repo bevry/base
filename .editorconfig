@@ -1,0 +1,16 @@
+# v1.3.14 February 8th, 2014
+# https://github.com/bevry/base
+
+# Top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+indent_style = tab
+
+# Modification for package.json and .travis.yml
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2

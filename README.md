@@ -91,6 +91,9 @@ git add .gitignore .npmignore .travis.yml Cakefile LICENSE.md CONTRIBUTING.md HI
 
 ## History
 
+- v1.3.14 February 8th, 2014
+	- `.editorconfig`: Added
+
 - v1.3.13 December 19, 2013
 	- `Cakefile`: Watching now happens in the background
 
