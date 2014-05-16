@@ -1,9 +1,14 @@
 {
-  "title": "Base",
-  "name": "base",
+  "title": "projectName",
+  "name": "projectName",
   "version": "1.0.0",
   "description": "description",
-  "homepage": "https://github.com/bevry/name",
+  "homepage": "https://github.com/bevry/projectName",
+  "keywords": [
+    "a",
+    "b",
+    "c"
+  ],
   "license": {
     "type": "MIT"
   },
@@ -15,14 +20,10 @@
     "gittip": "bevry",
     "flattr": "344188/balupton-on-Flattr",
     "paypal": "QB8GQPZAH84N6",
-    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a"
+    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a",
+    "wishlist": "http://amzn.com/w/2F8TXKSNAFG4V"
   },
-  "keywords": [
-    "a",
-    "b",
-    "c"
-  ],
-  "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "author": "2014+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
@@ -30,11 +31,11 @@
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
   "bugs": {
-    "url": "https://github.com/bevry/name/issues"
+    "url": "https://github.com/bevry/projectName/issues"
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/bevry/name.git"
+    "url": "http://github.com/bevry/projectName.git"
   },
   "engines": {
     "node": ">=0.4"
@@ -42,18 +43,22 @@
   "dependencies": {
   },
   "devDependencies": {
-    "coffee-script": "~1.6.2",
-    "joe": "~1.3.0",
+    "coffee-script": "~1.7.1",
+    "joe": "~1.4.0",
     "joe-reporter-console": "~1.2.1",
-    "chai": "~1.8.1",
-    "projectz": "~0.2.3"
+    "chai": "~1.9.1",
+    "projectz": "~0.3.11"
   },
   "directories": {
     "lib": "./out/lib"
   },
   "scripts": {
     "preinstall": "node ./cyclic.js",
-    "test": "node ./out/test/name-test.js"
+    "test": "node ./out/test/projectName-test.js",
+    "start": "node ./node_modules/coffee-script/bin/cake watch"
   },
-  "main": "./out/lib/name.js"
+  "main": "./out/lib/projectName.js",
+  "cakeConfigation": {
+    "COFFEE_SRC_PATH": "src"
+  }
 }

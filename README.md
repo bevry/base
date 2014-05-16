@@ -55,33 +55,11 @@ rm cyclic.js; wget https://raw.github.com/bevry/base/master/cyclic.js
 <!-- LICENSE -->
 ```
 
+
 ### Copy relevant parts from `package.json`
 
-``` json
-{
-  "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
-  "license": "MIT",
-  "badges": {
-    "travis": true,
-    "npm": true,
-    "david": true,
-    "daviddev": true,
-    "gittip": "bevry",
-    "flattr": "344188/balupton-on-Flattr",
-    "paypal": "QB8GQPZAH84N6",
-    "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a",
-    "wishlist": "http://amzn.com/w/2F8TXKSNAFG4V"
-  },
-  "devDependencies": {
-    "projectz": "~0.3.5"
-  },
-  "scripts": {
-    "preinstall": "node ./cyclic.js",
-    "test": "node ./out/test/caterpillar-test.js",
-    "start": "node ./node_modules/coffee-script/bin/cake watch"
-  }
-}
-```
+[View the `package.json` template here](https://github.com/bevry/base/blob/master/package.json)
+
 
 ### Add the files
 
@@ -91,6 +69,9 @@ git add .gitignore .npmignore .travis.yml Cakefile LICENSE.md CONTRIBUTING.md HI
 
 
 ## History
+
+- v1.3.15 May 16, 2014
+	- `COFFEE_SRC_PATH` is now longer defined in our `Cakefile`, and must now be defined in our `package.json` using `cakeConfiguration`
 
 - v1.3.14 February 6, 2014
 	- `.travis.yml`: Added caching of `node_modules` directory
