@@ -58,7 +58,7 @@
     "start": "node ./node_modules/coffee-script/bin/cake watch"
   },
   "main": "./out/lib/projectName.js",
-  "cakeConfigation": {
+  "cakeConfiguration": {
     "COFFEE_SRC_PATH": "src"
   }
 }
