@@ -14,7 +14,7 @@ npm init
 # projectz for maintaing our meta data files
 # coffee-script for building our project
 # joe and chai for testing our project
-npm install --save-dev projectz coffee-script joe joe-reporter-console chai
+npm install --save-dev projectz joe joe-reporter-console chai coffee-script
 ```
 
 ### Copy Files
