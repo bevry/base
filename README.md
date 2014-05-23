@@ -70,6 +70,9 @@ git add .gitignore .npmignore .travis.yml Cakefile LICENSE.md CONTRIBUTING.md HI
 
 ## History
 
+- v1.3.16 May 23, 2014
+	- `Cakefile` now uses the original locations for executables, rather than the npm symlink locations, which for some reason may not always be there
+
 - v1.3.15 May 16, 2014
 	- `COFFEE_SRC_PATH` is now longer defined in our `Cakefile`, and must now be defined in our `package.json` using `cakeConfiguration`
 
