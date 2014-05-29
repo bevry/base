@@ -70,6 +70,9 @@ git add .gitignore .npmignore .travis.yml Cakefile LICENSE.md CONTRIBUTING.md HI
 
 ## History
 
+- v1.3.17 May 29, 2014
+	- `.travis.yml` now ensures the the npm version is the latest
+
 - v1.3.16 May 23, 2014
 	- `Cakefile` now uses the original locations for executables, rather than the npm symlink locations, which for some reason may not always be there
 
