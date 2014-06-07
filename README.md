@@ -22,6 +22,7 @@ npm install --save-dev projectz joe joe-reporter-console chai coffee-script
 ``` bash
 # Download the files into your directory
 # Only run this for the files you want to fetch
+wget -N https://raw.github.com/bevry/base/master/.editorconfig
 wget -N https://raw.github.com/bevry/base/master/.gitignore
 wget -N https://raw.github.com/bevry/base/master/.npmignore
 wget -N https://raw.github.com/bevry/base/master/.travis.yml
@@ -69,6 +70,9 @@ git add .gitignore .npmignore .travis.yml Cakefile LICENSE.md CONTRIBUTING.md HI
 
 
 ## History
+
+- v1.3.18 Juny 8, 2014
+	- `.editorconfig` added
 
 - v1.3.17 May 29, 2014
 	- `.travis.yml` now ensures the the npm version is the latest
