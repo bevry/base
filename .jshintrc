@@ -26,11 +26,12 @@
   "maxstatements": false,  // no
   "maxcomplexity": false,  // no
   "maxlen": false,  // no
+  
   // relaxing options
   "asi": true,  // we use asi
   "boss": true,  // we understand assignments
   "debug": false,
-  "eqnull": true,
+  "eqnull": true,  // we know how to do null/undefined checks
   "esnext": false,
   "evil": false,
   "expr": false,
@@ -47,14 +48,16 @@
   "notypeof": false,
   "proto": false,
   "scripturl": false,
-  "smarttabs": false,
+  "smarttabs": false,  // default; spaces should only be mixed with tabs after words
   "shadow": false,
   "sub": false,
   "supernew": false,
   "noyield": false,
+  
   // environments
   "browser": true,
   "node": true,
+  
   // legacy
   "onevar": false
 }
