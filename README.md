@@ -22,17 +22,21 @@ npm install --save-dev projectz joe joe-reporter-console chai coffee-script
 ``` bash
 # Download the files into your directory
 # Only run this for the files you want to fetch
-wget -N https://raw.github.com/bevry/base/master/.editorconfig
+
 wget -N https://raw.github.com/bevry/base/master/.gitignore
 wget -N https://raw.github.com/bevry/base/master/.npmignore
 wget -N https://raw.github.com/bevry/base/master/.travis.yml
+wget -N https://raw.github.com/bevry/base/master/.editorconfig
 wget -N https://raw.github.com/bevry/base/master/Cakefile
 wget -N https://raw.github.com/bevry/base/master/LICENSE.md
 wget -N https://raw.github.com/bevry/base/master/CONTRIBUTING.md
+
 wget -N https://raw.github.com/bevry/base/master/.jshintrc
 wget -N https://raw.github.com/bevry/base/master/coffeelint.json
+
 wget -N https://raw.github.com/bevry/base/master/HISTORY.md
 wget -N https://raw.github.com/bevry/base/master/package.json
+
 wget -N https://raw.github.com/bevry/base/master/cyclic.js
 ```
 
@@ -67,13 +71,14 @@ wget -N https://raw.github.com/bevry/base/master/cyclic.js
 ### Add the files
 
 ``` bash
-git add .gitignore .npmignore .travis.yml Cakefile LICENSE.md CONTRIBUTING.md HISTORY.md README.md package.json cyclic.js src/
+git add .gitignore .npmignore .travis.yml .editorconfig .jshintrc
+git add .
 ```
 
 
 ## History
 
-- v1.3.18 Juny 8, 2014
+- v1.3.18 June 8, 2014
 	- `.editorconfig` added
 	- `.jshintrc` added
 	- `coffeelint.json` added
