@@ -2,7 +2,7 @@
   // enforcing options
   "bitwise": true,
   "camelcase": true,
-  "curly": false,
+  "curly": false,  // we like one liners
   "eqeqeq": true,
   "es3": true,
   "forin": true,
