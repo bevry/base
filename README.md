@@ -31,8 +31,8 @@ wget -N https://raw.github.com/bevry/base/master/Cakefile
 wget -N https://raw.github.com/bevry/base/master/LICENSE.md
 wget -N https://raw.github.com/bevry/base/master/CONTRIBUTING.md
 
-wget -N https://raw.github.com/bevry/base/master/.jshintrc
 wget -N https://raw.github.com/bevry/base/master/coffeelint.json
+wget -N https://raw.github.com/bevry/base/master/.jshintrc
 
 wget -N https://raw.github.com/bevry/base/master/HISTORY.md
 wget -N https://raw.github.com/bevry/base/master/package.json
