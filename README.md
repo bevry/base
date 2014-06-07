@@ -29,6 +29,8 @@ wget -N https://raw.github.com/bevry/base/master/.travis.yml
 wget -N https://raw.github.com/bevry/base/master/Cakefile
 wget -N https://raw.github.com/bevry/base/master/LICENSE.md
 wget -N https://raw.github.com/bevry/base/master/CONTRIBUTING.md
+wget -N https://raw.github.com/bevry/base/master/.jshintrc
+wget -N https://raw.github.com/bevry/base/master/coffeelint.json
 wget -N https://raw.github.com/bevry/base/master/HISTORY.md
 wget -N https://raw.github.com/bevry/base/master/package.json
 wget -N https://raw.github.com/bevry/base/master/cyclic.js
@@ -73,6 +75,8 @@ git add .gitignore .npmignore .travis.yml Cakefile LICENSE.md CONTRIBUTING.md HI
 
 - v1.3.18 Juny 8, 2014
 	- `.editorconfig` added
+	- `.jshintrc` added
+	- `coffeelint.json` added
 
 - v1.3.17 May 29, 2014
 	- `.travis.yml` now ensures the the npm version is the latest
