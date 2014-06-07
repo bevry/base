@@ -22,15 +22,15 @@ npm install --save-dev projectz joe joe-reporter-console chai coffee-script
 ``` bash
 # Download the files into your directory
 # Only run this for the files you want to fetch
-rm .gitignore; wget https://raw.github.com/bevry/base/master/.gitignore
-rm .npmignore; wget https://raw.github.com/bevry/base/master/.npmignore
-rm .travis.yml; wget https://raw.github.com/bevry/base/master/.travis.yml
-rm Cakefile; wget https://raw.github.com/bevry/base/master/Cakefile
-rm LICENSE.md; wget https://raw.github.com/bevry/base/master/LICENSE.md
-rm CONTRIBUTING.md; wget https://raw.github.com/bevry/base/master/CONTRIBUTING.md
-rm HISTORY.md; wget https://raw.github.com/bevry/base/master/HISTORY.md
-rm package.json; wget https://raw.github.com/bevry/base/master/package.json
-rm cyclic.js; wget https://raw.github.com/bevry/base/master/cyclic.js
+wget -N https://raw.github.com/bevry/base/master/.gitignore
+wget -N https://raw.github.com/bevry/base/master/.npmignore
+wget -N https://raw.github.com/bevry/base/master/.travis.yml
+wget -N https://raw.github.com/bevry/base/master/Cakefile
+wget -N https://raw.github.com/bevry/base/master/LICENSE.md
+wget -N https://raw.github.com/bevry/base/master/CONTRIBUTING.md
+wget -N https://raw.github.com/bevry/base/master/HISTORY.md
+wget -N https://raw.github.com/bevry/base/master/package.json
+wget -N https://raw.github.com/bevry/base/master/cyclic.js
 ```
 
 ### Copy `README.md`
