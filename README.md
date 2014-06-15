@@ -78,6 +78,9 @@ git add .
 
 ## History
 
+- v1.3.19 June 15, 2014
+	- `package.json`, `Cakefile` added [biscotto](http://atom.github.io/biscotto/) support
+
 - v1.3.18 June 8, 2014
 	- `.editorconfig` added
 	- `.jshintrc` added
