@@ -1,4 +1,4 @@
-# v1.3.19 June 9, 2014
+# v1.3.19 June 15, 2014
 # https://github.com/bevry/base
 
 
