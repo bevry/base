@@ -47,7 +47,8 @@
     "joe": "~1.4.0",
     "joe-reporter-console": "~1.2.1",
     "chai": "~1.9.1",
-    "projectz": "~0.3.11"
+    "projectz": "~0.3.11",
+    "biscotto": "^2.1.2"
   },
   "directories": {
     "lib": "./out/lib"
@@ -59,6 +60,7 @@
   },
   "main": "./out/lib/projectName.js",
   "cakeConfiguration": {
-    "COFFEE_SRC_PATH": "src"
+    "COFFEE_SRC_PATH": "src",
+    "BISCOTTO_SRC_PATH": "src"
   }
 }
