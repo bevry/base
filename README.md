@@ -78,6 +78,9 @@ git add .
 
 ## History
 
+- v1.3.20 June 16, 2014
+	- `Cakefile` added title config to biscotto
+
 - v1.3.19 June 15, 2014
 	- `package.json`, `Cakefile` added [biscotto](http://atom.github.io/biscotto/) support
 
