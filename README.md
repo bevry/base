@@ -78,6 +78,9 @@ git add .
 
 ## History
 
+- v1.3.22 June 23, 2014
+	- `CONTRIBUTING.md` fixed links to guidelines
+
 - v1.3.21 June 23, 2014
 	- `.travis.yml` will now install coffee-script for us (in case we forgot it)
 		- CoffeeScript is needed for the `cake` command which is used in other places
