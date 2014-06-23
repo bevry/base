@@ -23,21 +23,21 @@ npm install --save-dev projectz joe joe-reporter-console chai coffee-script
 # Download the files into your directory
 # Only run this for the files you want to fetch
 
-wget -N https://raw.github.com/bevry/base/master/.gitignore
-wget -N https://raw.github.com/bevry/base/master/.npmignore
-wget -N https://raw.github.com/bevry/base/master/.travis.yml
-wget -N https://raw.github.com/bevry/base/master/.editorconfig
-wget -N https://raw.github.com/bevry/base/master/Cakefile
-wget -N https://raw.github.com/bevry/base/master/LICENSE.md
-wget -N https://raw.github.com/bevry/base/master/CONTRIBUTING.md
+wget -N https://raw.githubusercontent.com/bevry/base/master/.gitignore
+wget -N https://raw.githubusercontent.com/bevry/base/master/.npmignore
+wget -N https://raw.githubusercontent.com/bevry/base/master/.travis.yml
+wget -N https://raw.githubusercontent.com/bevry/base/master/.editorconfig
+wget -N https://raw.githubusercontent.com/bevry/base/master/Cakefile
+wget -N https://raw.githubusercontent.com/bevry/base/master/LICENSE.md
+wget -N https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
 
-wget -N https://raw.github.com/bevry/base/master/coffeelint.json
-wget -N https://raw.github.com/bevry/base/master/.jshintrc
+wget -N https://raw.githubusercontent.com/bevry/base/master/coffeelint.json
+wget -N https://raw.githubusercontent.com/bevry/base/master/.jshintrc
 
-wget -N https://raw.github.com/bevry/base/master/HISTORY.md
-wget -N https://raw.github.com/bevry/base/master/package.json
+wget -N https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
+wget -N https://raw.githubusercontent.com/bevry/base/master/package.json
 
-wget -N https://raw.github.com/bevry/base/master/cyclic.js
+wget -N https://raw.githubusercontent.com/bevry/base/master/cyclic.js
 ```
 
 ### Copy `README.md`
