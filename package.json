@@ -38,7 +38,7 @@
     "url": "http://github.com/bevry/projectName.git"
   },
   "engines": {
-    "node": ">=0.4"
+    "node": ">=0.10"
   },
   "dependencies": {
   },

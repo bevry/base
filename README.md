@@ -78,6 +78,9 @@ git add .
 
 ## History
 
+- v1.3.23 June 23, 2014
+	- `package.json`, `.travis.yml`: Targeting Node >=0.10
+
 - v1.3.22 June 23, 2014
 	- `CONTRIBUTING.md` fixed links to guidelines
 
