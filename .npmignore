@@ -16,6 +16,7 @@ node_modules/
 
 # Development Files
 .editorconfig
+.eslintrc
 .jshintrc
 coffeelint.json
 .travis*
