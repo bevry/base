@@ -79,7 +79,7 @@ git add .
 ## History
 
 - v1.3.23 October 11, 2014
-	- `.travis.yml` restrict npm update to v1 to try and help 0.8 issues
+	- `.travis.yml` restrict npm update to v1 to try and help node v0.8 issues
 	- `.npmignore` added `.env` and `.eslint`
 
 - v1.3.22 June 23, 2014
