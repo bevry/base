@@ -15,6 +15,7 @@
   "badges": {
     "travis": true,
     "npm": true,
+    "npmdownloads": true,
     "david": true,
     "daviddev": true,
     "gittip": "bevry",
