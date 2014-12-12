@@ -78,6 +78,9 @@ git add .
 
 ## History
 
+> As of December 2014, the commit history is now the release history for this project.
+> Version numbers has been abdoned and dates inside the files should now be used instead.
+
 - v1.3.23 October 11, 2014
 	- `.travis.yml` restrict npm update to v1 to try and help node v0.8 issues
 	- `.npmignore` added `.env` and `.eslint`
