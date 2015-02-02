@@ -55,19 +55,20 @@ for own key,value of (PACKAGE_DATA.cakeConfiguration or {})
 
 child_process = require('child_process')
 
-spawn = (command, args, opts, next) ->
+spawn = (command, args, opts) ->
 	if opts.output is true
 		console.log(command, args.join(' '))
 		opts.stdio = 'inherit'
-	child_process.spawn(command, args, opts, next)
+	return child_process.spawn(command, args, opts)
 exec = (command, opts, next) ->
 	if opts.output is true
 		console.log(command)
-		child_process.exec command, opts, (err, stdout, stderr) ->
+		return child_process.exec command, opts, (err, stdout, stderr) ->
 			console.log(stdout)
 			console.log(stderr)
+			next()
 	else
-		child_process.exec(command, opts, next)
+		return child_process.exec(command, opts, next)
 
 safe = (next,fn) ->
 	next ?= (err) -> console.log(err.stack ? err)
@@ -221,8 +222,8 @@ actions =
 			exec("""#{BISCOTTO} -n #{PACKAGE_DATA.title or PACKAGE_DATA.name} --title "#{PACKAGE_DATA.title or PACKAGE_DATA.name} API Documentation" -r README.md -o #{config.BISCOTTO_OUT_PATH} #{config.BISCOTTO_SRC_PATH} - LICENSE.md HISTORY.md""", {output:true, cwd:APP_PATH}, safe next, step5)
 		step5 = ->
 			console.log('\ncake test')
-			actions.test(opts, safe next, step5)
-		step5 = next
+			actions.test(opts, safe next, step6)
+		step6 = next
 
 		# Start
 		step1()
