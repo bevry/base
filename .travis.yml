@@ -12,6 +12,8 @@ script: "npm test"
 node_js:
   - "0.8"
   - "0.10"
+  - "0.12"
+  - iojs
 cache:
   directories:
     - node_modules
