@@ -1,4 +1,4 @@
-# February 2, 2015
+# February 12, 2015
 # https://github.com/bevry/base
 language: node_js
 # install npm@1 so we can install npm@2 so we can ensure we have the latest version (can't install npm@2 directly on 0.8 as their bundled npm is too old)
