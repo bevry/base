@@ -4,14 +4,14 @@
   "version": "1.0.0",
   "description": "description",
   "homepage": "https://github.com/bevry/projectName",
+  "license": {
+    "type": "MIT"
+  },
   "keywords": [
     "a",
     "b",
     "c"
   ],
-  "license": {
-    "type": "MIT"
-  },
   "badges": {
     "travis": true,
     "npm": true,
@@ -24,7 +24,7 @@
     "bitcoin": "https://coinbase.com/checkouts/9ef59f5479eec1d97d63382c9ebcb93a",
     "wishlist": "http://amzn.com/w/2F8TXKSNAFG4V"
   },
-  "author": "2014+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "author": "2015+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
