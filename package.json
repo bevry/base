@@ -39,16 +39,16 @@
     "url": "http://github.com/bevry/projectName.git"
   },
   "engines": {
-    "node": ">=0.4"
+    "node": ">=0.8"
   },
   "dependencies": {
   },
   "devDependencies": {
-    "coffee-script": "~1.7.1",
-    "joe": "~1.5.0",
-    "joe-reporter-console": "~1.2.1",
-    "chai": "~1.9.1",
-    "projectz": "~0.3.15",
+    "coffee-script": "^1.9.1",
+    "joe": "^1.6.0",
+    "joe-reporter-console": "^1.2.1",
+    "chai": "^2.1.1",
+    "projectz": "^0.5.0",
     "biscotto": "^2.1.2"
   },
   "directories": {
@@ -57,7 +57,7 @@
   "scripts": {
     "preinstall": "node ./cyclic.js",
     "test": "node ./out/test/projectName-test.js",
-    "start": "node ./node_modules/coffee-script/bin/cake watch"
+    "start": "./node_modules/.bin/cake watch"
   },
   "main": "./out/lib/projectName.js",
   "cakeConfiguration": {
