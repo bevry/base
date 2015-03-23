@@ -32,7 +32,7 @@
   "boss": true,  // we understand assignments
   "debug": false,
   "eqnull": true,  // we know how to do null/undefined checks
-  "esnext": false,
+  "esnext": true,  // we are in the future with iojs and babeljs
   "evil": false,
   "expr": false,
   "funcscope": false,
