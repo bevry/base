@@ -1,4 +1,5 @@
 // March 23, 2015
+// https://github.com/bevry/base
 {
   // enforcing options
   "bitwise": true,
