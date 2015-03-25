@@ -1,4 +1,6 @@
 # March 20, 2015
+# https://github.com/bevry/base
+# https://houndci.com/configuration
 coffee_script:
   config_file: coffeelint.json
 java_script:
