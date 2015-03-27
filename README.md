@@ -38,7 +38,8 @@ wget -N https://raw.githubusercontent.com/bevry/base/master/cyclic.js
 ``` bash
 npm install --save-dev assert-helpers joe joe-reporter-console
 npm install --save-dev projectz coffee-script
-npm install --save-dev babel eslint babel-eslint
+npm install --save-dev babel
+npm install --save-dev eslint babel-eslint
 npm install --save-dev browserify babelify
 ```
 
