@@ -1,19 +1,19 @@
-// 27 March 2015
+// 28 March 2015
 // https://github.com/bevry/base
 (function () {
-	var fsUtil = require('fs'),
-		pathUtil = require('path'),
-		existsSync = fsUtil.existsSync || pathUtil.existsSync, /* node 0.6 compat */
-		name = require('./package.json').name
-	if ( existsSync('.git') === true && existsSync('./node_modules/'+name) === false ) {
-		require('child_process').spawn(
-			process.platform.indexOf('win') === 0 ? process.execPath.replace('node.exe', 'npm.cmd') : 'npm',
-			['install', '--force', name],
-			{
-				env: process.env,
-				cwd: process.cwd(),
-				stdio: 'inherit' /* stdio doesn't exist below node <0.8 but oh well */
-			}
-		).on('error', console.log).on('close', console.log)
+	var fsUtil = require('fs')
+	var pathUtil = require('path')
+	var existsSync = fsUtil.existsSync || pathUtil.existsSync /* node 0.6 compat */
+	var cwd = __dirname
+	var moduleName = require('./package.json').name
+	var modulePath = pathUtil.join(cwd, 'node_modules', moduleName)
+	var command = 'npm install --force '+moduleName
+	var options = {
+		env: process.env,
+		cwd: cwd,
+		stdio: 'inherit' /* stdio doesn't exist below node <0.8 but oh well */
+	}
+	if ( existsSync('.git') === true && existsSync(modulePath) === false ) {
+		require('child_process').exec(command, options)
 	}
 }())
