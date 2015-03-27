@@ -1,4 +1,4 @@
-# February 2, 2015
+# 27 March 2015
 # https://github.com/bevry/base
 
 
@@ -24,12 +24,14 @@ PACKAGE_DATA     = require(PACKAGE_PATH)
 
 MODULES_PATH     = pathUtil.join(APP_PATH, "node_modules")
 DOCPAD_PATH      = pathUtil.join(MODULES_PATH, "docpad")
-CAKE             = pathUtil.join(MODULES_PATH, "coffee-script/bin/cake")
-COFFEE           = pathUtil.join(MODULES_PATH, "coffee-script/bin/coffee")
-PROJECTZ         = pathUtil.join(MODULES_PATH, "projectz/bin/projectz")
-DOCCO            = pathUtil.join(MODULES_PATH, "docco/bin/docco")
-DOCPAD           = pathUtil.join(MODULES_PATH, "docpad/bin/docpad")
-BISCOTTO         = pathUtil.join(MODULES_PATH, "biscotto/bin/biscotto")
+CAKE             = pathUtil.join(MODULES_PATH, ".bin", "cake")
+COFFEE           = pathUtil.join(MODULES_PATH, ".bin", "coffee")
+PROJECTZ         = pathUtil.join(MODULES_PATH, ".bin", "projectz")
+DOCCO            = pathUtil.join(MODULES_PATH, ".bin", "docco")
+DOCPAD           = pathUtil.join(MODULES_PATH, ".bin", "docpad")
+BISCOTTO         = pathUtil.join(MODULES_PATH, ".bin", "biscotto")
+BABEL            = pathUtil.join(MODULES_PATH, ".bin", "babel")
+ESLINT           = pathUtil.join(MODULES_PATH, ".bin", "eslint")
 
 config = {}
 config.TEST_PATH           = "test"
@@ -41,6 +43,9 @@ config.COFFEE_SRC_PATH     = null
 config.COFFEE_OUT_PATH     = "out"
 config.DOCPAD_SRC_PATH     = null
 config.DOCPAD_OUT_PATH     = "out"
+config.BABEL_SRC_PATH      = null
+config.BABEL_OUT_PATH      = "es5"
+config.ESLINT_SRC_PATH      = null
 
 for own key,value of (PACKAGE_DATA.cakeConfiguration or {})
 	config[key] = value
@@ -153,10 +158,14 @@ actions =
 			console.log('\ncoffee compile:')
 			spawn(NODE, [COFFEE, '-co', config.COFFEE_OUT_PATH, config.COFFEE_SRC_PATH], {output:true, cwd:APP_PATH}).on('close', safe next, step3)
 		step3 = ->
-			return step4()  if !config.DOCPAD_SRC_PATH or !fsUtil.existsSync(DOCPAD)
+			return step4()  if !config.BABEL_SRC_PATH or !fsUtil.existsSync(BABEL)
+			console.log('\nbabel compile:')
+			spawn(NODE, [BABEL, config.BABEL_SRC_PATH, '--out-dir', config.BABEL_OUT_PATH], {output:true, cwd:APP_PATH}).on('close', safe next, step4)
+		step4 = ->
+			return step5()  if !config.DOCPAD_SRC_PATH or !fsUtil.existsSync(DOCPAD)
 			console.log('\ndocpad generate:')
-			spawn(NODE, [DOCPAD, 'generate'], {output:true, cwd:APP_PATH}).on('close', safe next, step4)
-		step4 = next
+			spawn(NODE, [DOCPAD, 'generate'], {output:true, cwd:APP_PATH}).on('close', safe next, step5)
+		step5 = next
 
 		# Start
 		step1()
@@ -193,9 +202,12 @@ actions =
 			console.log('\ncake compile')
 			actions.compile(opts, safe next, step2)
 		step2 = ->
+			console.log('\neslint:')
+			spawn(ESLINT, [config.ESLINT_SRC_PATH], {output:true, cwd:APP_PATH}).on('close', safe next, step3)
+		step3 = ->
 			console.log('\nnpm test:')
-			spawn(NPM, ['test'], {output:true, cwd:APP_PATH}).on('close', safe next, step3)
-		step3 = next
+			spawn(NPM, ['test'], {output:true, cwd:APP_PATH}).on('close', safe next, step4)
+		step4 = next
 
 		# Start
 		step1()
