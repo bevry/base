@@ -51,7 +51,7 @@ Our [Contributing Guide](https://learn.bevry.me/community/contribute) contains u
 5. Run tests
 
 	``` bash
-	npm test
+	npm run-script verify
 	```
 
 
@@ -69,7 +69,7 @@ Follow these steps in order to implement your changes/improvements into your des
 1. Ensure all tests pass:
 
     ``` bash
-    npm test
+	npm run-script verify
     ```
 
     > If possible, add tests for your change, if you don't know how, mention this in your pull request
@@ -79,7 +79,7 @@ Follow these steps in order to implement your changes/improvements into your des
     ```
     git status
     git diff
-    npm run-script prepublish
+    npm run-script prepare
     ```
 
 
@@ -128,17 +128,13 @@ To publish your changes as the project owner:
     ```
     git status
     git diff
-    npm run-script prepublish
+    npm run-script prepare
     ```
 
-1. Publish the module:
+1. Prepare the release and publish it to npm and git:
 
     ``` bash
-    npm publish
+    npm run-script release
     ```
 
-    Due to our hooks, this will also:
-
-    1. Runs the `prepublish` script which compiles any meta files
-    1. Runs the `publish` script which will create a git tag for the release, as well as push our `master` branch changes up and the new git tag up to the remote `origin`
-        1. A prompt will occur asking you for a git tag annotation, enter the changelog entry that we created earlier, save and exit the prompt.
+	> A prompt will occur asking you for a git tag annotation, enter the changelog entry that we created earlier, save and exit the prompt.

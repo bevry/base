@@ -35,8 +35,6 @@ BABEL            = pathUtil.join(MODULES_PATH, ".bin", "babel")
 ESLINT           = pathUtil.join(MODULES_PATH, ".bin", "eslint")
 
 config = {}
-config.TEST_COMMAND        = null
-config.BROWSERIFY_COMMAND  = null
 config.TEST_PATH           = "test"
 config.DOCCO_SRC_PATH      = null
 config.DOCCO_OUT_PATH      = "docs"
@@ -65,38 +63,28 @@ for own key,value of (PACKAGE_DATA.cakeConfiguration or {})
 
 child_process = require('child_process')
 
-spawn = (command, args, opts) ->
+spawn = (command, args, opts, next) ->
+	commandString = command+' '+args.join(' ')
 	if opts.output is true
-		console.log(command, args.join(' '))
+		console.log(commandString)
 		opts.stdio = 'inherit'
-	return child_process.spawn(command, args, opts)
+	pid = child_process.spawn(command, args, opts)
+	pid.on 'close', (args...) ->
+		if args[0] is 1
+			error = new Error("Process [#{commandString}] exited with error status code.")
+		else
+			next?(args...)
+	return pid
+
 exec = (command, opts, next) ->
 	if opts.output is true
 		console.log(command)
 		return child_process.exec command, opts, (err, stdout, stderr) ->
 			console.log(stdout)
 			console.log(stderr)
-			next()
+			next?()
 	else
 		return child_process.exec(command, opts, next)
-
-safe = (next,fn) ->
-	next ?= (err) -> console.error(err.stack ? err)
-	fn ?= next  # support only one argument
-	return (err) ->
-		# success status code
-		if err is 0
-			err = null
-
-		# error status code
-		else if err is 1
-			err = new Error('Process exited with error status code')
-
-		# Error
-		return next(err)  if err
-
-		# Continue
-		return fn()
 
 finish = (error) ->
 	if error
@@ -122,10 +110,10 @@ steps = (next, steps) ->
 			next(error)
 		else
 			++step
-			if step isnt steps.length
-				steps[step](complete)
-			else
+			if step is steps.length
 				next()
+			else
+				steps[step](complete)
 
 	steps[step](complete)
 
@@ -162,68 +150,68 @@ actions =
 					)
 
 				# rm
-				spawn('rm', args, {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn('rm', args, {output:true, cwd:APP_PATH}, complete)
 		])
 
-	prepare: (opts,next) ->
+	setup: (opts,next) ->
 		# Steps
 		steps(next, [
 			(complete) ->
 				console.log('\nnpm install (for app):')
-				spawn(NPM, ['install'], {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn(NPM, ['install'], {output:true, cwd:APP_PATH}, complete)
 			(complete) ->
 				return complete()  if !config.TEST_PATH or !fsUtil.existsSync(config.TEST_PATH)
 				console.log('\nnpm install (for test):')
-				spawn(NPM, ['install'], {output:true, cwd:config.TEST_PATH}).on('close', complete)
+				spawn(NPM, ['install'], {output:true, cwd:config.TEST_PATH}, complete)
 			(complete) ->
 				return complete()  if !fsUtil.existsSync(DOCPAD_PATH)
 				console.log('\nnpm install (for docpad tests):')
-				spawn(NPM, ['install'], {output:true, cwd:DOCPAD_PATH}).on('close', complete)
+				spawn(NPM, ['install'], {output:true, cwd:DOCPAD_PATH}, complete)
 		])
 
 	compile: (opts,next) ->
 		# Steps
 		steps(next, [
 			(complete) ->
-				console.log('\ncake prepare')
-				actions.prepare(opts, complete)
+				console.log('\ncake setup')
+				actions.setup(opts, complete)
 			(complete) ->
 				return complete()  if !config.COFFEE_SRC_PATH or !fsUtil.existsSync(COFFEE)
 				console.log('\ncoffee compile:')
-				spawn(NODE, [COFFEE, '-co', config.COFFEE_OUT_PATH, config.COFFEE_SRC_PATH], {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn(NODE, [COFFEE, '-co', config.COFFEE_OUT_PATH, config.COFFEE_SRC_PATH], {output:true, cwd:APP_PATH}, complete)
 			(complete) ->
 				return complete()  if !config.BABEL_SRC_PATH or !fsUtil.existsSync(BABEL)
 				console.log('\nbabel compile:')
-				spawn(NODE, [BABEL, config.BABEL_SRC_PATH, '--out-dir', config.BABEL_OUT_PATH], {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn(NODE, [BABEL, config.BABEL_SRC_PATH, '--out-dir', config.BABEL_OUT_PATH], {output:true, cwd:APP_PATH}, complete)
 			(complete) ->
 				return complete()  if !config.DOCPAD_SRC_PATH or !fsUtil.existsSync(DOCPAD)
 				console.log('\ndocpad generate:')
-				spawn(NODE, [DOCPAD, 'generate'], {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn(NODE, [DOCPAD, 'generate'], {output:true, cwd:APP_PATH}, complete)
 		])
 
 	watch: (opts,next) ->
 		# Steps
 		steps(next, [
 			(complete) ->
-				console.log('\ncake prepare')
-				actions.prepare(opts, complete)
+				console.log('\ncake setup')
+				actions.setup(opts, complete)
 			(complete) ->
 				return complete()  if !config.BABEL_SRC_PATH or !fsUtil.existsSync(BABEL)
 				console.log('\nbabel compile:')
-				spawn(NODE, [BABEL, '-w', config.BABEL_SRC_PATH, '--out-dir', config.BABEL_OUT_PATH], {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn(NODE, [BABEL, '-w', config.BABEL_SRC_PATH, '--out-dir', config.BABEL_OUT_PATH], {output:true, cwd:APP_PATH}, complete)
 			(complete) ->
 				return complete()  if !config.COFFEE_SRC_PATH or !fsUtil.existsSync(COFFEE)
 				console.log('\ncoffee watch:')
-				spawn(NODE, [COFFEE, '-wco', config.COFFEE_OUT_PATH, config.COFFEE_SRC_PATH], {output:true, cwd:APP_PATH}).on('close', safe)  # background
+				spawn(NODE, [COFFEE, '-wco', config.COFFEE_OUT_PATH, config.COFFEE_SRC_PATH], {output:true, cwd:APP_PATH})  # background
 				complete()  # continue while coffee runs in background
 			(complete) ->
 				return complete()  if !config.DOCPAD_SRC_PATH or !fsUtil.existsSync(DOCPAD)
 				console.log('\ndocpad run:')
-				spawn(NODE, [DOCPAD, 'run'], {output:true, cwd:APP_PATH}).on('close', safe)  # background
+				spawn(NODE, [DOCPAD, 'run'], {output:true, cwd:APP_PATH})  # background
 				complete()  # continue while docpad runs in background
 		])
 
-	test: (opts,next) ->
+	verify: (opts,next) ->
 		# Steps
 		steps(next, [
 			(complete) ->
@@ -231,14 +219,13 @@ actions =
 				actions.compile(opts, complete)
 			(complete) ->
 				console.log('\neslint:')
-				spawn(ESLINT, [config.ESLINT_SRC_PATH], {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn(ESLINT, [config.ESLINT_SRC_PATH], {output:true, cwd:APP_PATH}, complete)
 			(complete) ->
-				complete(new Error('package.json:cakeConfiguration.TEST_COMMAND not defined'))  unless config.TEST_COMMAND
-				console.log('\ntest:')
-				exec(config.TEST_COMMAND, {output:true, cwd:APP_PATH}).on('close', complete)
+				console.log('\nnpm test:')
+				spawn(NPM, ['test'], {output:true, cwd:APP_PATH}, complete)
 		])
 
-	prepublish: (opts,next) ->
+	prerelease: (opts,next) ->
 		# Steps
 		steps(next, [
 			(complete) ->
@@ -260,37 +247,43 @@ actions =
 				command = [YUIDOC]
 				command.push('-o', config.YUIDOC_OUT_PATH)  if config.YUIDOC_OUT_PATH
 				command.push(config.YUIDOC_SRC_PATH)  if config.YUIDOC_SRC_PATH
-				spawn(NODE, command, {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn(NODE, command, {output:true, cwd:APP_PATH}, complete)
 			(complete) ->
 				return complete()  if !fsUtil.existsSync(PROJECTZ)
 				console.log('\nprojectz compile')
-				spawn(NODE, [PROJECTZ, 'compile'], {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn(NODE, [PROJECTZ, 'compile'], {output:true, cwd:APP_PATH}, complete)
 			(complete) ->
 				console.log('\ncake test')
 				actions.test(opts, complete)
 		])
 
-	publish: (opts,next) ->
+	release: (opts,next) ->
 		# Steps
 		steps(next, [
 			(complete) ->
+				console.log('\ncake prerelease')
+				actions.prerelease(opts, complete)
+			(complete) ->
 				console.log('\nnpm publish:')
-				spawn(NPM, ['publish'], {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn(NPM, ['publish'], {output:true, cwd:APP_PATH}, complete)
 				# ^ npm will run prepublish and postpublish for us
+			(complete) ->
+				console.log('\ncake postrelease')
+				actions.postrelease(opts, complete)
 		])
 
-	postpublish: (opts,next) ->
+	postrelease: (opts,next) ->
 		# Steps
 		steps(next, [
 			(complete) ->
 				console.log('\ngit tag:')
-				spawn(GIT, ['tag', 'v'+PACKAGE_DATA.version, '-a'], {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn(GIT, ['tag', 'v'+PACKAGE_DATA.version, '-a'], {output:true, cwd:APP_PATH}, complete)
 			(complete) ->
 				console.log('\ngit push origin master:')
-				spawn(GIT, ['push', 'origin', 'master'], {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn(GIT, ['push', 'origin', 'master'], {output:true, cwd:APP_PATH}, complete)
 			(complete) ->
 				console.log('\ngit push tags:')
-				spawn(GIT, ['push', 'origin', '--tags'], {output:true, cwd:APP_PATH}).on('close', complete)
+				spawn(GIT, ['push', 'origin', '--tags'], {output:true, cwd:APP_PATH}, complete)
 		])
 
 
@@ -299,15 +292,28 @@ actions =
 
 commands =
 	clean:       'clean up instance'
-	setup:       'prepare project for setup'
+	setup:       'setup our project for development'
 	compile:     'compile our files (includes setup)'
 	watch:       'compile our files initially, and again for each change (includes setup)'
-	test:        'run our tests (includes compile)'
-	prepublish:  'prepare our project for publishing'
-	publish:     'publish our project using npm'
-	postpublish: 'prepare our project after publishing'
+	verify:      'verify our project works (includes compile)'
+	prerelease:  'prepare our project for publishing'
+	release:     'publish our project using npm'
+	postrelease: 'prepare our project after publishing'
+aliases =
+	install:     'setup'
+	test:        'verify'
+	prepare:     'prerelease'
+	prepublish:  'prerelease'
+	publish:     'release'
+	postpublish: 'postpublish'
 
 Object.keys(commands).forEach (key) ->
 	description = commands[key]
-	fn = actions[key]
-	task key, description, (opts) ->  fn(opts, finish)
+	actualMethod = actions[key]
+	task key, description, (opts) ->  actualMethod(opts, finish)
+
+Object.keys(aliases).forEach (desiredMethodName) ->
+	actualMethodName = aliases[desiredMethodName]
+	actualMethod = actions[actualMethodName]
+	description = "alias for #{actualMethodName}"
+	task desiredMethodName, description, (opts) ->  actualMethod(opts, finish)

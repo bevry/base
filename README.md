@@ -100,6 +100,26 @@ git add .
 [Get the `package.json` template.](https://github.com/bevry/base/blob/master/package.json)
 
 
+### Cake Configuration
+
+Cake Configuration properties you can customise and their defaults:
+
+``` coffee
+config.TEST_PATH           = "test"
+config.DOCCO_SRC_PATH      = null
+config.DOCCO_OUT_PATH      = "docs"
+config.BISCOTTO_SRC_PATH   = null
+config.BISCOTTO_OUT_PATH   = "docs"
+config.YUIDOC_SRC_PATH     = null
+config.YUIDOC_OUT_PATH     = "docs"
+config.COFFEE_SRC_PATH     = null
+config.COFFEE_OUT_PATH     = "out"
+config.DOCPAD_SRC_PATH     = null
+config.DOCPAD_OUT_PATH     = "out"
+config.BABEL_SRC_PATH      = null
+config.BABEL_OUT_PATH      = "es5"
+config.ESLINT_SRC_PATH     = null
+```
 
 
 ## History
