@@ -6,7 +6,7 @@ https://github.com/bevry/base
 
 # Contribute
 
-- [Contributing Guide](https://learn.bevry.me/community/contribute)
+- [Contributing Guide](https://learn.bevry.me/community/contribute) (worth reading)
 - [Coding Standards](http://learn.bevry.me/community/coding-standards)
 - [Support Channels](https://discuss.bevry.me/t/official-bevry-support-channels/63)
 	- [Stack Overflow](https://discuss.bevry.me/t/stack-overflow-support/61/1)
