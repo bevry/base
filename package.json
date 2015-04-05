@@ -62,6 +62,7 @@
     "compile": "./node_modules/.bin/cake compile",
     "watch": "./node_modules/.bin/cake watch",
     "verify": "./node_modules/.bin/cake verify",
+    "meta": "./node_modules/.bin/cake meta",
     "prepare": "./node_modules/.bin/cake prepare",
     "release": "./node_modules/.bin/cake release",
 

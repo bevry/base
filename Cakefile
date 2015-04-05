@@ -225,12 +225,9 @@ actions =
 				spawn(NPM, ['test'], {output:true, cwd:APP_PATH}, complete)
 		])
 
-	prerelease: (opts,next) ->
+	meta: (opts, next) ->
 		# Steps
 		steps(next, [
-			(complete) ->
-				console.log('\ncake compile')
-				actions.compile(opts, complete)
 			(complete) ->
 				return complete()  if !config.DOCCO_SRC_PATH or !fsUtil.existsSync(DOCCO)
 				console.log('\ndocco compile:')
@@ -252,9 +249,17 @@ actions =
 				return complete()  if !fsUtil.existsSync(PROJECTZ)
 				console.log('\nprojectz compile')
 				spawn(NODE, [PROJECTZ, 'compile'], {output:true, cwd:APP_PATH}, complete)
+		])
+
+	prerelease: (opts,next) ->
+		# Steps
+		steps(next, [
 			(complete) ->
 				console.log('\ncake verify')
 				actions.verify(opts, complete)
+			(complete) ->
+				console.log('\ncake meta')
+				actions.meta(opts, complete)
 		])
 
 	release: (opts,next) ->
@@ -296,12 +301,14 @@ commands =
 	compile:     'compile our files (includes setup)'
 	watch:       'compile our files initially, and again for each change (includes setup)'
 	verify:      'verify our project works (includes compile)'
-	prerelease:  'prepare our project for publishing'
-	release:     'publish our project using npm'
+	meta:        'compile our meta files'
+	prerelease:  'prepare our project for publishing (includes verify and compile)'
+	release:     'publish our project using npm (includes prerelease and postrelease)'
 	postrelease: 'prepare our project after publishing'
 aliases =
 	install:     'setup'
 	test:        'verify'
+	docs:        'meta'
 	prepare:     'prerelease'
 	prepublish:  'prerelease'
 	publish:     'release'
