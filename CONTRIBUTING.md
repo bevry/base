@@ -3,24 +3,21 @@ April 5, 2015
 https://github.com/bevry/base
 -->
 
+# Before You Post!
 
-# Contribute
+## Support
 
-- [Contributing Guide](https://learn.bevry.me/community/contribute)
-	- [Coding Standards](http://learn.bevry.me/community/coding-standards)
-	- [Support Channels](https://discuss.bevry.me/t/official-bevry-support-channels/63)
-		- [Stack Overflow](https://discuss.bevry.me/t/stack-overflow-support/61/1)
-		- [Problems](https://discuss.bevry.me/c/problems)
-		- [Suggestions](https://discuss.bevry.me/c/suggestions)
-		- [Guides](https://discuss.bevry.me/c/guides)
-		- [Gitter](https://discuss.bevry.me/t/gitter-chat-rooms/58/1)
-		- [IRC](https://discuss.bevry.me/t/irc-chat-rooms/54/1)
-		- GitHub Issues is no longer one of our support channels, please use one of the above instead.
+We offer support through our [Official Support Channels](https://discuss.bevry.me/t/official-bevry-support-channels/63). Do not use GitHub Issues for support, your issue will be closed.
+
+
+## Contribute
+
+Our [Contributing Guide](https://learn.bevry.me/community/contribute) contains useful tips and suggestions on how to contribute to this project, it's worth the read.
 
 
 ## Development
 
-For developers and contributors
+For developers and contributors.
 
 
 ### Setup
