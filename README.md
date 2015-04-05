@@ -24,6 +24,8 @@ wget -N https://raw.githubusercontent.com/bevry/base/master/LICENSE.md
 wget -N https://raw.githubusercontent.com/bevry/base/master/.npmignore
 wget -N https://raw.githubusercontent.com/bevry/base/master/.travis.yml
 wget -N https://raw.githubusercontent.com/bevry/base/master/Cakefile
+
+wget -N https://raw.githubusercontent.com/bevry/base/master/coffeelint.json
 wget -N https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
 
 wget -N https://raw.githubusercontent.com/bevry/base/master/package.json
