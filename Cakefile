@@ -253,8 +253,8 @@ actions =
 				console.log('\nprojectz compile')
 				spawn(NODE, [PROJECTZ, 'compile'], {output:true, cwd:APP_PATH}, complete)
 			(complete) ->
-				console.log('\ncake test')
-				actions.test(opts, complete)
+				console.log('\ncake verify')
+				actions.verify(opts, complete)
 		])
 
 	release: (opts,next) ->
