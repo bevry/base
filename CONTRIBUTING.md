@@ -6,16 +6,16 @@ https://github.com/bevry/base
 
 # Contribute
 
-- [Contributing Guide](https://learn.bevry.me/community/contribute) (worth reading)
-- [Coding Standards](http://learn.bevry.me/community/coding-standards)
-- [Support Channels](https://discuss.bevry.me/t/official-bevry-support-channels/63)
-	- [Stack Overflow](https://discuss.bevry.me/t/stack-overflow-support/61/1)
-	- [Problems](https://discuss.bevry.me/c/problems)
-	- [Suggestions](https://discuss.bevry.me/c/suggestions)
-	- [Guides](https://discuss.bevry.me/c/guides)
-	- [Gitter](https://discuss.bevry.me/t/gitter-chat-rooms/58/1)
-	- [IRC](https://discuss.bevry.me/t/irc-chat-rooms/54/1)
-	- GitHub Issues is no longer one of our support channels, please use one of the above instead.
+- [Contributing Guide](https://learn.bevry.me/community/contribute)
+	- [Coding Standards](http://learn.bevry.me/community/coding-standards)
+	- [Support Channels](https://discuss.bevry.me/t/official-bevry-support-channels/63)
+		- [Stack Overflow](https://discuss.bevry.me/t/stack-overflow-support/61/1)
+		- [Problems](https://discuss.bevry.me/c/problems)
+		- [Suggestions](https://discuss.bevry.me/c/suggestions)
+		- [Guides](https://discuss.bevry.me/c/guides)
+		- [Gitter](https://discuss.bevry.me/t/gitter-chat-rooms/58/1)
+		- [IRC](https://discuss.bevry.me/t/irc-chat-rooms/54/1)
+		- GitHub Issues is no longer one of our support channels, please use one of the above instead.
 
 
 ## Development
