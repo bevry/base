@@ -25,15 +25,13 @@ wget -N https://raw.githubusercontent.com/bevry/base/master/.npmignore
 wget -N https://raw.githubusercontent.com/bevry/base/master/.travis.yml
 wget -N https://raw.githubusercontent.com/bevry/base/master/Cakefile
 
-wget -N https://raw.githubusercontent.com/bevry/base/master/coffeelint.json
 wget -N https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
 
 wget -N https://raw.githubusercontent.com/bevry/base/master/package.json
 wget -N https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
 
-wget -N https://raw.githubusercontent.com/bevry/base/master/cyclic.js
+wget -N https://raw.githubusercontent.com/bevry/base/master/coffeelint.json
 ```
-
 
 ### Install Development Dependencies
 
@@ -76,6 +74,25 @@ git add .
 
 <!-- LICENSE -->
 ```
+
+
+### If you have cyclic errors
+
+1. Download the cyclic command:
+
+	``` bash
+	wget -N https://raw.githubusercontent.com/bevry/base/master/cyclic.js
+	```
+
+1. Add the following to your `package.json` file:
+
+	``` json
+	{
+		"scripts": {
+			"preinstall": "node ./cyclic.js"
+		}
+	}
+	```
 
 
 ### Copy relevant parts from `package.json`

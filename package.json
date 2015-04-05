@@ -57,11 +57,17 @@
   },
   "main": "./es6guardian.js",
   "scripts": {
-    "preinstall": "node ./cyclic.js",
-    "test": "node --harmony ./coffeejs/test/projectName-test.js",
+    "clean": "./node_modules/.bin/cake clean",
+    "setup": "./node_modules/.bin/cake setup",
+    "compile": "./node_modules/.bin/cake compile",
+    "watch": "./node_modules/.bin/cake watch",
+    "test": "./node_modules/.bin/cake test",
+    "prepublish": "./node_modules/.bin/cake prepublish",
+    "postpublish": "./node_modules/.bin/cake postpublish",
     "browserify": "./node_modules/.bin/browserify ./web/index.js -t babelify --outfile ./web/out.js"
   },
   "cakeConfiguration": {
+    "TEST_COMMAND": "node --harmony ./coffeejs/test/projectName-test.js",
     "BISCOTTO_SRC_PATH": "src",
     "COFFEE_SRC_PATH": "coffee",
     "COFFEE_OUT_PATH": "coffeejs",
