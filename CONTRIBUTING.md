@@ -69,7 +69,7 @@ Follow these steps in order to implement your changes/improvements into your des
 1. Ensure all tests pass:
 
     ``` bash
-    cake test
+    npm test
     ```
 
     > If possible, add tests for your change, if you don't know how, mention this in your pull request
