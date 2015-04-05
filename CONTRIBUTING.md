@@ -17,9 +17,6 @@ Our [Contributing Guide](https://learn.bevry.me/community/contribute) contains u
 
 ## Development
 
-For developers and contributors.
-
-
 ### Setup
 
 1. Install [Node.js](/node/install)
