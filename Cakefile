@@ -1,4 +1,4 @@
-# 5 April 2015
+# 7 April 2015
 # https://github.com/bevry/base
 
 
@@ -33,6 +33,7 @@ BISCOTTO         = pathUtil.join(MODULES_PATH, ".bin", "biscotto")
 YUIDOC           = pathUtil.join(MODULES_PATH, ".bin", "yuidoc")
 BABEL            = pathUtil.join(MODULES_PATH, ".bin", "babel")
 ESLINT           = pathUtil.join(MODULES_PATH, ".bin", "eslint")
+COFFEELINT       = pathUtil.join(MODULES_PATH, ".bin", "coffeelint")
 
 config = {}
 config.TEST_PATH           = "test"
@@ -49,6 +50,7 @@ config.DOCPAD_OUT_PATH     = "out"
 config.BABEL_SRC_PATH      = null
 config.BABEL_OUT_PATH      = "es5"
 config.ESLINT_SRC_PATH     = null
+config.COFFEELINT_SRC_PATH = null
 
 for own key,value of (PACKAGE_DATA.cakeConfiguration or {})
 	config[key] = value
@@ -218,7 +220,12 @@ actions =
 				console.log('\ncake compile')
 				actions.compile(opts, complete)
 			(complete) ->
+				console.log('\ncoffeelint:')
+				return complete()  if !config.COFFEELINT_SRC_PATH or !fsUtil.existsSync(COFFEELINT)
+				spawn(COFFEELINT, [config.COFFEELINT_SRC_PATH], {output:true, cwd:APP_PATH}, complete)
+			(complete) ->
 				console.log('\neslint:')
+				return complete()  if !config.ESLINT_SRC_PATH or !fsUtil.existsSync(ESLINT)
 				spawn(ESLINT, [config.ESLINT_SRC_PATH], {output:true, cwd:APP_PATH}, complete)
 			(complete) ->
 				console.log('\nnpm test:')
