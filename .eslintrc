@@ -1,4 +1,4 @@
-// 5 April 2015
+// 12 August 2015
 // https://github.com/bevry/base
 {
     "parser": "babel-eslint",
@@ -37,7 +37,7 @@
         // Possible Errors
 
         // ES6 supports dangling commas
-        "comma-dangle": false,
+        // "comma-dangle": false,
 
         // Don't allow assignments in conditional statements (if, while, etc.)
         "no-cond-assign": [2, "always"],
@@ -64,7 +64,7 @@
         "no-duplicate-case": 2,
 
         // Allow empty block statements, they are useful for clarity
-        "no-empty": false,
+        // "no-empty": false,
 
         // Disallow empty [] in regular expressions as they cause unexpected behaviour
         "no-empty-class": 2,
@@ -262,7 +262,7 @@
         "no-warning-comments": [1, { "terms": ["todo", "fixme"], "location": "anywhere" }],
 
         // We never use this, it seems silly to allow this
-        "no-with": true,
+        // "no-with": true,
 
         // Always specify a radix to avoid errors
         "radix": 2,
