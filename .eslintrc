@@ -67,7 +67,7 @@
         // "no-empty": false,
 
         // Disallow empty [] in regular expressions as they cause unexpected behaviour
-        "no-empty-class": 2,
+        "no-empty-character-class": 2,
 
         // Overwriting the exception argument in a catch statement can cause memory leaks in some browsers
         "no-ex-assign": 2,
@@ -104,7 +104,8 @@
         "no-regex-spaces": 2,
 
         // Seems like a good idea to error about this
-        "no-reserved-keys": 2,
+        // "no-reserved-keys": 2,
+        "quote-props": ["consistent-as-needed", 2],
 
         // Seems like a good idea to error about this
         "no-sparse-arrays": 2,
@@ -430,7 +431,8 @@
         "no-new-object": 2,
 
         // We never use this, it seems silly to allow this
-        "no-space-before-semi": 2,
+        // "no-space-before-semi": 2,
+        "semi-spacing": [2, {"before": false, "after": true}],
 
         // We never use this, it seems silly to allow this
         "no-spaced-func": 2,
@@ -445,8 +447,9 @@
         // Sometimes this is useful when avoiding shadowing
         "no-underscore-dangle": 0,
 
-        // Unless it is needed such as iife rule then error
-        "no-wrap-func": 2,
+        // Unless it is needed such as IIFE rule then error
+        // "no-wrap-func": 2,
+        "no-extra-parens": 2,
 
         // We like multiple var statements
         "one-var": 0,
@@ -479,7 +482,8 @@
         "space-before-blocks": [2, "always"],
 
         // function () {, get blah () {
-        "space-before-function-parentheses": [2, "always"],
+        // "space-before-function-parentheses": [2, "always"],
+        "space-before-function-paren": [2, "always"],
 
         // This is for spacing between [], so [ 1, 2, 3 ] which we don't want
         "space-in-brackets": 0,
@@ -498,7 +502,8 @@
         "space-unary-ops": 2,
 
         // We use this
-        "spaced-line-comment": 2,
+        // "spaced-line-comment": 2,
+        "spaced-comment": 2,
 
         // We use this
         // @TODO revise this
