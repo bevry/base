@@ -360,8 +360,8 @@
         // --------------------------------------
         // Stylistic
 
-        // Use tabs
-        "indent": [2, "tab"],
+        // Use tabs and indent case blocks
+        "indent": [2, "tab", {"SwitchCase": 1}],
 
         // Opening brace on same line, closing brace on its own line, except when statement is a single line
         "brace-style": [2, "stroustrup", { "allowSingleLine": true }],
