@@ -30,6 +30,7 @@ wget -N https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
 wget -N https://raw.githubusercontent.com/bevry/base/master/package.json
 wget -N https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
 
+wget -N https://raw.githubusercontent.com/bevry/base/master/esguardian.js
 wget -N https://raw.githubusercontent.com/bevry/base/master/coffeelint.json
 ```
 
