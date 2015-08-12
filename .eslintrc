@@ -290,7 +290,8 @@
         // Variables
 
         // Don't allow the catch method to shadow objects as browsers handle this differently
-        "no-catch-shadow": 2,
+        // Update: We don't care for IE8
+        // "no-catch-shadow": 2,
 
         // Don't use delete, it disables optimisations
         "no-delete-var": 2,
