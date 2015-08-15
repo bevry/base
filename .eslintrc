@@ -1,4 +1,4 @@
-// 12 August 2015
+// 15 August 2015
 // https://github.com/bevry/base
 {
     "parser": "babel-eslint",
@@ -37,7 +37,7 @@
         // Possible Errors
 
         // ES6 supports dangling commas
-        // "comma-dangle": false,
+        "comma-dangle": 0,
 
         // Don't allow assignments in conditional statements (if, while, etc.)
         "no-cond-assign": [2, "always"],
@@ -64,7 +64,7 @@
         "no-duplicate-case": 2,
 
         // Allow empty block statements, they are useful for clarity
-        // "no-empty": false,
+        "no-empty": 0,
 
         // Disallow empty [] in regular expressions as they cause unexpected behaviour
         "no-empty-character-class": 2,
@@ -283,7 +283,8 @@
         // Strict Mode
 
         // Force strict mode in the global scope as we want it everywhere
-        "strict": [2, "global"],
+        "strict": 0,
+        // Off because when using ES6 in modules, "use strict" is necessary, but eslint complains about it
 
 
         // --------------------------------------
@@ -465,7 +466,7 @@
         "quote-props": [2, "as-needed"],
 
         // Use single quotes where escaping isn't needed
-		"quotes": [2, "single", "avoid-escape"],
+	"quotes": [2, "single", "avoid-escape"],
 
         // Never use semicolons
         "semi": [2, "never"],
