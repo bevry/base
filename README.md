@@ -6,7 +6,7 @@ Files we use when scaffolding new projects.
 
 ### Setup the Project
 
-``` bash
+``` shell
 npm init
 touch README.md
 ```
@@ -14,16 +14,15 @@ touch README.md
 
 ### Copy Files
 
-``` bash
+``` shell
 wget -N https://raw.githubusercontent.com/bevry/base/master/.editorconfig
 wget -N https://raw.githubusercontent.com/bevry/base/master/.eslintrc
 wget -N https://raw.githubusercontent.com/bevry/base/master/.gitignore
-wget -N https://raw.githubusercontent.com/bevry/base/master/coffeelint.json
 wget -N https://raw.githubusercontent.com/bevry/base/master/LICENSE.md
 
 wget -N https://raw.githubusercontent.com/bevry/base/master/.npmignore
 wget -N https://raw.githubusercontent.com/bevry/base/master/.travis.yml
-wget -N https://raw.githubusercontent.com/bevry/base/master/Cakefile
+wget -N https://raw.githubusercontent.com/bevry/base/master/nakefile.js
 
 wget -N https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
 
@@ -31,15 +30,16 @@ wget -N https://raw.githubusercontent.com/bevry/base/master/package.json
 wget -N https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
 
 wget -N https://raw.githubusercontent.com/bevry/base/master/es6guardian.js
+wget -N https://raw.githubusercontent.com/bevry/base/master/coffeelint.json
 ```
 
 ### Install Development Dependencies
 
-``` bash
-npm install --save-dev assert-helpers joe joe-reporter-console
-npm install --save-dev projectz coffee-script
-npm install --save-dev babel
+``` shell
 npm install --save-dev eslint babel-eslint
+npm install --save-dev projectz
+npm install --save-dev babel
+npm install --save-dev assert-helpers joe joe-reporter-console
 npm install --save-dev browserify babelify
 ```
 
@@ -100,25 +100,31 @@ git add .
 [Get the `package.json` template.](https://github.com/bevry/base/blob/master/package.json)
 
 
-### Cake Configuration
+### Nakefile Configuration
 
-Cake Configuration properties you can customise and their defaults:
+Nakefile Configuration properties with their default values that you can customise via `nakeConfiguration` inside your `package.json` file:
 
-``` coffee
-config.TEST_PATH           = "test"
-config.DOCCO_SRC_PATH      = null
-config.DOCCO_OUT_PATH      = "docs"
-config.BISCOTTO_SRC_PATH   = null
-config.BISCOTTO_OUT_PATH   = "docs"
-config.YUIDOC_SRC_PATH     = null
-config.YUIDOC_OUT_PATH     = "docs"
-config.COFFEE_SRC_PATH     = null
-config.COFFEE_OUT_PATH     = "out"
-config.DOCPAD_SRC_PATH     = null
-config.DOCPAD_OUT_PATH     = "out"
-config.BABEL_SRC_PATH      = null
-config.BABEL_OUT_PATH      = "es5"
-config.ESLINT_SRC_PATH     = null
+``` json
+{
+	"nakeConfiguration": {
+		"TEST_PATH": "test",
+		"DOCCO_SRC_PATH": null,
+		"DOCCO_OUT_PATH": "docs",
+		"BISCOTTO_SRC_PATH": null,
+		"BISCOTTO_OUT_PATH": "docs",
+		"YUIDOC_SRC_PATH": null,
+		"YUIDOC_OUT_PATH": "docs",
+		"YUIDOC_SYNTAX": "js",
+		"COFFEE_SRC_PATH": null,
+		"COFFEE_OUT_PATH": "out",
+		"DOCPAD_SRC_PATH": null,
+		"DOCPAD_OUT_PATH": "out",
+		"BABEL_SRC_PATH": null,
+		"BABEL_OUT_PATH": "es5",
+		"ESLINT_SRC_PATH": null,
+		"COFFEELINT_SRC_PATH": null
+	}
+}
 ```
 
 

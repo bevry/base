@@ -40,31 +40,30 @@
   },
   "browsers": true,
   "engines": {
-    "node": ">=0.8"
+    "node": ">=0.12"
   },
   "dependencies": {},
   "devDependencies": {
     "assert-helpers": "^1.0.2",
-    "babel": "^4.7.16",
-    "babel-eslint": "^2.0.2",
-    "babelify": "^5.0.4",
-    "browserify": "^9.0.3",
-    "coffee-script": "^1.9.1",
-    "eslint": "^0.17.1",
+    "babel": "^5.8.21",
+    "babel-eslint": "^4.0.10",
+    "babelify": "^6.2.0",
+    "browserify": "^11.0.1",
+    "eslint": "^1.2.1",
     "joe": "^1.6.0",
     "joe-reporter-console": "^1.2.1",
     "projectz": "^0.5.0"
   },
   "main": "./es6guardian.js",
   "scripts": {
-    "clean": "./node_modules/.bin/cake clean",
-    "setup": "./node_modules/.bin/cake setup",
-    "compile": "./node_modules/.bin/cake compile",
-    "watch": "./node_modules/.bin/cake watch",
-    "verify": "./node_modules/.bin/cake verify",
-    "meta": "./node_modules/.bin/cake meta",
-    "prepare": "./node_modules/.bin/cake prepare",
-    "release": "./node_modules/.bin/cake release",
+    "clean": "node --harmony nakefile.js clean",
+    "setup": "node --harmony nakefile.js setup",
+    "compile": "node --harmony nakefile.js compile",
+    "watch": "node --harmony nakefile.js watch",
+    "verify": "node --harmony nakefile.js verify",
+    "meta": "node --harmony nakefile.js meta",
+    "prepare": "node --harmony nakefile.js prepare",
+    "release": "node --harmony nakefile.js release",
 
     "test": "node --harmony ./es5/test/projectName-test.js",
     "browserify": "./node_modules/.bin/browserify ./web/index.js -t babelify --outfile ./web/out.js"
