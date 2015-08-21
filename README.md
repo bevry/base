@@ -31,7 +31,6 @@ wget -N https://raw.githubusercontent.com/bevry/base/master/package.json
 wget -N https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
 
 wget -N https://raw.githubusercontent.com/bevry/base/master/es6guardian.js
-wget -N https://raw.githubusercontent.com/bevry/base/master/coffeelint.json
 ```
 
 ### Install Development Dependencies
