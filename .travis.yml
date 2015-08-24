@@ -24,7 +24,7 @@ script: "npm test"
 
 # Custom notifications
 # notifications:
-#   # Nofity email travisci@bevry.me
+#   # Notify email travisci@bevry.me
 
 #   email:
 #     recipients:
