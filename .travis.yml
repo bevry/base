@@ -1,4 +1,4 @@
-# August 24, 2015
+# August 25, 2015
 # https://github.com/bevry/base
 
 # Use the latest travis infrastructure
@@ -23,32 +23,5 @@ before_script: "npm run-script compile"
 script: "npm test"
 
 # Custom notifications
-# notifications:
-#   # Notify email travisci@bevry.me
-#   email:
-#     recipients:
-#       - travisci@bevry.me
-
-#   # Notify slack bevry#updates on https://bevry.slack.com
-#   # Bevry's token available from https://bevry.slack.com/services/4200459714
-#   # travis encrypt "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack
-#   slack:
-#     secure: TXhffbJwQRIT+9sxFvi/aW8mvE0+IpDyjW5V0nfhjEuyhqsocBQi15rxxfubha9rSs/f1aCoWnH6H5YcrffT8dtVJTe6inKNO0B/JNJa4bIb20+QfoFo2AzMdtxEZPKhy+dEtPW7n9AJrItLVnz5SpqkBkjV0P+rJMTih7ZYtF4=
-
-# # Custom deployment
-# # travis encrypt "$GITHUB_USER:$GITHUB_TRAVIS_TOKEN" --add env.global
-# env:
-#   global:
-#     secure: "BAWV2Gc+9wgcqygqaSMN1KXfqxi/DRupGd/9flHuIWgikCWQAdMAHmAWZKVh6/bYwGeW7ZVA+hZeBoQBMd6RSPsAi3LTOE/KzUU8edYoibtlF5EMHgOc1rqe5sGzlMdIc2htx5dHOgXP5tr+PcIsCoTeOiKgbCGHxuKcqaQgFMQ="
-# after_success: >
-#   if ([ "$TRAVIS_BRANCH" == "master" ] || [ ! -z "$TRAVIS_TAG" ]) &&
-#       [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-#     echo "Deploying"
-#     git config --global user.email "travisci@bevry.me"
-#     git config --global user.name "Bevry TravisCI Deployer"
-#     git remote rm origin && git remote add origin "https://$GITHUB_AUTH@github.com/docpad/website.git"
-#     npm run-script deploy
-#     echo "Deployed"
-#   else
-#     echo "Skipped deploy"
-#   fi
+# travis encrypt --org "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack
+# travis encrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recipients
