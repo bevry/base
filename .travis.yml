@@ -20,4 +20,5 @@ notifications:
       - travisci@bevry.me
 
   # Notify slack #updates channel on https://bevry.slack.com
-  # travis encrypt "bevry:TOKEN#updates" --add notifications.slack
+  # Bevry's token available from https://bevry.slack.com/services/4200459714
+  # travis encrypt "bevry:$BEVRY_TRAVIS_TOKEN#updates" --add notifications.slack
