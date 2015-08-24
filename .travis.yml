@@ -1,24 +1,57 @@
-# August 21, 2015
+# August 24, 2015
 # https://github.com/bevry/base
+
+# Use the latest travis infrastructure
+sudo: false
+
+# We use node
 language: node_js
-# ensure npm is the latest version (ignore node versions that can't run it)
-# ensure correct dependencies are installed (handled via npm run-script install)
-install: "npm install -g npm && npm run-script setup"
-# ensure our application is compiled before we run our tests
-before_script: "npm run-script compile"
-script: "npm test"
 node_js:
   - "0.12"
   - iojs
 cache:
   directories:
     - node_modules
-notifications:
-  # Nofity email travisci@bevry.me
-  email:
-    recipients:
-      - travisci@bevry.me
 
-  # Notify slack #updates channel on https://bevry.slack.com
-  # Bevry's token available from https://bevry.slack.com/services/4200459714
-  # travis encrypt "bevry:$BEVRY_TRAVIS_TOKEN#updates" --add notifications.slack
+# Prepare our tests
+# Ensure npm is the latest version that we support
+# Ensure the project is setup correctly and compiled
+install: "npm install -g npm@3 && npm run-script setup"
+before_script: "npm run-script compile"
+
+# Run our tests
+script: "npm test"
+
+# Custom notifications
+# notifications:
+#   # Nofity email travisci@bevry.me
+
+#   email:
+#     recipients:
+#       - travisci@bevry.me
+
+#   # Notify slack bevry#updates on https://bevry.slack.com
+#   # Bevry's token available from https://bevry.slack.com/services/4200459714
+#   # travis encrypt "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack
+
+#   slack:
+#     secure: TXhffbJwQRIT+9sxFvi/aW8mvE0+IpDyjW5V0nfhjEuyhqsocBQi15rxxfubha9rSs/f1aCoWnH6H5YcrffT8dtVJTe6inKNO0B/JNJa4bIb20+QfoFo2AzMdtxEZPKhy+dEtPW7n9AJrItLVnz5SpqkBkjV0P+rJMTih7ZYtF4=
+
+# Custom deployment
+# travis encrypt "$GITHUB_USER:$GITHUB_TRAVIS_TOKEN#updates" --add env.global
+#
+# env:
+#   global:
+#     secure: "BAWV2Gc+9wgcqygqaSMN1KXfqxi/DRupGd/9flHuIWgikCWQAdMAHmAWZKVh6/bYwGeW7ZVA+hZeBoQBMd6RSPsAi3LTOE/KzUU8edYoibtlF5EMHgOc1rqe5sGzlMdIc2htx5dHOgXP5tr+PcIsCoTeOiKgbCGHxuKcqaQgFMQ="
+# after_success: >
+#   if ([ "$TRAVIS_BRANCH" == "master" ] || [ ! -z "$TRAVIS_TAG" ]) &&
+#       [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+#     echo "Deploying"
+#     git config --global user.email "travisci@bevry.me"
+#     git config --global user.name "Bevry TravisCI Deployer"
+#     git remote rm origin && git remote add origin "https://$GITHUB_AUTH@github.com/docpad/website.git"
+#     npm run-script deploy
+#     echo "Deployed"
+#   else
+#     echo "Skipped deploy"
+#   fi
