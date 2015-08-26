@@ -68,7 +68,7 @@
     "test": "node --harmony ./es5/test/projectName-test.js",
     "browserify": "./node_modules/.bin/browserify ./web/index.js -t babelify --outfile ./web/out.js"
   },
-  "cakeConfiguration": {
+  "nakeConfiguration": {
     "BABEL_SRC_PATH": "es6",
     "ESLINT_SRC_PATH": "es6",
     "YUIDOC_SRC_PATH": "es6"
