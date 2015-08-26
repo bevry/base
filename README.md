@@ -27,10 +27,11 @@ wget -N https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
 
 wget -N https://raw.githubusercontent.com/bevry/base/master/.travis.yml
 
+wget -N https://raw.githubusercontent.com/bevry/base/master/es6guardian.js
+
 wget -N https://raw.githubusercontent.com/bevry/base/master/package.json
 wget -N https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
 
-wget -N https://raw.githubusercontent.com/bevry/base/master/es6guardian.js
 wget -N https://raw.githubusercontent.com/bevry/base/master/coffeelint.json
 ```
 
@@ -44,10 +45,17 @@ npm install --save-dev assert-helpers joe joe-reporter-console
 npm install --save-dev browserify babelify
 ```
 
+### Prepare Travis
+
+``` shell
+travis encrypt --org "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack
+travis encrypt --org "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack
+```
+
 
 ### Add files to Git
 
-``` bash
+``` shell
 git add .editorconfig .eslintrc .gitignore .npmignore .travis.yml
 git add .
 ```
@@ -76,24 +84,6 @@ git add .
 <!-- LICENSE -->
 ```
 
-
-### If you have cyclic errors
-
-1. Download the cyclic command:
-
-	``` bash
-	wget -N https://raw.githubusercontent.com/bevry/base/master/cyclic.js
-	```
-
-1. Add the following to your `package.json` file:
-
-	``` json
-	{
-		"scripts": {
-			"preinstall": "node ./cyclic.js"
-		}
-	}
-	```
 
 
 ### Copy relevant parts from `package.json`
@@ -127,6 +117,27 @@ Nakefile Configuration properties with their default values that you can customi
 	}
 }
 ```
+
+### If you have cyclic errors
+
+Sometimes npm (it seems only applicable to legacy versions perhaps) would sometimes crash npm installs, when a project includes a cyclic dependency - for instance your are developing Project A which depends on Project B which also depends on Project A (the project you are developing). To fix this crash, `cyclic.js` is used as followed.
+
+
+1. Download the cyclic command:
+
+	``` shell
+	wget -N https://raw.githubusercontent.com/bevry/base/master/cyclic.js
+	```
+
+1. Add the following to your `package.json` file:
+
+	``` json
+	{
+		"scripts": {
+			"preinstall": "node ./cyclic.js"
+		}
+	}
+	```
 
 
 ## History
