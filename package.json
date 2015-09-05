@@ -43,17 +43,7 @@
     "node": ">=0.12"
   },
   "dependencies": {},
-  "devDependencies": {
-    "assert-helpers": "^1.0.2",
-    "babel": "^5.8.21",
-    "babel-eslint": "^4.0.10",
-    "babelify": "^6.2.0",
-    "browserify": "^11.0.1",
-    "eslint": "^1.2.1",
-    "joe": "^1.6.0",
-    "joe-reporter-console": "^1.2.1",
-    "projectz": "^0.5.0"
-  },
+  "devDependencies": {},
   "main": "./es6guardian.js",
   "scripts": {
     "clean": "node --harmony nakefile.js clean",
