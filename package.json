@@ -44,7 +44,7 @@
   },
   "dependencies": {},
   "devDependencies": {},
-  "main": "./es6guardian.js",
+  "main": "./esnextguardian.js",
   "scripts": {
     "clean": "node --harmony nakefile.js clean",
     "setup": "node --harmony nakefile.js setup",
@@ -59,8 +59,8 @@
     "browserify": "./node_modules/.bin/browserify ./web/index.js -t babelify --outfile ./web/out.js"
   },
   "nakeConfiguration": {
-    "BABEL_SRC_PATH": "es6",
-    "ESLINT_SRC_PATH": "es6",
-    "YUIDOC_SRC_PATH": "es6"
+    "BABEL_SRC_PATH": "esnext",
+    "ESLINT_SRC_PATH": "esnext",
+    "YUIDOC_SRC_PATH": "esnext"
   }
 }
