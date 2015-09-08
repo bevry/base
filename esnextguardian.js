@@ -1,4 +1,4 @@
-// September 8, 2015
+// 9 September 2015
 // https://github.com/bevry/base
 if ( process.env.REQUIRE_ESNEXT ) {
 	module.exports = require('./esnext/lib/safefs.js')

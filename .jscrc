@@ -1,5 +1,6 @@
 // 5 April 2015
 // https://github.com/bevry/base
+// http://jscs.info
 {
 	"excludeFiles": ["!(es6)"],
 	"esnext": true,
