@@ -120,7 +120,7 @@ travisencrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recip
 
 ### esnextguardian
 
-If you would like to use ES6+ features natively if supported but also support environments where those ES6+ features may not be available, then you can utilise our esnextguardian script that trys to load the ES6+ file first, and if that fails, then it fallbacks to loading the compiled ES5 version that will run (nearly) everywhere.
+If you would like to use ES6+ features natively if supported but also support environments where those ES6+ features may not be available, then you can utilise our esnextguardian script that trys to load the ES6+ file first, and if that fails, then it fallbacks to loading the compiled ES5 version that runs wherever.
 
 To get started with this:
 
