@@ -91,9 +91,14 @@ git add .
 [Get the `package.json` template.](https://github.com/bevry/base/blob/master/package.json)
 
 
-### Nakefile Configuration
+### Nakefiles
 
-Nakefile Configuration properties with their default values that you can customise via `nakeConfiguration` inside your `package.json` file:
+Nakefiles are a standalone node file called `nakefile.js` that doesn't have any other external dependencies while providing tooling for installing, compiling, testing, and releasing your project. Consider them like a cross-platform Makefile built with Node.js. [Learn more.](https://blog.bevry.me/bevry-news-2015-weeks-34-35-36-7f1516cb2580)
+
+
+#### Nakefile Configuration
+
+The following Nakefile configuration properties are listed below with their default values. You can customize them via the `nakeConfiguration` property inside your `package.json` file.
 
 ``` json
 {
@@ -118,18 +123,17 @@ Nakefile Configuration properties with their default values that you can customi
 }
 ```
 
-### If you have cyclic errors
+### Cyclic Dependencies
 
-Sometimes npm (it seems only applicable to legacy versions perhaps) would sometimes crash npm installs, when a project includes a cyclic dependency - for instance your are developing Project A which depends on Project B which also depends on Project A (the project you are developing). To fix this crash, `cyclic.js` is used as followed.
+Cyclic dependencies would fail in npm version 1 and earlier. If you have cyclic dependencies and require support for npm v1, do the following:
 
-
-1. Download the cyclic command:
+1. Add our [`cyclic.js` file](https://github.com/bevry/base/master/cyclic.js) to your project:
 
 	``` shell
 	wget -N https://raw.githubusercontent.com/bevry/base/master/cyclic.js
 	```
 
-1. Add the following to your `package.json` file:
+1. Get it to run on the npm `preinstall` script, by adding the following your `package.json`:
 
 	``` json
 	{
