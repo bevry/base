@@ -47,16 +47,25 @@ npm install --save-dev browserify babelify
 
 ### Prepare Travis
 
+Run the following in the project to add notifications for the builds (requires the environment variables to be set):
+
 ``` shell
 travis encrypt --org "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack
 travis encrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recipients
 ```
 
-If you get [token errors with travis](https://github.com/travis-ci/travis.rb/issues/315), try again with the following in your dotfiles:
+If you get [token errors with travis](https://github.com/travis-ci/travis.rb/issues/315), add this to you dotfiles:
 
 ``` shell
 export TRAVIS_ACCESS_TOKEN='the token value found in ~/.travis/config.yml'
-alias travis='travis -t "$TRAVIS_ACCESS_TOKEN"'
+alias travisencrypt='travis encrypt -t "$TRAVIS_ACCESS_TOKEN"'
+```
+
+And use this instead:
+
+``` shell
+travisencrypt --org "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack
+travisencrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recipients
 ```
 
 
