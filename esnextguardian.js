@@ -3,7 +3,7 @@
 if ( process.env.REQUIRE_ESNEXT ) {
 	module.exports = require('./esnext/lib/safefs.js')
 }
-else if ( !process.versions.v8 || process.versions.v8.split('.')[0] < 4 ) {
+else if ( process.env.REQUIRE_ES5 || !process.versions.v8 || process.versions.v8.split('.')[0] < 4 ) {
 	module.exports = require('./es5/lib/safefs.js')
 }
 else {
