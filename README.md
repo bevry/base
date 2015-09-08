@@ -52,6 +52,13 @@ travis encrypt --org "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifi
 travis encrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recipients
 ```
 
+If you get [token errors with travis](https://github.com/travis-ci/travis.rb/issues/315), try again with the following in your dotfiles:
+
+``` shell
+export TRAVIS_ACCESS_TOKEN='the token value found in ~/.travis/config.yml'
+alias travis='travis -t "$TRAVIS_ACCESS_TOKEN"'
+```
+
 
 ### Add files to Git
 
