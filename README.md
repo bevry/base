@@ -4,7 +4,7 @@ Files we use when scaffolding new projects.
 
 ## Setup
 
-### Initialise
+### init
 
 Setup your new project:
 
@@ -14,7 +14,7 @@ touch README.md
 ```
 
 
-### Files
+### files
 
 Download the relevant files for your project:
 
@@ -92,7 +92,7 @@ Finally copy the relevant parts of our [`package.json` template](https://github.
 
 
 
-## Customisation
+## Configure
 
 ### travis
 
