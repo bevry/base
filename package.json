@@ -4,25 +4,38 @@
   "version": "1.0.0",
   "description": "description",
   "homepage": "https://github.com/bevry/projectName",
-  "license": {
-    "type": "MIT"
-  },
+  "license": "MIT",
   "keywords": [
     "a",
     "b",
     "c"
   ],
+  
   "badges": {
-    "travis": true,
-    "npm": true,
-    "npmdownloads": true,
-    "david": true,
-    "daviddev": true,
-    "gratipay": "bevry",
-    "flattr": "344188/balupton-on-Flattr",
-    "paypal": "QB8GQPZAH84N6",
-    "bitcoin": "https://bevry.me/bitcoin",
-    "wishlist": "https://bevry.me/wishlist"
+    "list": [
+      "travisci",
+      "npmversion",
+      "npmdownloads",
+      "daviddm",
+      "daviddmdev",
+      "---",
+      "slackin",
+      "patreon",
+      "gratipay",
+      "flattr",
+      "paypal",
+      "bitcoin",
+      "wishlist"
+    ],
+    "config": {
+      "patreonUsername": "bevry",
+      "gratipayUsername": "bevry",
+      "flattrCode": "344188/balupton-on-Flattr",
+      "paypalButtonID": "QB8GQPZAH84N6",
+      "bitcoinURL": "https://bevry.me/bitcoin",
+      "wishlistURL": "https://bevry.me/wishlist",
+      "slackinURL": "https://slack.bevry.me"
+    }
   },
   "author": "2015+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
