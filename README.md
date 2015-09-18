@@ -121,14 +121,12 @@ travisencrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recip
 
 ### esnextguardian
 
-If you would like to use ES6+ features natively if supported but also support environments where those ES6+ features may not be available, then you can utilise our esnextguardian script that trys to load the ES6+ file first, and if that fails, then it fallbacks to loading the compiled ES5 version that runs wherever.
+If you would like to use ES6+ features natively if supported but also support environments where those ES6+ features may not be available, then you can utilise [ESNextGuardian](https://github.com/bevry/esnextguardian) to try and load the ES6+ file first, and if that fails, then it fallbacks to loading the compiled ES5 version that runs wherever.
 
 To get started with this:
 
-1. Put your source code inside a `esnext` directory, so you have `esnext/lib` and `esnext/test`
-2. Add our [`esnextguardian.js` file](https://github.com/bevry/base/blob/master/esnextguardian.js) to your project
-3. Customise the `esnextguardian.js` code to point to the relevant files in your project
-4. Update your `package.json` `main` property to point to `./esnextguardian.js` instead
+1. Add our [`esnextguardian.js` file](https://github.com/bevry/base/blob/master/esnextguardian.js) to your project
+1. Follow the latest [ESNextGuardian](https://github.com/bevry/esnextguardian) usage instructions
 
 
 ### nakefile
