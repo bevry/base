@@ -10,7 +10,6 @@
     "b",
     "c"
   ],
-  
   "badges": {
     "list": [
       "travisci",
@@ -58,6 +57,7 @@
   "dependencies": {},
   "devDependencies": {},
   "main": "./esnextguardian.js",
+  "browser": "./es5/lib/index.js",
   "scripts": {
     "clean": "node --harmony nakefile.js clean",
     "setup": "node --harmony nakefile.js setup",

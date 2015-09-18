@@ -80,7 +80,7 @@ Add the appropriate development dependencies for what you want to do:
 ``` shell
 npm install --save-dev eslint babel-eslint  # for eslint parsing and linting
 npm install --save-dev projectz  # for projectz meta+package file compilation
-npm install --save-dev babel  # for babel es6+ to es5 compilation
+npm install --save-dev babel esnextguardian  # for babel es6+ to es5 compilation and loading
 npm install --save-dev assert-helpers joe joe-reporter-console  # for testing
 npm install --save-dev browserify babelify  # for compiling to the browser
 ```
