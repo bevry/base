@@ -44,7 +44,7 @@ And add them to git:
 ``` shell
 git add .editorconfig .eslintrc .gitignore .npmignore .travis.yml
 git add .
-mkdir esnext
+mkdir -p esnext/lib esnext/test
 ```
 
 
