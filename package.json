@@ -68,7 +68,7 @@
     "prepare": "node --harmony nakefile.js prepare",
     "release": "node --harmony nakefile.js release",
 
-    "test": "node --harmony ./es5/test/projectName-test.js",
+    "test": "node --harmony ./es5/test/index.js",
     "browserify": "./node_modules/.bin/browserify ./web/index.js -t babelify --outfile ./web/out.js"
   },
   "nakeConfiguration": {
