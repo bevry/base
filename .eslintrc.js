@@ -1,42 +1,48 @@
 // 2015 November 30
 // https://github.com/bevry/base
 // http://eslint.org
+/* eslint no-warning-comments: 0 */
+
+'use strict'
+
+const IGNORE = 0, WARN = 1, ERROR = 2, MAX_PARAMS = 4
+
 module.exports = {
-	"parser": "babel-eslint",
-	"ecmaFeatures": {
-		"arrowFunctions": true,
-		"binaryLiterals": true,
-		"blockBindings": true,
-		"classes": true,
-		"defaultParams": true,
-		"destructuring": true,
-		"forOf": true,
-		"generators": true,
-		"modules": true,
-		"objectLiteralComputedProperties": true,
-		"objectLiteralDuplicateProperties": true,
-		"objectLiteralShorthandMethods": true,
-		"objectLiteralShorthandProperties": true,
-		"octalLiterals": true,
-		"regexUFlag": true,
-		"regexYFlag": true,
-		"restParams": true,
-		"spread": true,
-		"superInFunctions": true,
-		"templateStrings": true,
-		"unicodeCodePointEscapes": true,
-		"globalReturn": true,
-		"jsx": true,
-		"experimentalObjectRestSpread": true
+	parser: 'babel-eslint',
+	ecmaFeatures: {
+		arrowFunctions: true,
+		binaryLiterals: true,
+		blockBindings: true,
+		classes: true,
+		defaultParams: true,
+		destructuring: true,
+		forOf: true,
+		generators: true,
+		modules: true,
+		objectLiteralComputedProperties: true,
+		objectLiteralDuplicateProperties: true,
+		objectLiteralShorthandMethods: true,
+		objectLiteralShorthandProperties: true,
+		octalLiterals: true,
+		regexUFlag: true,
+		regexYFlag: true,
+		restParams: true,
+		spread: true,
+		superInFunctions: true,
+		templateStrings: true,
+		unicodeCodePointEscapes: true,
+		globalReturn: true,
+		jsx: true,
+		experimentalObjectRestSpread: true
 	},
-	"env": {
-		"browser": true,
-		"node": true,
-		"es6": true,
-		"commonjs": true,
-		"amd": true
+	env: {
+		browser: true,
+		node: true,
+		es6: true,
+		commonjs: true,
+		amd: true
 	},
-	"rules": {
+	rules: {
 		// ----------------------------
 		// Problems with these rules
 		// If we can figure out how to enable the following, that would be great
@@ -64,89 +70,89 @@ module.exports = {
 		// The following rules point out areas where you might have made mistakes.
 
 		// ES6 supports dangling commas
-		"comma-dangle": 0,
+		'comma-dangle': IGNORE,
 
 		// Don't allow assignments in conditional statements (if, while, etc.)
-		"no-cond-assign": [2, "always"],
+		'no-cond-assign': [ERROR, 'always'],
 
 		// Warn but don't error about console statements
-		"no-console": 1,
+		'no-console': WARN,
 
 		// Allow while(true) loops
-		"no-constant-condition": 0,
+		'no-constant-condition': IGNORE,
 
 		// Seems like a good idea to error about this
-		"no-control-regex": 2,
+		'no-control-regex': ERROR,
 
 		// Warn but don't error about console statements
-		"no-debugger": 1,
+		'no-debugger': WARN,
 
 		// Don't allow duplicate arguments in a function, they can cause errors
-		"no-dupe-args": 2,
+		'no-dupe-args': ERROR,
 
 		// Disallow duplicate keys in an object, they can cause errors
-		"no-dupe-keys": 2,
+		'no-dupe-keys': ERROR,
 
 		// Disallow duplicate case statements in a switch
-		"no-duplicate-case": 2,
+		'no-duplicate-case': ERROR,
 
 		// Disallow empty [] in regular expressions as they cause unexpected behaviour
-		"no-empty-character-class": 2,
+		'no-empty-character-class': ERROR,
 
 		// Allow empty block statements, they are useful for clarity
-		"no-empty": 0,
+		'no-empty': IGNORE,
 
 		// Overwriting the exception argument in a catch statement can cause memory leaks in some browsers
-		"no-ex-assign": 2,
+		'no-ex-assign': ERROR,
 
 		// Disallow superflous boolean casts, they offer no value
-		"no-extra-boolean-cast": 2,
+		'no-extra-boolean-cast': ERROR,
 
 		// Allow superflous parenthesis as they offer clarity in some cases
-		"no-extra-parens": 0,
+		'no-extra-parens': IGNORE,
 
 		// Disallow superflous semicolons, they offer no value
-		"no-extra-semi": 0,
+		'no-extra-semi': IGNORE,
 
 		// Seems like a good idea to error about this
-		"no-func-assign": 2,
+		'no-func-assign': ERROR,
 
 		// Seems like a good idea to error about this
-		"no-inner-declarations": 2,
+		'no-inner-declarations': ERROR,
 
 		// Seems like a good idea to error about this
-		"no-invalid-regexp": 2,
+		'no-invalid-regexp': ERROR,
 
 		// Seems like a good idea to error about this
-		"no-irregular-whitespace": 2,
+		'no-irregular-whitespace': ERROR,
 
 		// Seems like a good idea to error about this
-		"no-negated-in-lhs": 2,
+		'no-negated-in-lhs': ERROR,
 
 		// Seems like a good idea to error about this
-		"no-obj-calls": 2,
+		'no-obj-calls': ERROR,
 
 		// Seems like a good idea to error about this
-		// Instead of /  /  used / {2}/ instead
-		"no-regex-spaces": 2,
+		// Instead of /  /  used / {ERROR}/ instead
+		'no-regex-spaces': ERROR,
 
 		// Seems like a good idea to error about this
-		"no-sparse-arrays": 2,
+		'no-sparse-arrays': ERROR,
 
 		// Seems like a good idea to error about this
-		"no-unexpected-multiline": 2,
+		'no-unexpected-multiline': ERROR,
 
 		// Seems like a good idea to error about this
-		"no-unreachable": 2,
+		'no-unreachable': ERROR,
 
 		// Seems like a good idea to error about this
-		"use-isnan": 2,
+		'use-isnan': ERROR,
 
 		// We use YUIdoc, not JSDoc
-		"valid-jsdoc": 0,
+		'valid-jsdoc': IGNORE,
 
 		// Seems like a good idea to error about this
-		"valid-typeof": 2,
+		'valid-typeof': ERROR,
 
 
 		// --------------------------------------
@@ -154,102 +160,103 @@ module.exports = {
 		// These are rules designed to prevent you from making mistakes. They either prescribe a better way of doing something or help you avoid footguns.
 
 		// Meh
-		"accessor-pairs": 0,
+		'accessor-pairs': IGNORE,
 
 		// This rule seems buggy
-		"block-scoped-var": 0,
+		'block-scoped-var': IGNORE,
 
 		// Disable complexity checks, they are annoying and not that useful in detecting actual complexity
-		"complexity": 0,
+		'complexity': IGNORE,
 
 		// We use blank returns for break statements
-		"consistent-return": 0,
+		'consistent-return': IGNORE,
 
 		// Always require curly braces unless the statement is all on a single line
-		"curly": [2, "multi-line"],
+		'curly': [ERROR, 'multi-line'],
 
 		// If we don't have a default cause, it probably means we should throw an error
-		"default-case": 2,
+		'default-case': ERROR,
 
 		// Dots should be on the newlines
 		// chainableThingy
 		//   .doSomething()
 		//   .doSomethingElse()
-		"dot-location": [2, "property"],
+		'dot-location': [ERROR, 'property'],
 
 		// Use dot notation where possible
-		"dot-notation": 2,
+		'dot-notation': ERROR,
 
 		// Unless you are doing == null, then force === to avoid truthy/falsey mistakes
-		"eqeqeq": [2, "allow-null"],
+		'eqeqeq': [ERROR, 'allow-null'],
 
 		// Always use hasOwnProperty when doing for in
-		"guard-for-in": 2,
+		'guard-for-in': ERROR,
 
 		// Warn about alert statements in our code
 		// Use one of the suggested alternatives instead
 		// Reasoning is they could be mistaken for left over debugging statements
-		"no-alert": 1,
+		'no-alert': WARN,
 
 		// They are very slow
-		"no-caller": 2,
+		'no-caller': ERROR,
 
 		// Wow...
-		"no-case-declarations": 2,
+		'no-case-declarations': ERROR,
 
 		// Seems like a good idea to error about this
-		"no-div-regex": 2,
+		'no-div-regex': ERROR,
 
 		// Returns in else statements offer code clarity, so disable this rule
-		"no-else-return": 0,
+		'no-else-return': IGNORE,
 
 		// Seems like a good idea to error about this
-		"no-empty-label": 2,
+		'no-empty-label': ERROR,
 
 		// Seems sensible
-		"no-empty-pattern": 2,
+		'no-empty-pattern': ERROR,
 
 		// We know that == null is a null and undefined check
-		"no-eq-null": 0,
+		'no-eq-null': IGNORE,
 
 		// Eval is slow and unsafe, use vm's instead
-		"no-eval": 2,
+		'no-eval': ERROR,
 
 		// There is never a good reason for this
-		"no-extend-native": 2,
+		'no-extend-native': ERROR,
 
 		// Don't allow useless binds
-		"no-extra-bind": 2,
+		'no-extra-bind': ERROR,
 
 		// Don't allow switch case statements to follow through, use continue keyword instead
-		"no-fallthrough": 2,
+		'no-fallthrough': ERROR,
 
 		// Use zero when doing decimals, otherwise it is confusing
-		"no-floating-decimal": 2,
+		'no-floating-decimal': ERROR,
 
 		// Cleverness is unclear
-		"no-implicit-coercion": 2,
+		'no-implicit-coercion': ERROR,
 
 		// A sneaky way to do evals
-		"no-implied-eval": 2,
+		'no-implied-eval': ERROR,
 
-		// We sometimes use this for binds, so warn but not error
-		"no-invalid-this": 1,
+		// This throws for a lot of senseless things, like chainy functions
+		'no-invalid-this': IGNORE,
 
 		// Use proper iterators instead
-		"no-iterator": 2,
+		'no-iterator': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-labels": 2,
+		'no-labels': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-lone-blocks": 2,
+		'no-lone-blocks': ERROR,
 
 		// Loop functions always cause problems, as the scope isn't clear through iterations
-		"no-loop-func": 2,
+		'no-loop-func': ERROR,
 
 		// This is a great idea
-		"no-magic-numbers": 2,
+		// Although ignore -1 and 0 as it is common with indexOf
+		'no-magic-numbers': [WARN, { ignore: [-1, 0] }],
 
 		// We like multi spaces for clarity
 		// E.g. We like
@@ -257,86 +264,87 @@ module.exports = {
 		// Instead of:
 		// if ( blah ) return foo
 		// @TODO would be great to enforce the above
-		"no-multi-spaces": 0,
+		'no-multi-spaces': IGNORE,
 
 		// Use ES6 template strings instead
-		"no-multi-str": 2,
+		'no-multi-str': ERROR,
 
 		// Would be silly to allow this
-		"no-native-reassign": 2,
+		'no-native-reassign': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-new-func": 2,
+		'no-new-func': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-new-wrappers": 2,
+		'no-new-wrappers': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-new": 2,
+		'no-new': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-octal-escape": 2,
+		'no-octal-escape': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-octal": 2,
+		'no-octal': ERROR,
 
-		// Warn for awareness but don't enforce
-		"no-param-reassign": 1,
+		// We got to be pretty silly if we don't realise we are doing this
+		// As such, take any usage as intentional and aware
+		'no-param-reassign': IGNORE,
 
 		// We use process.env wisely
-		"no-process-env": 0,
+		'no-process-env': IGNORE,
 
 		// We never use this, it seems silly to allow this
-		"no-proto": 2,
+		'no-proto': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-redeclare": 2,
+		'no-redeclare': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-return-assign": 2,
+		'no-return-assign': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-script-url": 2,
+		'no-script-url': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-self-compare": 2,
+		'no-self-compare': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-sequences": 2,
+		'no-sequences': ERROR,
 
 		// We always want proper error objects as they have stack traces and respond to instanceof Error checks
-		"no-throw-literal": 2,
+		'no-throw-literal': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-unused-expressions": 2,
+		'no-unused-expressions': ERROR,
 
 		// Seems sensible
-		"no-useless-call": 2,
+		'no-useless-call': ERROR,
 
 		// Seems sensible
-		"no-useless-concat": 2,
+		'no-useless-concat': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-void": 2,
+		'no-void': ERROR,
 
 		// Warn about todos
-		"no-warning-comments": [1, { "terms": ["todo", "fixme"], "location": "anywhere" }],
+		'no-warning-comments': [WARN, { terms: ['todo', 'fixme'], location: 'anywhere' }],
 
 		// We never use this, it seems silly to allow this
-		"no-with": 2,
+		'no-with': ERROR,
 
 		// Always specify a radix to avoid errors
-		"radix": 2,
+		'radix': ERROR,
 
 		// We appreciate the clarity late defines offer
-		"vars-on-top": 0,
+		'vars-on-top': IGNORE,
 
 		// Wrap instant called functions in parenthesis for clearer intent
-		"wrap-iife": 2,
+		'wrap-iife': ERROR,
 
 		// Because we force === and never allow assignments in conditions
 		// we have no need for yoda statements, so disable them
-		"yoda": [2, "never"],
+		'yoda': [ERROR, 'never'],
 
 
 		// --------------------------------------
@@ -344,8 +352,8 @@ module.exports = {
 		// These rules relate to using strict mode.
 
 		// Force strict mode in the global scope as we want it everywhere
-		"strict": 0,
-		// Off because when using ES6 in modules, "use strict" is necessary, but eslint complains about it
+		'strict': IGNORE,
+		// Off because when using ES6 in modules, 'use strict' is necessary, but eslint complains about it
 
 
 		// --------------------------------------
@@ -353,38 +361,38 @@ module.exports = {
 		// These rules have to do with variable declarations.
 
 		// We don't care
-		"init-declaration": 0,
+		'init-declaration': IGNORE,
 
 		// Don't allow the catch method to shadow objects as browsers handle this differently
 		// Update: We don't care for IE8
-		"no-catch-shadow": 0,
+		'no-catch-shadow': IGNORE,
 
 		// Don't use delete, it disables optimisations
-		"no-delete-var": 2,
+		'no-delete-var': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-label-var": 2,
+		'no-label-var': ERROR,
 
 		// We never use this, it seems silly to allow this
-		"no-shadow-restricted-names": 2,
+		'no-shadow-restricted-names': ERROR,
 
 		// We use shadowing
-		"no-shadow": 0,
+		'no-shadow': IGNORE,
 
 		// Makes sense
-		"no-undef-init": 2,
+		'no-undef-init': ERROR,
 
 		// Error when an undefined variable is used
-		"no-undef": 2,
+		'no-undef': ERROR,
 
 		// typeof blah === 'undefined' should always be used
-		"no-undefined": 2,
+		'no-undefined': ERROR,
 
 		// Warn us when we don't use something
-		"no-unused-vars": 1,
+		'no-unused-vars': WARN,
 
 		// Error when we try and use something before it is defined
-		"no-use-before-define": 2,
+		'no-use-before-define': ERROR,
 
 
 		// --------------------------------------
@@ -392,31 +400,31 @@ module.exports = {
 		// These rules are specific to JavaScript running on Node.js or using CommonJS in the browser.
 
 		// Seems to difficult to enforce
-		"callback-return": 0,
+		'callback-return': IGNORE,
 
 		// We use require where it is appropriate to use it
-		"global-require": 0,
+		'global-require': IGNORE,
 
 		// Force handling of callback errors
-		"handle-callback-err": 2,
+		'handle-callback-err': ERROR,
 
 		// @TODO decide if this is good or not
-		"no-mixed-requires": 2,
+		'no-mixed-requires': ERROR,
 
 		// Disallow error prone syntax
-		"no-new-require": 2,
+		'no-new-require': ERROR,
 
 		// Always use path.join for windows support
-		"no-path-concat": 2,
+		'no-path-concat': ERROR,
 
 		// We know what we are doing
-		"no-process-exit": 0,
+		'no-process-exit': IGNORE,
 
 		// No need for this rule
-		"no-restricted-modules": 0,
+		'no-restricted-modules': IGNORE,
 
 		// Sometimes sync methods are useful, so warn but don't error
-		"no-sync": 1,
+		'no-sync': WARN,
 
 
 		// --------------------------------------
@@ -424,267 +432,269 @@ module.exports = {
 		// These rules are purely matters of style and are quite subjective.
 
 		// We don't use spaces with brackets
-		"array-bracket-spacing": [2, "never"],
+		'array-bracket-spacing': [ERROR, 'never'],
 
 		// Disallow or enforce spaces inside of single line blocks
-		"block-spacing": [2, "always"],
+		'block-spacing': [ERROR, 'always'],
 
 		// Opening brace on same line, closing brace on its own line, except when statement is a single line
-		"brace-style": [2, "stroustrup", { "allowSingleLine": true }],
+		'brace-style': [ERROR, 'stroustrup', { allowSingleLine: true }],
 
 		// Use camel case
-		"camelcase": 2,
+		'camelcase': ERROR,
 
 		// Require a comma after always
-		"comma-spacing": [2, {"before": false, "after": true}],
+		'comma-spacing': [ERROR, { before: false, after: true }],
 
 		// Commas go last, we have tooling to detect if we forget a comma
-		"comma-style": [2, "last"],
+		'comma-style': [ERROR, 'last'],
 
 		// Require or disallow padding inside computed properties
-		"computed-property-spacing": [2, "never"],
+		'computed-property-spacing': [ERROR, 'never'],
 
 		// Enabling this was incredibly annoying when doing layers of nesting
-		"consistent-this": 0,
+		'consistent-this': IGNORE,
 
 		// Enable to make UNIX people's lives easier
-		"eol-last": 2,
+		'eol-last': ERROR,
 
 		// We like anonymous functions
-		"func-names": 0,
+		'func-names': IGNORE,
 
 		// Prefer to define functions via variables
-		"func-style": [1, "declaration"],
+		'func-style': [WARN, 'declaration'],
 
 		// Sometimes short names are appropriate
-		"id-length": 0,
+		'id-length': IGNORE,
 
 		// Camel case handles this for us
-		"id-match": 0,
+		'id-match': IGNORE,
 
 		// Use tabs and indent case blocks
-		"indent": [2, "tab", {"SwitchCase": 1}],
+		'indent': [ERROR, 'tab', { SwitchCase: WARN }],
 
 		// Prefer double qoutes for JSX properties: <a b="c" />, <a b='"' />
-		"jsx-quotes": [2, "prefer-double"],
+		'jsx-quotes': [ERROR, 'prefer-double'],
 
 		// Space after the colon
-		"key-spacing": [2, {
-			"beforeColon": false,
-			"afterColon": true
+		'key-spacing': [ERROR, {
+			beforeColon: false,
+			afterColon: true
 		}],
 
 		// Enforce unix line breaks
-		"linebreak-style": [2, "unix"],
+		'linebreak-style': [ERROR, 'unix'],
 
 		// Enforce new lines before block comments
-		"lines-around-comment": [2, { "beforeBlockComment": true, "allowBlockStart": true } ],
+		'lines-around-comment': [ERROR, { beforeBlockComment: true, allowBlockStart: true }],
 
 		// Disabled to ensure consistency with complexity option
-		"max-depth": 0,
+		'max-depth': IGNORE,
 
 		// We use soft wrap
-		"max-len": 0,
+		'max-len': IGNORE,
 
 		// We are smart enough to know if this is bad or not
-		"max-nested-callbacks": 0,
+		'max-nested-callbacks': IGNORE,
 
 		// Sometimes we have no control over this for compat reasons, so just warn
-		"max-params": [1, 4],
+		'max-params': [WARN, MAX_PARAMS],
 
 		// We should be able to use whatever feels right
-		"max-statements": 0,
+		'max-statements': IGNORE,
 
 		// Constructors should be CamelCase
-		"new-cap": 2,
+		'new-cap': ERROR,
 
 		// Always use parens when instantiating a class
-		"new-parens": 2,
+		'new-parens': ERROR,
 
-		// We do this
-		"newline-after-var": [2, "always"],
+		// Too difficult to enforce correctly as too many edge-cases
+		'newline-after-var': IGNORE,
 
 		// Don't use the array constructor when it is not needed
-		"no-array-constructor": 2,
+		'no-array-constructor': ERROR,
 
 		// We never use bitwise, they are too clever
-		"no-bitwise": 2,
+		'no-bitwise': ERROR,
 
 		// We use continue
-		"no-continue": 0,
+		'no-continue': IGNORE,
 
 		// We like inline comments
-		"no-inline-comments": 0,
+		'no-inline-comments': IGNORE,
 
 		// The code could be optimised if this error occurs
-		"no-lonely-if": 2,
+		'no-lonely-if': ERROR,
 
 		// Don't mix spaces and tabs
-		// @TODO maybe [2, "smart-tabs"] will be better, we will see
-		"no-mixed-spaces-and-tabs": 2,
+		// @TODO maybe [ERROR, 'smart-tabs'] will be better, we will see
+		'no-mixed-spaces-and-tabs': ERROR,
 
 		// We use multiple empty lines for styling
-		"no-multiple-empty-lines": 0,
+		'no-multiple-empty-lines': IGNORE,
 
 		// Sometimes it is more understandable with a negated condition
-		"no-negated-condition": 0,
+		'no-negated-condition': IGNORE,
 
 		// Sometimes these are useful
-		"no-nested-ternary": 0,
+		'no-nested-ternary': IGNORE,
 
 		// Use {} instead of new Object()
-		"no-new-object": 2,
+		'no-new-object': ERROR,
 
 		// We use plus plus
-		"no-plusplus": 0,
+		'no-plusplus': IGNORE,
 
 		// Handled by other rules
-		"no-restricted-syntax": 0,
+		'no-restricted-syntax': IGNORE,
 
 		// We never use this, it seems silly to allow this
-		"no-spaced-func": 2,
+		'no-spaced-func': ERROR,
 
 		// Sometimes ternaries are useful
-		"no-ternary": 0,
+		'no-ternary': IGNORE,
 
 		// Disallow trailing spaces
-		"no-trailing-spaces": 2,
+		'no-trailing-spaces': ERROR,
 
 		// Sometimes this is useful when avoiding shadowing
-		"no-underscore-dangle": 0,
+		'no-underscore-dangle': IGNORE,
 
 		// Sensible
-		"no-unneeded-ternary": 2,
+		'no-unneeded-ternary': ERROR,
 
-		// We want to do this
-		"object-curly-spacing": [2, "always"],
+		// Desirable, but too many edge cases it turns out where it is actually preferred
+		'object-curly-spacing': IGNORE, // [ERROR, 'always'],
 
 		// We like multiple var statements
-		"one-var": 0,
+		'one-var': IGNORE,
 
 		// Force use of shorthands when available
-		"operator-assignment": [2, "always"],
+		'operator-assignment': [ERROR, 'always'],
 
 		// Should be before, but not with =, *=, /=, += lines
 		// @TODO figure out how to enforce
-		"operator-linebreak": 0,
+		'operator-linebreak': IGNORE,
 
 		// This rule doesn't appear to work correclty
-		"padded-blocks": 0,
+		'padded-blocks': IGNORE,
 
 		// Seems like a good idea to error about this
-		"quote-props": [2, "consistent-as-needed"],
+		'quote-props': [ERROR, 'consistent-as-needed'],
 
 		// Use single quotes where escaping isn't needed
-		"quotes": [2, "single", "avoid-escape"],
+		'quotes': [ERROR, 'single', 'avoid-escape'],
 
 		// We use YUIdoc
-		"require-jsdoc": 0,
+		'require-jsdoc': IGNORE,
 
 		// If semi's are used, then add spacing after
-		"semi-spacing": [2, {"before": false, "after": true}],
+		'semi-spacing': [ERROR, { before: false, after: true }],
 
 		// Never use semicolons
-		"semi": [2, "never"],
+		'semi': [ERROR, 'never'],
 
 		// We don't care if our vars are alphabetical
-		"sort-vars": 0,
+		'sort-vars': IGNORE,
 
 		// Always force a space after a keyword
-		"space-after-keywords": [2, "always"],
+		'space-after-keywords': [ERROR, 'always'],
 
 		// Always force a space before a {
-		"space-before-blocks": [2, "always"],
+		'space-before-blocks': [ERROR, 'always'],
 
 		// function () {, get blah () {
-		"space-before-function-paren": [2, "always"],
+		'space-before-function-paren': [ERROR, 'always'],
 
 		// We do this
-		"space-before-keywords": [2, "always"],
+		'space-before-keywords': [ERROR, 'always'],
 
-		// This is for spacing between [], so [ 1, 2, 3 ] which we don't want
-		"space-in-brackets": 0,
+		// This is for spacing between [], so [ WARN, ERROR, 3 ] which we don't want
+		'space-in-brackets': IGNORE,
 
-		// This is for spacing between (), so doSomething( 1, 2, 3 ) or if ( 1 === 3 )
+		// This is for spacing between (), so doSomething( WARN, ERROR, 3 ) or if ( WARN === 3 )
 		// which we want for ifs, but don't want for calls
-		"space-in-parens": 0,
+		'space-in-parens': IGNORE,
 
 		// We use this
-		"space-infix-ops": 2,
+		'space-infix-ops': ERROR,
 
 		// We use this
-		"space-return-throw-case": 2,
+		'space-return-throw-case': ERROR,
 
 		// We use this
-		"space-unary-ops": 2,
+		'space-unary-ops': ERROR,
 
 		// We use this
-		// "spaced-line-comment": 2,
-		"spaced-comment": 2,
+		// 'spaced-line-comment': ERROR,
+		'spaced-comment': ERROR,
 
 		// We use this
 		// @TODO revise this
-		"wrap-regex": 2,
+		'wrap-regex': ERROR,
 
 
 		// --------------------------------------
 		// ECMAScript 6
 
 		// Sensible to create more informed and clear code
-		"arrow-body-style": [2, "as-needed"],
+		'arrow-body-style': [ERROR, 'as-needed'],
 
 		// We do this, no reason why, just what we do
-		"arrow-parens": [2, "always"],
+		'arrow-parens': [ERROR, 'always'],
 
 		// Require consistent spacing for arrow functions
-		"arrow-spacing": 2,
+		'arrow-spacing': ERROR,
 
 		// Makes sense as otherwise runtime error will occur
-		"constructor-super": 2,
+		'constructor-super': ERROR,
 
 		// Seems the most consistent location for it
-		"generator-star-spacing": [2, "before"],
+		'generator-star-spacing': [ERROR, 'before'],
 
 		// Seems sensible
-		"no-arrow-condition": 2,
+		'no-arrow-condition': ERROR,
 
 		// Seems sensible
-		"no-class-assign": 2,
+		'no-class-assign': ERROR,
 
 		// Makes sense as otherwise runtime error will occur
-		"no-const-assign": 2,
+		'no-const-assign': ERROR,
 
 		// Makes sense as otherwise runtime error will occur
-		"no-dupe-class-members": 2,
+		'no-dupe-class-members': ERROR,
 
 		// Makes sense as otherwise runtime error will occur
-		"no-this-before-super": 2,
+		'no-this-before-super': ERROR,
 
 		// @TODO This probably should be an error
 		// however it is useful for: for ( var key in obj ) {
 		// which hopefully is more performant than let (@TODO check if it actually is more performant)
-		"no-var": 1,
+		'no-var': WARN,
 
 		// Enforce ES6 object shorthand
-		"object-shorthand": 2,
+		'object-shorthand': ERROR,
+
+		// Better performance when running native
+		// but horrible performance if not running native as could fallback to bind
+		// https://travis-ci.org/bevry/es6-benchmarks
+		'prefer-arrow-callback': IGNORE,
 
 		// Sure, why not
-		"prefer-arrow-callback": 2,
-
-		// Sure, why not
-		"prefer-const": 1,
+		'prefer-const': WARN,
 
 		// Controversial change, but makes sense to move towards to reduce the risk of bad people overwriting apply and call
-		// https://github.com/eslint/eslint/issues/2939
-		"prefer-reflect": 1,
+		// https://github.com/eslint/eslint/issues/ERROR939
+		'prefer-reflect': WARN,
 
 		// Sure, why not
-		"prefer-spread": 2,
+		'prefer-spread': ERROR,
 
-		// Makes sense to move towards
-		"prefer-template": 1,
+		// Too annoying to enforce
+		'prefer-template': IGNORE,
 
 		// Makes sense
-		"require-yield": 2
+		'require-yield': ERROR
 	}
 }
