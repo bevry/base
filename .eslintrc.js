@@ -2,7 +2,6 @@
 // https://github.com/bevry/base
 // http://eslint.org
 /* eslint no-warning-comments: 0 */
-
 'use strict'
 
 const IGNORE = 0, WARN = 1, ERROR = 2, MAX_PARAMS = 4
@@ -353,8 +352,9 @@ module.exports = {
 		// Strict Mode
 		// These rules relate to using strict mode.
 
-		// Ignored as eslint will tell us if it is needed or not anyway
-		'strict': IGNORE,
+		// Ensure that use strict is specified to prevent the runtime erorr:
+		// SyntaxError: Block-scoped declarations (let, const, function, class) not yet supported outside strict mode
+		'strict': [ERROR, 'global'],
 
 
 		// --------------------------------------
