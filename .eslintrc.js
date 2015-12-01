@@ -1,4 +1,4 @@
-// 2015 November 30
+// 2015 December 1
 // https://github.com/bevry/base
 // http://eslint.org
 /* eslint no-warning-comments: 0 */
@@ -8,8 +8,10 @@
 const IGNORE = 0, WARN = 1, ERROR = 2, MAX_PARAMS = 4
 
 module.exports = {
-	parser: 'babel-eslint',
+	// parser: 'babel-eslint',
+	// ^ the bundled ESLINT parser is now actually quite good, and supports the ecmaFeatures property
 	ecmaFeatures: {
+		// this property only works with the bundled ESLINT parser, not babel-eslint
 		arrowFunctions: true,
 		binaryLiterals: true,
 		blockBindings: true,
@@ -18,7 +20,7 @@ module.exports = {
 		destructuring: true,
 		forOf: true,
 		generators: true,
-		modules: true,
+		modules: false,  // Disabled due to https://twitter.com/balupton/status/671519915795345410
 		objectLiteralComputedProperties: true,
 		objectLiteralDuplicateProperties: true,
 		objectLiteralShorthandMethods: true,
@@ -351,9 +353,8 @@ module.exports = {
 		// Strict Mode
 		// These rules relate to using strict mode.
 
-		// Force strict mode in the global scope as we want it everywhere
+		// Ignored as eslint will tell us if it is needed or not anyway
 		'strict': IGNORE,
-		// Off because when using ES6 in modules, 'use strict' is necessary, but eslint complains about it
 
 
 		// --------------------------------------
@@ -420,7 +421,7 @@ module.exports = {
 		// We know what we are doing
 		'no-process-exit': IGNORE,
 
-		// No need for this rule
+		// No need to disallow any modules
 		'no-restricted-modules': IGNORE,
 
 		// Sometimes sync methods are useful, so warn but don't error
