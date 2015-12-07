@@ -1,4 +1,4 @@
-// 28 March 2015
+// 2015 March 28
 // https://github.com/bevry/base
 (function () {
 	var fsUtil = require('fs')

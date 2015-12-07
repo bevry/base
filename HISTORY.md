@@ -1,4 +1,4 @@
 # History
 
-## v1.0.0 October 25, 2015
+## v1.0.0 2015 October 25
 - Some feature
