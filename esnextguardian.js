@@ -1,6 +1,8 @@
-// 2015 September 18
-// https://github.com/bevry/base
+// 2015 December 8
+// https://github.com/bevry/esnextguardian
+var pathUtil = require('path')
 module.exports = require('esnextguardian')(
-	require('path').join(__dirname, 'esnext', 'lib', 'index.js'),
-	require('path').join(__dirname, 'es5', 'lib', 'index.js')
+    pathUtil.join(__dirname, 'esnext', 'lib', 'index.js'),
+    pathUtil.join(__dirname, 'es5', 'lib', 'index.js'),
+    require
 )
