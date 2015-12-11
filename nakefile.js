@@ -1,5 +1,6 @@
-// 2015 September 11
+// 2015 December 12
 // https://github.com/bevry/base
+/* eslint no-console:0, prefer-reflect:0, no-magic-numbers:0, no-sync:0, object-shorthand:0 */
 'use strict'
 
 
@@ -71,7 +72,7 @@ Object.keys(PACKAGE_CONFIG).forEach(function (key) {
 
 const childProcess = require('child_process')
 
-const spawn = function (command, args, opts, next) {
+function spawn (command, args, opts, next) {
 	const commandString = command + ' ' + args.join(' ')
 	if ( opts.output === true ) {
 		console.log(commandString)
@@ -79,7 +80,7 @@ const spawn = function (command, args, opts, next) {
 	}
 	const pid = childProcess.spawn(command, args, opts)
 	pid.on('close', function () {
-		let args = Array.prototype.slice.call(arguments)
+		const args = Array.prototype.slice.call(arguments)
 		if ( args[0] === 1 ) {
 			const error = new Error('Process [' + commandString + '] exited with error status code.')
 			next(error)
@@ -91,7 +92,7 @@ const spawn = function (command, args, opts, next) {
 	return pid
 }
 
-const exec = function (command, opts, next) {
+function exec (command, opts, next) {
 	if ( opts.output === true ) {
 		console.log(command)
 		return childProcess.exec(command, opts, function (error, stdout, stderr) {
@@ -105,10 +106,10 @@ const exec = function (command, opts, next) {
 	}
 }
 
-const steps = function (next, steps) {
+function steps (next, steps) {
 	let step = 0
 
-	const complete = function (error) {
+	function complete (error) {
 		// success status code
 		if ( error === 0 ) {
 			error = null
@@ -142,18 +143,18 @@ const steps = function (next, steps) {
 // Actions
 
 const actions = {
-	clean: function (opts, next) {
+	clean (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
 				console.log('\nclean:')
 
 				// Prepare rm args
-				let args = ['-Rf']
+				const args = ['-Rf']
 
 				// Add compilation paths to args
 				Object.keys(config).forEach(function (key) {
-					let value = config[key]
+					const value = config[key]
 					if ( key.indexOf('OUT_PATH') !== -1 ) {
 						args.push(value)
 					}
@@ -179,7 +180,7 @@ const actions = {
 		])
 	},
 
-	setup: function (opts, next) {
+	setup (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -201,7 +202,7 @@ const actions = {
 		])
 	},
 
-	compile: function (opts, next) {
+	compile (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -224,7 +225,7 @@ const actions = {
 		])
 	},
 
-	watch: function (opts, next) {
+	watch (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -249,7 +250,7 @@ const actions = {
 		])
 	},
 
-	verify: function (opts, next) {
+	verify (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -276,13 +277,13 @@ const actions = {
 		])
 	},
 
-	meta: function (opts, next) {
+	meta (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
 				if ( !config.DOCCO_SRC_PATH || !fsUtil.existsSync(DOCCO) )  return complete()
 				console.log('\ndocco compile:')
-				let command = [NODE, DOCCO,
+				const command = [NODE, DOCCO,
 					'-o', config.DOCCO_OUT_PATH,
 					config.DOCCO_SRC_PATH
 				].join(' ')
@@ -292,7 +293,7 @@ const actions = {
 			function (complete) {
 				if ( !config.BISCOTTO_SRC_PATH || !fsUtil.existsSync(BISCOTTO) )  return complete()
 				console.log('\nbiscotto compile:')
-				let command = [BISCOTTO,
+				const command = [BISCOTTO,
 					'-n', PACKAGE_DATA.title || PACKAGE_DATA.name,
 					'--title', '"' + (PACKAGE_DATA.title || PACKAGE_DATA.name) + ' API Documentation"',
 					'-r', 'README.md',
@@ -306,7 +307,7 @@ const actions = {
 			function (complete) {
 				if ( !fsUtil.existsSync(YUIDOC) )  return complete()
 				console.log('\nyuidoc compile:')
-				let command = [YUIDOC]
+				const command = [YUIDOC]
 				if ( config.YUIDOC_OUT_PATH )  command.push('-o', config.YUIDOC_OUT_PATH)
 				if ( config.YUIDOC_SYNTAX )    command.push('--syntaxtype', config.YUIDOC_SYNTAX, '-e', '.' + config.YUIDOC_SYNTAX)
 				if ( config.YUIDOC_SRC_PATH )  command.push(config.YUIDOC_SRC_PATH)
@@ -321,7 +322,7 @@ const actions = {
 		])
 	},
 
-	prerelease: function (opts, next) {
+	prerelease (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -336,7 +337,7 @@ const actions = {
 		])
 	},
 
-	release: function (opts, next) {
+	release (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -357,7 +358,7 @@ const actions = {
 		])
 	},
 
-	postrelease: function (opts, next) {
+	postrelease (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -431,7 +432,7 @@ Object.keys(aliases).forEach(function (alias) {
 let desiredAction = null
 let longestNameLength = 0
 
-const finish = function (error) {
+function finish (error) {
 	if ( error ) {
 		process.stderr.write( (error.stack || error.message || error) + '\n' )
 		throw error
@@ -441,7 +442,7 @@ const finish = function (error) {
 	}
 }
 
-const output = function (list) {
+function output (list) {
 	let result = ''
 	Object.keys(list).forEach(function (key) {
 		const description = combined[key].description
