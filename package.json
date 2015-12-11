@@ -54,10 +54,13 @@
   "engines": {
     "node": ">=0.12"
   },
-  "dependencies": {},
-  "devDependencies": {},
   "main": "./esnextguardian.js",
   "browser": "./es5/lib/index.js",
+  "jspm": {
+      "main": "./es5/lib/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
     "clean": "node --harmony nakefile.js clean",
     "setup": "node --harmony nakefile.js setup",
