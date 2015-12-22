@@ -29,10 +29,10 @@ wget -N https://raw.githubusercontent.com/bevry/base/master/nakefile.js
 
 wget -N https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
 
+wget -N https://raw.githubusercontent.com/bevry/base/master/.travis.yml
+
 wget -N https://raw.githubusercontent.com/bevry/base/master/.babelrc
 wget -N https://raw.githubusercontent.com/bevry/base/master/esnextguardian.js
-
-wget -N https://raw.githubusercontent.com/bevry/base/master/.travis.yml
 
 wget -N https://raw.githubusercontent.com/bevry/base/master/package.json
 wget -N https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
