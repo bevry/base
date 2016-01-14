@@ -1,4 +1,4 @@
-// 2015 December 12
+// 2016 January 14
 // https://github.com/bevry/base
 /* eslint no-console:0, prefer-reflect:0, no-magic-numbers:0, no-sync:0, object-shorthand:0 */
 'use strict'
@@ -143,7 +143,7 @@ function steps (next, steps) {
 // Actions
 
 const actions = {
-	clean (opts, next) {
+	clean: function (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -180,7 +180,7 @@ const actions = {
 		])
 	},
 
-	setup (opts, next) {
+	setup: function (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -202,7 +202,7 @@ const actions = {
 		])
 	},
 
-	compile (opts, next) {
+	compile: function (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -225,7 +225,7 @@ const actions = {
 		])
 	},
 
-	watch (opts, next) {
+	watch: function (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -250,7 +250,7 @@ const actions = {
 		])
 	},
 
-	verify (opts, next) {
+	verify: function (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -277,7 +277,7 @@ const actions = {
 		])
 	},
 
-	meta (opts, next) {
+	meta: function (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -322,7 +322,7 @@ const actions = {
 		])
 	},
 
-	prerelease (opts, next) {
+	prerelease: function (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -337,7 +337,7 @@ const actions = {
 		])
 	},
 
-	release (opts, next) {
+	release: function (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
@@ -358,7 +358,7 @@ const actions = {
 		])
 	},
 
-	postrelease (opts, next) {
+	postrelease: function (opts, next) {
 		// Steps
 		steps(next, [
 			function (complete) {
