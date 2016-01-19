@@ -83,14 +83,12 @@ Add the appropriate development dependencies for what you want to do:
 ``` shell
 npm install --save-dev eslint  # for eslint parsing and linting
 npm install --save-dev projectz  # for projectz meta+package file compilation
-npm install --save-dev babel-cli babel-preset-es2015 babel-preset-es2015-loose  # for babel es6+ to es5 compilation
+npm install --save-dev babel-cli babel-preset-es2015  # for babel es6+ to es5 compilation
 npm install --save esnextguardian  # for loading es6+ files when available with fallback to es5 files
 npm install --save-dev assert-helpers joe joe-reporter-console  # for testing
 npm install --save-dev yuidocjs  # for documentation
 npm install --save-dev browserify babelify  # for compiling to the browser
 ```
-
-[We use Babel's loose mode.](https://github.com/bevry/base/issues/20)
 
 
 ### package.json
