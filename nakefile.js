@@ -1,4 +1,4 @@
-// 2016 January 14
+// 2016 January 20
 // https://github.com/bevry/base
 /* eslint no-console:0, prefer-reflect:0, no-magic-numbers:0, no-sync:0, object-shorthand:0 */
 'use strict'
@@ -30,18 +30,21 @@ const PACKAGE_CONFIG   = PACKAGE_DATA.nakeConfiguration || PACKAGE_DATA.cakeConf
 // Define module paths
 const MODULES_PATH     = pathUtil.join(APP_PATH, 'node_modules')
 const DOCPAD_PATH      = pathUtil.join(MODULES_PATH, 'docpad')
-const COFFEE           = pathUtil.join(MODULES_PATH, '.bin', 'coffee')
-const PROJECTZ         = pathUtil.join(MODULES_PATH, '.bin', 'projectz')
-const DOCCO            = pathUtil.join(MODULES_PATH, '.bin', 'docco')
-const DOCPAD           = pathUtil.join(MODULES_PATH, '.bin', 'docpad')
-const BISCOTTO         = pathUtil.join(MODULES_PATH, '.bin', 'biscotto')
-const YUIDOC           = pathUtil.join(MODULES_PATH, '.bin', 'yuidoc')
-const BABEL            = pathUtil.join(MODULES_PATH, '.bin', 'babel')
-const ESLINT           = pathUtil.join(MODULES_PATH, '.bin', 'eslint')
-const COFFEELINT       = pathUtil.join(MODULES_PATH, '.bin', 'coffeelint')
 
 // Define configuration
 const config = {
+	// Define executable paths
+	COFFEE_BIN_PATH: pathUtil.join(MODULES_PATH, '.bin', 'coffee'),
+	PROJECTZ_BIN_PATH: pathUtil.join(MODULES_PATH, '.bin', 'projectz'),
+	DOCCO_BIN_PATH: pathUtil.join(MODULES_PATH, '.bin', 'docco'),
+	DOCPAD_BIN_PATH: pathUtil.join(MODULES_PATH, '.bin', 'docpad'),
+	BISCOTTO_BIN_PATH: pathUtil.join(MODULES_PATH, '.bin', 'biscotto'),
+	YUIDOC_BIN_PATH: pathUtil.join(MODULES_PATH, '.bin', 'yuidoc'),
+	BABEL_BIN_PATH: pathUtil.join(MODULES_PATH, '.bin', 'babel'),
+	ESLINT_BIN_PATH: pathUtil.join(MODULES_PATH, '.bin', 'eslint'),
+	COFFEELINT_BIN_PATH: pathUtil.join(MODULES_PATH, '.bin', 'coffeelint'),
+
+	// Define project paths
 	TEST_PATH: 'test',
 	DOCCO_SRC_PATH: null,
 	DOCCO_OUT_PATH: 'docs',
@@ -206,21 +209,21 @@ const actions = {
 		// Steps
 		steps(next, [
 			function (complete) {
-				if ( !config.COFFEE_SRC_PATH || !fsUtil.existsSync(COFFEE) )  return complete()
+				if ( !config.COFFEE_SRC_PATH || !fsUtil.existsSync(config.COFFEE_BIN_PATH) )  return complete()
 				console.log('\ncoffee compile:')
-				spawn(NODE, [COFFEE, '-co', config.COFFEE_OUT_PATH, config.COFFEE_SRC_PATH], {output: true, cwd: APP_PATH}, complete)
+				spawn(NODE, [config.COFFEE_BIN_PATH, '-co', config.COFFEE_OUT_PATH, config.COFFEE_SRC_PATH], {output: true, cwd: APP_PATH}, complete)
 			},
 
 			function (complete) {
-				if ( !config.BABEL_SRC_PATH || !fsUtil.existsSync(BABEL) )  return complete()
+				if ( !config.BABEL_SRC_PATH || !fsUtil.existsSync(config.BABEL_BIN_PATH) )  return complete()
 				console.log('\nbabel compile:')
-				spawn(NODE, [BABEL, config.BABEL_SRC_PATH, '--out-dir', config.BABEL_OUT_PATH], {output: true, cwd: APP_PATH}, complete)
+				spawn(NODE, [config.BABEL_BIN_PATH, config.BABEL_SRC_PATH, '--out-dir', config.BABEL_OUT_PATH], {output: true, cwd: APP_PATH}, complete)
 			},
 
 			function (complete) {
-				if ( !config.DOCPAD_SRC_PATH || !fsUtil.existsSync(DOCPAD) )  return complete()
+				if ( !config.DOCPAD_SRC_PATH || !fsUtil.existsSync(config.DOCPAD_BIN_PATH) )  return complete()
 				console.log('\ndocpad generate:')
-				spawn(NODE, [DOCPAD, 'generate'], {output: true, cwd: APP_PATH}, complete)
+				spawn(NODE, [config.DOCPAD_BIN_PATH, 'generate'], {output: true, cwd: APP_PATH}, complete)
 			}
 		])
 	},
@@ -229,22 +232,22 @@ const actions = {
 		// Steps
 		steps(next, [
 			function (complete) {
-				if ( !config.BABEL_SRC_PATH || !fsUtil.existsSync(BABEL) )  return complete()
+				if ( !config.BABEL_SRC_PATH || !fsUtil.existsSync(config.BABEL_BIN_PATH) )  return complete()
 				console.log('\nbabel compile:')
-				spawn(NODE, [BABEL, '-w', config.BABEL_SRC_PATH, '--out-dir', config.BABEL_OUT_PATH], {output: true, cwd: APP_PATH}, complete)
+				spawn(NODE, [config.BABEL_BIN_PATH, '-w', config.BABEL_SRC_PATH, '--out-dir', config.BABEL_OUT_PATH], {output: true, cwd: APP_PATH}, complete)
 			},
 
 			function (complete) {
-				if ( !config.COFFEE_SRC_PATH || !fsUtil.existsSync(COFFEE) )  return complete()
+				if ( !config.COFFEE_SRC_PATH || !fsUtil.existsSync(config.COFFEE_BIN_PATH) )  return complete()
 				console.log('\ncoffee watch:')
-				spawn(NODE, [COFFEE, '-wco', config.COFFEE_OUT_PATH, config.COFFEE_SRC_PATH], {output: true, cwd: APP_PATH})  // background
+				spawn(NODE, [config.COFFEE_BIN_PATH, '-wco', config.COFFEE_OUT_PATH, config.COFFEE_SRC_PATH], {output: true, cwd: APP_PATH})  // background
 				complete()  // continue while coffee runs in background
 			},
 
 			function (complete) {
-				if ( !config.DOCPAD_SRC_PATH || !fsUtil.existsSync(DOCPAD) )  return complete()
+				if ( !config.DOCPAD_SRC_PATH || !fsUtil.existsSync(config.DOCPAD_BIN_PATH) )  return complete()
 				console.log('\ndocpad run:')
-				spawn(NODE, [DOCPAD, 'run'], {output: true, cwd: APP_PATH})  // background
+				spawn(NODE, [config.DOCPAD_BIN_PATH, 'run'], {output: true, cwd: APP_PATH})  // background
 				complete()  // continue while docpad runs in background
 			}
 		])
@@ -260,14 +263,14 @@ const actions = {
 
 			function (complete) {
 				console.log('\ncoffeelint:')
-				if ( !config.COFFEELINT_SRC_PATH || !fsUtil.existsSync(COFFEELINT) )  return complete()
-				spawn(COFFEELINT, [config.COFFEELINT_SRC_PATH], {output: true, cwd: APP_PATH}, complete)
+				if ( !config.COFFEELINT_SRC_PATH || !fsUtil.existsSync(config.COFFEELINT_BIN_PATH) )  return complete()
+				spawn(config.COFFEELINT_BIN_PATH, [config.COFFEELINT_SRC_PATH], {output: true, cwd: APP_PATH}, complete)
 			},
 
 			function (complete) {
 				console.log('\neslint:')
-				if ( !config.ESLINT_SRC_PATH || !fsUtil.existsSync(ESLINT) )  return complete()
-				spawn(ESLINT, [config.ESLINT_SRC_PATH], {output: true, cwd: APP_PATH}, complete)
+				if ( !config.ESLINT_SRC_PATH || !fsUtil.existsSync(config.ESLINT_BIN_PATH) )  return complete()
+				spawn(config.ESLINT_BIN_PATH, [config.ESLINT_SRC_PATH], {output: true, cwd: APP_PATH}, complete)
 			},
 
 			function (complete) {
@@ -281,9 +284,9 @@ const actions = {
 		// Steps
 		steps(next, [
 			function (complete) {
-				if ( !config.DOCCO_SRC_PATH || !fsUtil.existsSync(DOCCO) )  return complete()
+				if ( !config.DOCCO_SRC_PATH || !fsUtil.existsSync(config.DOCCO_BIN_PATH) )  return complete()
 				console.log('\ndocco compile:')
-				const command = [NODE, DOCCO,
+				const command = [NODE, config.DOCCO_BIN_PATH,
 					'-o', config.DOCCO_OUT_PATH,
 					config.DOCCO_SRC_PATH
 				].join(' ')
@@ -291,9 +294,9 @@ const actions = {
 			},
 
 			function (complete) {
-				if ( !config.BISCOTTO_SRC_PATH || !fsUtil.existsSync(BISCOTTO) )  return complete()
+				if ( !config.BISCOTTO_SRC_PATH || !fsUtil.existsSync(config.BISCOTTO_BIN_PATH) )  return complete()
 				console.log('\nbiscotto compile:')
-				const command = [BISCOTTO,
+				const command = [config.BISCOTTO_BIN_PATH,
 					'-n', PACKAGE_DATA.title || PACKAGE_DATA.name,
 					'--title', '"' + (PACKAGE_DATA.title || PACKAGE_DATA.name) + ' API Documentation"',
 					'-r', 'README.md',
@@ -305,9 +308,9 @@ const actions = {
 			},
 
 			function (complete) {
-				if ( !fsUtil.existsSync(YUIDOC) )  return complete()
+				if ( !fsUtil.existsSync(config.YUIDOC_BIN_PATH) )  return complete()
 				console.log('\nyuidoc compile:')
-				const command = [YUIDOC]
+				const command = [config.YUIDOC_BIN_PATH]
 				if ( config.YUIDOC_OUT_PATH )  command.push('-o', config.YUIDOC_OUT_PATH)
 				if ( config.YUIDOC_SYNTAX )    command.push('--syntaxtype', config.YUIDOC_SYNTAX, '-e', '.' + config.YUIDOC_SYNTAX)
 				if ( config.YUIDOC_SRC_PATH )  command.push(config.YUIDOC_SRC_PATH)
@@ -315,9 +318,9 @@ const actions = {
 			},
 
 			function (complete) {
-				if ( !fsUtil.existsSync(PROJECTZ) )  return complete()
+				if ( !fsUtil.existsSync(config.PROJECTZ_BIN_PATH) )  return complete()
 				console.log('\nprojectz compile')
-				spawn(NODE, [PROJECTZ, 'compile'], {output: true, cwd: APP_PATH}, complete)
+				spawn(NODE, [config.PROJECTZ_BIN_PATH, 'compile'], {output: true, cwd: APP_PATH}, complete)
 			}
 		])
 	},
