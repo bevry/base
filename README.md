@@ -21,6 +21,7 @@ Download the relevant files for your project:
 ``` shell
 wget -N https://raw.githubusercontent.com/bevry/base/master/.editorconfig
 wget -N https://raw.githubusercontent.com/bevry/base/master/.eslintrc.js
+wget -N https://raw.githubusercontent.com/bevry/base/master/.jscrc
 wget -N https://raw.githubusercontent.com/bevry/base/master/.gitignore
 wget -N https://raw.githubusercontent.com/bevry/base/master/LICENSE.md
 
