@@ -187,6 +187,11 @@ Cyclic dependencies would fail in npm version 1 and earlier. If you have cyclic 
 	```
 
 
+### `.jscrc`
+
+`.jshint` & `.jscrc` files are now covered by eslint. It is still there for legacy reasons as none of our linting setup uses it.
+
+
 ## History
 
 [View the commit history for the release history.](https://github.com/bevry/base/commits/master)
