@@ -248,9 +248,8 @@ module.exports = {
 		// Loop functions always cause problems, as the scope isn't clear through iterations
 		'no-loop-func': ERROR,
 
-		// This is a great idea
-		// Although ignore -1 and 0 as it is common with indexOf
-		'no-magic-numbers': [WARN, { ignore: [-1, 0] }],
+		// Far too annoying
+		'no-magic-numbers': IGNORE,
 
 		// We like multi spaces for clarity
 		// E.g. We like
