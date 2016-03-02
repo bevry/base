@@ -50,7 +50,7 @@ touch esnext/lib/index.js esnext/test/index.js
 ```
 
 
-### README.md
+### readme
 
 Use the following inside your `README.md` file to have [projectz](https://github.com/bevry/projectz) generate most of it for you, leaving you up the "Usage" section.
 
