@@ -135,8 +135,25 @@ To get started with this:
 
 ### nakefile
 
-Nakefiles are a standalone node file called `nakefile.js` that doesn't have any other external dependencies while providing tooling for installing, compiling, testing, and releasing your project. Consider them like a cross-platform Makefile built with Node.js. [Learn more.](https://blog.bevry.me/bevry-news-2015-weeks-34-35-36-7f1516cb2580)
+Nakefiles are a standalone node file called `nakefile.js` that doesn't have any other external dependencies while providing tooling for installing, compiling, testing, and releasing your project. Consider them like a cross-platform Makefile built with Node.js. [Learn more.](https://blog.bevry.me/bevry-news-2015-weeks-34-35-36-7f1516cb2580) [See ours.](https://github.com/bevry/base/blob/master/nakefile.js)
 
+#### nakefile npm scripts
+
+
+``` json
+{
+	"scripts": {
+		"clean": "node --harmony nakefile.js clean",
+		"setup": "node --harmony nakefile.js setup",
+		"compile": "node --harmony nakefile.js compile",
+		"watch": "node --harmony nakefile.js watch",
+		"verify": "node --harmony nakefile.js verify",
+		"meta": "node --harmony nakefile.js meta",
+		"prepare": "node --harmony nakefile.js prepare",
+		"release": "node --harmony nakefile.js release"
+	}
+}
+```
 
 #### nakefile configuration
 
