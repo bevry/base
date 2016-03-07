@@ -1,12 +1,17 @@
-// 2016 February 28
+// 2016 March 8
 // https://github.com/bevry/base
 // http://eslint.org
 /* eslint no-warning-comments: 0 */
 const IGNORE = 0, WARN = 1, ERROR = 2, MAX_PARAMS = 4
 
 module.exports = {
-	// parser: 'babel-eslint',
-	// ^ the bundled ESLINT parser is now actually quite good, and supports the ecmaFeatures property
+	extends: ['eslint:recommended', 'plugin:react/recommended'],
+	parser: 'babel-eslint',
+	plugins: [
+		'babel',
+		'react',
+		'flow-vars'
+	],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 6,
@@ -437,7 +442,9 @@ module.exports = {
 		// These rules are purely matters of style and are quite subjective.
 
 		// We don't use spaces with brackets
-		'array-bracket-spacing': [ERROR, 'never'],
+		// 'array-bracket-spacing': [ERROR, 'never'],
+		'array-bracket-spacing': IGNORE,
+    	'babel/array-bracket-spacing': [ERROR, 'never'],
 
 		// Disallow or enforce spaces inside of single line blocks
 		'block-spacing': [ERROR, 'always'],
@@ -480,7 +487,8 @@ module.exports = {
 		'id-match': IGNORE,
 
 		// Use tabs and indent case blocks
-		'indent': [ERROR, 'tab', { SwitchCase: WARN }],
+		// 'indent': [ERROR, 'tab', { SwitchCase: WARN }],
+		// ^ broken
 
 		// Prefer double qoutes for JSX properties: <a b="c" />, <a b='"' />
 		'jsx-quotes': [ERROR, 'prefer-double'],
@@ -516,7 +524,9 @@ module.exports = {
 		'max-statements': IGNORE,
 
 		// Constructors should be CamelCase
-		'new-cap': ERROR,
+		// 'new-cap': ERROR,
+		'new-cap': IGNORE,
+    	'babel/new-cap': ERROR,
 
 		// Always use parens when instantiating a class
 		'new-parens': ERROR,
@@ -585,7 +595,8 @@ module.exports = {
 		'no-whitespace-before-property': ERROR,
 
 		// Desirable, but too many edge cases it turns out where it is actually preferred
-		'object-curly-spacing': IGNORE, // [ERROR, 'always'],
+		'object-curly-spacing': IGNORE,
+	    'babel/object-curly-spacing': IGNORE,
 
 		// We like multiple var statements
 		'one-var': IGNORE,
@@ -602,7 +613,8 @@ module.exports = {
 		'padded-blocks': IGNORE,
 
 		// Seems like a good idea to error about this
-		'quote-props': [ERROR, 'consistent-as-needed'],
+		// 'quote-props': [ERROR, 'consistent-as-needed'],
+		// ^ broken
 
 		// Use single quotes where escaping isn't needed
 		'quotes': [ERROR, 'single', 'avoid-escape'],
@@ -657,7 +669,9 @@ module.exports = {
 		'arrow-body-style': [ERROR, 'as-needed'],
 
 		// We do this, no reason why, just what we do
-		'arrow-parens': [ERROR, 'always'],
+		// 'arrow-parens': [ERROR, 'always'],
+		'arrow-parens': IGNORE,
+	    'babel/arrow-parens': [ERROR, 'always'],
 
 		// Require consistent spacing for arrow functions
 		'arrow-spacing': ERROR,
@@ -666,7 +680,9 @@ module.exports = {
 		'constructor-super': ERROR,
 
 		// Seems the most consistent location for it
-		'generator-star-spacing': [ERROR, 'before'],
+		// 'generator-star-spacing': [ERROR, 'before'],
+		'generator-star-spacing': IGNORE,
+		'babel/generator-star-spacing':  [ERROR, 'before'],
 
 		// Seems sensible
 		'no-confusing-arrow': ERROR,
@@ -702,7 +718,9 @@ module.exports = {
 		'no-var': WARN,
 
 		// Enforce ES6 object shorthand
-		'object-shorthand': ERROR,
+		// 'object-shorthand': ERROR,
+		'object-shorthand': IGNORE,
+	    'babel/object-shorthand': ERROR,
 
 		// Better performance when running native
 		// but horrible performance if not running native as could fallback to bind
@@ -733,6 +751,15 @@ module.exports = {
 		'template-curly-spacing': [ERROR, 'never'],
 
 		// Our preference
-		'yield-star-spacing': [2, 'both']
+		'yield-star-spacing': [ERROR, 'both'],
+
+
+		// --------------------------------------
+		// Plugins
+
+		// Not sure why, but okay
+	    'babel/no-await-in-loop': WARN,
+    	'flow-vars/define-flow-type': WARN,
+    	'flow-vars/use-flow-type': WARN
 	}
 }
