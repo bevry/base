@@ -81,9 +81,10 @@ Use the following inside your `README.md` file to have [projectz](https://github
 Add the appropriate development dependencies for what you want to do:
 
 ``` shell
-npm install --save-dev eslint  # for eslint parsing and linting
 npm install --save-dev projectz  # for projectz meta+package file compilation
-npm install --save-dev babel-cli babel-preset-es2015  # for babel es6+ to es5 compilation
+npm install --save-dev eslint  # for eslint parsing and linting
+npm install --save-dev babel-cli babel-preset-es2015 # for babel es6+ to es5 compilation
+npm install --save-dev eslint-plugin-babel eslint-plugin-flow-vars eslint-plugin-react # for esnext eslinting
 npm install --save esnextguardian  # for loading es6+ files when available with fallback to es5 files
 npm install --save-dev assert-helpers joe joe-reporter-console  # for testing
 npm install --save-dev yuidocjs  # for documentation
