@@ -1,17 +1,13 @@
-// 2016 March 8
+// 2016 March 9
 // https://github.com/bevry/base
 // http://eslint.org
+// This code must be able to run on Node 0.10
 /* eslint no-warning-comments: 0 */
-const IGNORE = 0, WARN = 1, ERROR = 2, MAX_PARAMS = 4
+var IGNORE = 0, WARN = 1, ERROR = 2, MAX_PARAMS = 4
 
-module.exports = {
-	extends: ['eslint:recommended', 'plugin:react/recommended'],
-	parser: 'babel-eslint',
-	plugins: [
-		'babel',
-		'react',
-		'flow-vars'
-	],
+var config = {
+	extends: ['eslint:recommended'],
+	plugins: [],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 6,
@@ -132,8 +128,8 @@ module.exports = {
 		// Seems like a good idea to error about this
 		'use-isnan': ERROR,
 
-		// We use YUIdoc, not JSDoc
-		'valid-jsdoc': IGNORE,
+		// We use JSDoc again
+		'valid-jsdoc': ERROR,
 
 		// Seems like a good idea to error about this
 		'valid-typeof': ERROR,
@@ -442,9 +438,7 @@ module.exports = {
 		// These rules are purely matters of style and are quite subjective.
 
 		// We don't use spaces with brackets
-		// 'array-bracket-spacing': [ERROR, 'never'],
-		'array-bracket-spacing': IGNORE,
-    	'babel/array-bracket-spacing': [ERROR, 'never'],
+		'array-bracket-spacing': [ERROR, 'never'],
 
 		// Disallow or enforce spaces inside of single line blocks
 		'block-spacing': [ERROR, 'always'],
@@ -524,9 +518,7 @@ module.exports = {
 		'max-statements': IGNORE,
 
 		// Constructors should be CamelCase
-		// 'new-cap': ERROR,
-		'new-cap': IGNORE,
-    	'babel/new-cap': ERROR,
+		'new-cap': ERROR,
 
 		// Always use parens when instantiating a class
 		'new-parens': ERROR,
@@ -596,7 +588,6 @@ module.exports = {
 
 		// Desirable, but too many edge cases it turns out where it is actually preferred
 		'object-curly-spacing': IGNORE,
-	    'babel/object-curly-spacing': IGNORE,
 
 		// We like multiple var statements
 		'one-var': IGNORE,
@@ -669,9 +660,7 @@ module.exports = {
 		'arrow-body-style': [ERROR, 'as-needed'],
 
 		// We do this, no reason why, just what we do
-		// 'arrow-parens': [ERROR, 'always'],
-		'arrow-parens': IGNORE,
-	    'babel/arrow-parens': [ERROR, 'always'],
+		'arrow-parens': [ERROR, 'always'],
 
 		// Require consistent spacing for arrow functions
 		'arrow-spacing': ERROR,
@@ -680,9 +669,7 @@ module.exports = {
 		'constructor-super': ERROR,
 
 		// Seems the most consistent location for it
-		// 'generator-star-spacing': [ERROR, 'before'],
-		'generator-star-spacing': IGNORE,
-		'babel/generator-star-spacing':  [ERROR, 'before'],
+		'generator-star-spacing': [ERROR, 'before'],
 
 		// Seems sensible
 		'no-confusing-arrow': ERROR,
@@ -718,9 +705,7 @@ module.exports = {
 		'no-var': WARN,
 
 		// Enforce ES6 object shorthand
-		// 'object-shorthand': ERROR,
-		'object-shorthand': IGNORE,
-	    'babel/object-shorthand': ERROR,
+		'object-shorthand': ERROR,
 
 		// Better performance when running native
 		// but horrible performance if not running native as could fallback to bind
@@ -763,3 +748,59 @@ module.exports = {
     	'flow-vars/use-flow-type': WARN
 	}
 }
+
+// ------------------------------------
+// Enhancements
+
+var package = require('./package.json')
+
+if ( 'babel-eslint' in package.devDependencies ) {
+	config.parser = 'babel-eslint'
+}
+
+if ( 'eslint-plugin-react' in package.devDependencies ) {
+	config.extends.push('plugin:react/recommended')
+	config.plugins.push('react')
+}
+
+if ( 'eslint-plugin-babel' in package.devDependencies ) {
+	config.plugins.push('babel')
+	var replacements = [
+		'array-bracket-spacing',
+		'new-cap',
+		'object-curly-spacing',
+		'arrow-parens',
+		'generator-star-spacing',
+		'object-shorthand'
+	]
+	replacements.forEach(function (key) {
+		if ( key in config.rules ) {
+			config.rules['babel/' + key] = config.rules[key]
+			config.rules[key] = IGNORE
+		}
+	})
+}
+else {
+	Object.keys(config.rules).forEach(function (key) {
+		if ( key.indexOf('babel/') === 0 ) {
+			delete config.rules[key]
+		}
+	})
+}
+
+if ( 'eslint-plugin-flow-vars' in package.devDependencies ) {
+	config.plugins.push('flow-vars')
+}
+else {
+	Object.keys(config.rules).forEach(function (key) {
+		if ( key.indexOf('flow-vars/') === 0 ) {
+			delete config.rules[key]
+		}
+	})
+}
+
+
+// ------------------------------------
+// Export
+
+module.exports = config
