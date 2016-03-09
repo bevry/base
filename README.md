@@ -24,29 +24,28 @@ wget -N https://raw.githubusercontent.com/bevry/base/master/.eslintrc.js
 wget -N https://raw.githubusercontent.com/bevry/base/master/.gitignore
 wget -N https://raw.githubusercontent.com/bevry/base/master/LICENSE.md
 
+wget -N https://raw.githubusercontent.com/bevry/base/master/.flowconfig
 wget -N https://raw.githubusercontent.com/bevry/base/master/.npmignore
-wget -N https://raw.githubusercontent.com/bevry/base/master/nakefile.js
 
 wget -N https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
 
-wget -N https://raw.githubusercontent.com/bevry/base/master/.travis.yml
+wget -N https://raw.githubusercontent.com/bevry/base/master/index.js
 
-wget -N https://raw.githubusercontent.com/bevry/base/master/.babelrc
-wget -N https://raw.githubusercontent.com/bevry/base/master/esnextguardian.js
+wget -N https://raw.githubusercontent.com/bevry/base/master/.travis.yml
 
 wget -N https://raw.githubusercontent.com/bevry/base/master/package.json
 wget -N https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
-
-wget -N https://raw.githubusercontent.com/bevry/base/master/coffeelint.json
 ```
 
 And add them to git:
 
 ``` shell
-git add .editorconfig .eslintrc .gitignore .npmignore .travis.yml
+git add .editorconfig .eslintrc.js .gitignore .flowconfig .npmignore .travis.yml
 git add .
-mkdir -p esnext/lib esnext/test
-touch esnext/lib/index.js esnext/test/index.js
+mkdir source
+touch source/index.js
+touch source/test.js
+touch source/bin.js
 ```
 
 
@@ -84,11 +83,11 @@ Add the appropriate development dependencies for what you want to do:
 npm install --save-dev projectz  # for projectz meta+package file compilation
 npm install --save-dev eslint  # for eslint parsing and linting
 npm install --save-dev babel-cli babel-preset-es2015 # for babel es6+ to es5 compilation
-npm install --save-dev eslint-plugin-babel eslint-plugin-flow-vars eslint-plugin-react # for esnext eslinting
-npm install --save esnextguardian  # for loading es6+ files when available with fallback to es5 files
+npm install --save-dev eslint-plugin-babel eslint-plugin-react # for esnext eslinting
+npm install --save-dev flow-bin # for flow type
+npm install --save editions  # for loading the best edition for the current environment
 npm install --save-dev assert-helpers joe joe-reporter-console  # for testing
-npm install --save-dev yuidocjs  # for documentation
-npm install --save-dev browserify babelify  # for compiling to the browser
+npm install --save-dev documentation  # for documentation
 ```
 
 
@@ -199,7 +198,7 @@ Cyclic dependencies would fail in npm version 1 and earlier. If you have cyclic 
 	``` json
 	{
 		"scripts": {
-			"preinstall": "node ./cyclic.js"
+			"preinstall": "node cyclic.js"
 		}
 	}
 	```
@@ -207,7 +206,7 @@ Cyclic dependencies would fail in npm version 1 and earlier. If you have cyclic 
 
 ### legacy
 
-`.jshint` & `.jscrc` files are now covered by eslint. It is still there for legacy reasons as none of our linting setup uses it.
+- `.jshint` and `.jscrc` files are now covered by eslint
 
 
 ## History
