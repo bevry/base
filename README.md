@@ -85,7 +85,7 @@ npm install --save-dev eslint  # for eslint parsing and linting
 npm install --save-dev babel-cli babel-preset-es2015 # for babel es6+ to es5 compilation
 npm install --save-dev eslint-plugin-babel eslint-plugin-react # for esnext eslinting
 npm install --save-dev flow-bin # for flow type
-npm install --save editions  # for loading the best edition for the current environment
+npm install --save-dev editions  # for loading the best edition for the current environment
 npm install --save-dev assert-helpers joe joe-reporter-console  # for testing
 npm install --save-dev documentation  # for documentation
 ```
