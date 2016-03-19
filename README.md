@@ -208,6 +208,10 @@ Cyclic dependencies would fail in npm version 1 and earlier. If you have cyclic 
 
 The following legacy parts of the base files
 
+### [CoffeeLint](http://www.coffeelint.org)
+[Our `coffeelint.json` file.](https://github.com/bevry/base/blob/82c69564a1d95bc902f53153a841efba19d4fd93/coffeelint.json)
+Dropped in favour of ESNext.
+
 ### [JSHint](http://jshint.com)
 
 [Our `.jshintrc` file.](https://github.com/bevry/base/blob/b1335ea16811d2870dbde87c3a1a606797db54a0/.jshintrc)
