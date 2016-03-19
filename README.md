@@ -96,9 +96,6 @@ npm install --save-dev editions  # for loading the best edition for the current 
 Finally copy the relevant parts of our [`package.json` template](https://github.com/bevry/base/blob/master/package.json) for your consumption.
 
 
-
-## Configure
-
 ### travis
 
 Run the following in the project to add notifications for the builds (requires the environment variables to be set):
