@@ -126,8 +126,6 @@ travisencrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recip
 
 ## Legacy
 
-The following legacy parts of the base files
-
 ### [ESNextGuardian](https://github.com/bevry/esnextguardian)
 [Our `esnextguardian.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/esnextguardian.js)
 Dropped in favour of [Editions](https://github.com/bevry/editions).
