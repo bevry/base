@@ -133,56 +133,6 @@ To get started with this:
 1. Follow the latest [ESNextGuardian](https://github.com/bevry/esnextguardian) usage instructions
 
 
-### nakefile
-
-Nakefiles are a standalone node file called `nakefile.js` that doesn't have any other external dependencies while providing tooling for installing, compiling, testing, and releasing your project. Consider them like a cross-platform Makefile built with Node.js. [Learn more.](https://blog.bevry.me/bevry-news-2015-weeks-34-35-36-7f1516cb2580) [See ours.](https://github.com/bevry/base/blob/master/nakefile.js)
-
-#### nakefile npm scripts
-
-
-``` json
-{
-	"scripts": {
-		"clean": "node --harmony nakefile.js clean",
-		"setup": "node --harmony nakefile.js setup",
-		"compile": "node --harmony nakefile.js compile",
-		"watch": "node --harmony nakefile.js watch",
-		"verify": "node --harmony nakefile.js verify",
-		"meta": "node --harmony nakefile.js meta",
-		"prepare": "node --harmony nakefile.js prepare",
-		"release": "node --harmony nakefile.js release"
-	}
-}
-```
-
-#### nakefile configuration
-
-The following Nakefile configuration properties are listed below with their default values. You can customize them via the `nakeConfiguration` property inside your `package.json` file.
-
-``` json
-{
-	"nakeConfiguration": {
-		"TEST_PATH": "test",
-		"DOCCO_SRC_PATH": null,
-		"DOCCO_OUT_PATH": "docs",
-		"BISCOTTO_SRC_PATH": null,
-		"BISCOTTO_OUT_PATH": "docs",
-		"YUIDOC_SRC_PATH": null,
-		"YUIDOC_OUT_PATH": "docs",
-		"YUIDOC_SYNTAX": "js",
-		"COFFEE_SRC_PATH": null,
-		"COFFEE_OUT_PATH": "out",
-		"DOCPAD_SRC_PATH": null,
-		"DOCPAD_OUT_PATH": "out",
-		"BABEL_SRC_PATH": null,
-		"BABEL_OUT_PATH": "es5",
-		"ESLINT_SRC_PATH": null,
-		"COFFEELINT_SRC_PATH": null
-	}
-}
-```
-
-
 ### cyclic dependencies
 
 Cyclic dependencies would fail in npm version 1 and earlier. If you have cyclic dependencies and require support for npm v1, do the following:
@@ -207,6 +157,10 @@ Cyclic dependencies would fail in npm version 1 and earlier. If you have cyclic 
 ## Legacy
 
 The following legacy parts of the base files
+
+### [Nakefile](https://github.com/bevry/base/wiki/Nakefile)
+[Our `nakefile.js` file.](https://github.com/bevry/base/blob/8e02232ad83059e79adc4c6976a55d929cd9bdd3/nakefile.js)
+Dropped in favour of NPM Scripts.
 
 ### [CoffeeLint](http://www.coffeelint.org)
 [Our `coffeelint.json` file.](https://github.com/bevry/base/blob/82c69564a1d95bc902f53153a841efba19d4fd93/coffeelint.json)
