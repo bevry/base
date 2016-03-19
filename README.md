@@ -133,27 +133,6 @@ To get started with this:
 1. Follow the latest [ESNextGuardian](https://github.com/bevry/esnextguardian) usage instructions
 
 
-### cyclic dependencies
-
-Cyclic dependencies would fail in npm version 1 and earlier. If you have cyclic dependencies and require support for npm v1, do the following:
-
-1. Add our [`cyclic.js` file](https://github.com/bevry/base/master/cyclic.js) to your project:
-
-	``` shell
-	wget -N https://raw.githubusercontent.com/bevry/base/master/cyclic.js
-	```
-
-1. Get it to run on the npm `preinstall` script, by adding the following your `package.json`:
-
-	``` json
-	{
-		"scripts": {
-			"preinstall": "node cyclic.js"
-		}
-	}
-	```
-
-
 ## Legacy
 
 The following legacy parts of the base files
@@ -166,13 +145,15 @@ Dropped in favour of NPM Scripts.
 [Our `coffeelint.json` file.](https://github.com/bevry/base/blob/82c69564a1d95bc902f53153a841efba19d4fd93/coffeelint.json)
 Dropped in favour of ESNext.
 
-### [JSHint](http://jshint.com)
+### [Cyclic](https://github.com/bevry/base/wiki/Cyclic)
+[Our `cyclic.js` file.](https://github.com/bevry/base/blob/8e02232ad83059e79adc4c6976a55d929cd9bdd3/cyclic.js)
+Dropped in favour of npm `>=2`.
 
+### [JSHint](http://jshint.com)
 [Our `.jshintrc` file.](https://github.com/bevry/base/blob/b1335ea16811d2870dbde87c3a1a606797db54a0/.jshintrc)
 Dropped in favour of eslint.
 
 ### [JSCS](http://jscs.info)
-
 [Our `.jscrc` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/.jscrc)
 Dropped in favour of eslint.
 
