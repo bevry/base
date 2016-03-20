@@ -70,7 +70,7 @@
     "pretest": "npm run test:eslint && npm run test:flow",
     "test:eslint": "eslint ./source",
     "test:flow": "flow check",
-    "test": "node --harmony ./es2015/test.js"
+    "test": "node --harmony -e \"require('editions').requirePackage(process.cwd(), require, 'test.js')\""
   },
   "dependencies": {},
   "devDependencies": {
