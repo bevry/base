@@ -83,7 +83,7 @@ Add the appropriate development dependencies for what you want to do:
 npm install --save-dev projectz  # for projectz meta+package file compilation
 npm install --save-dev eslint  # for eslint parsing and linting
 npm install --save-dev babel-cli babel-preset-es2015 # for babel es6+ to es5 compilation
-npm install --save-dev editions # for esnext auto loading
+npm install --save editions # for esnext auto loading
 npm install --save-dev eslint-plugin-babel # for esnext linting
 npm install --save-dev assert-helpers joe joe-reporter-console  # for testing
 npm install --save-dev documentation  # for documentation
