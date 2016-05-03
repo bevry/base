@@ -61,7 +61,7 @@
     "compile": "npm run compile:es2015",
     "compile:es2015": "babel ./source --out-dir ./es2015 --presets es2015",
     "meta": "npm run meta:docs && npm run meta:projectz",
-    "meta:docs": "documentation build --shallow -f html -g source/**.js -o docs",
+    "meta:docs": "documentation build -f html -o ./docs -g --shallow ./source/**.js",
     "meta:projectz": "projectz compile",
     "prepare": "npm run compile && npm run test && npm run meta",
     "release": "npm run prepare && npm run release:publish && npm run release:tag && npm run release:push",
