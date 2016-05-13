@@ -53,6 +53,30 @@
   "engines": {
     "node": ">=0.12"
   },
+  "editions": [
+    {
+      "description": "Source + ESNext + Require",
+      "entry": "source/index.js",
+      "directory": "source",
+      "syntaxes": [
+        "javascript",
+        "esnext",
+        "require",
+        "const",
+        "let"
+      ]
+    },
+    {
+      "description": "Babel Compiled + ES2015 + Require",
+      "entry": "es2015/index.js",
+      "directory": "es2015",
+      "syntaxes": [
+        "javascript",
+        "es2015",
+        "require"
+      ]
+    }
+  ],
   "main": "index.js",
   "browser": "es2015/index.js",
   "scripts": {
