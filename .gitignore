@@ -1,4 +1,4 @@
-# 2016 March 21
+# 2016 June 4
 # https://github.com/bevry/base
 
 # Temp Files
@@ -13,24 +13,35 @@ build/
 components/
 bower_components/
 node_modules/
-out/
-*output/
-coffeejs/
-coffee/
-es5/
-es2015/
-esnext/
-
-# Editor Caches
-.c9/
 
 # Private Files
 .env
-.idea
-.cake_task_cache
 
+# Documentation Files
+docs/
+guides/
+BACKERS.md
+CONTRIBUTING.md
+HISTORY.md
+
+# Development Files
+.editorconfig
+.eslintrc*
+.jshintrc
+.jscrc
+coffeelint*
+.travis*
+nakefile*
+Cakefile
+Makefile
+**/test*
+
+# Other Package Definitions
+template.js
+component.json
+bower.json
 
 # =====================================
-# CUSTOM
+# CUSTOM MODIFICATIONS
 
 # None
