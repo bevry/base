@@ -25,6 +25,8 @@ CONTRIBUTING.md
 HISTORY.md
 
 # Development Files
+web/
+**/test*
 .editorconfig
 .eslintrc*
 .jshintrc
@@ -34,7 +36,6 @@ coffeelint*
 nakefile*
 Cakefile
 Makefile
-**/test*
 
 # Other Package Definitions
 template.js
