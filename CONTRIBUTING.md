@@ -19,7 +19,7 @@ Our [Contributing Guide](https://learn.bevry.me/community/contribute) contains u
 
 ### Setup
 
-1. Install [Node.js](/node/install)
+1. Install [Node.js](https://learn.bevry.me/node/install)
 
 1. Fork the project and clone your fork - [guide](https://help.github.com/articles/fork-a-repo/)
 
