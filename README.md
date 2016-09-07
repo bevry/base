@@ -127,26 +127,60 @@ travisencrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recip
 
 ### [ESNextGuardian](https://github.com/bevry/esnextguardian)
 [Our `esnextguardian.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/esnextguardian.js)
+
+``` shell
+wget -N https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/esnextguardian.js
+```
+
 Dropped in favour of [Editions](https://github.com/bevry/editions).
+
 
 ### [Nakefile](https://github.com/bevry/base/wiki/Nakefile)
 [Our `nakefile.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/nakefile.js)
+
+``` shell
+wget -N https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/nakefile.js
+```
+
 Dropped in favour of NPM Scripts.
+
 
 ### [CoffeeLint](http://www.coffeelint.org)
 [Our `coffeelint.json` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/coffeelint.json)
+
+``` shell
+wget -N https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/coffeelint.json
+```
+
 Dropped in favour of ESNext.
+
 
 ### [Cyclic](https://github.com/bevry/base/wiki/Cyclic)
 [Our `cyclic.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/cyclic.js)
+
+``` shell
+wget -N https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/cyclic.js
+```
+
 Dropped in favour of npm `>=2`.
 
 ### [JSHint](http://jshint.com)
 [Our `.jshintrc` file.](https://github.com/bevry/base/blob/b1335ea16811d2870dbde87c3a1a606797db54a0/.jshintrc)
+
+``` shell
+wget -N https://raw.githubusercontent.com/bevry/base/b1335ea16811d2870dbde87c3a1a606797db54a0/.jshintrc
+```
+
 Dropped in favour of [ESLint](http://eslint.org).
+
 
 ### [JSCS](http://jscs.info)
 [Our `.jscrc` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/.jscrc)
+
+``` shell
+wget -N https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/.jscrc
+```
+
 Dropped in favour of [ESLint](http://eslint.org).
 
 
