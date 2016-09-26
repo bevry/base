@@ -18,24 +18,26 @@ touch README.md
 
 Download the relevant files for your project:
 
+> Replace `download` with `wget -N` if you have wget or `curl -OL` if you have curl
+
 ``` shell
-wget -N https://raw.githubusercontent.com/bevry/base/master/.editorconfig
-wget -N https://raw.githubusercontent.com/bevry/base/master/.eslintrc.js
-wget -N https://raw.githubusercontent.com/bevry/base/master/.gitignore
-wget -N https://raw.githubusercontent.com/bevry/base/master/LICENSE.md
+download https://raw.githubusercontent.com/bevry/base/master/.editorconfig
+download https://raw.githubusercontent.com/bevry/base/master/.eslintrc.js
+download https://raw.githubusercontent.com/bevry/base/master/.gitignore
+download https://raw.githubusercontent.com/bevry/base/master/LICENSE.md
 
-wget -N https://raw.githubusercontent.com/bevry/base/master/.npmignore
+download https://raw.githubusercontent.com/bevry/base/master/.npmignore
 
-wget -N https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
+download https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
 
-wget -N https://raw.githubusercontent.com/bevry/base/master/index.js
+download https://raw.githubusercontent.com/bevry/base/master/index.js
 
-wget -N https://raw.githubusercontent.com/bevry/base/master/.travis.yml
+download https://raw.githubusercontent.com/bevry/base/master/.travis.yml
 
-wget -N https://raw.githubusercontent.com/bevry/base/master/.flowconfig
+download https://raw.githubusercontent.com/bevry/base/master/.flowconfig
 
-wget -N https://raw.githubusercontent.com/bevry/base/master/package.json
-wget -N https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
+download https://raw.githubusercontent.com/bevry/base/master/package.json
+download https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
 ```
 
 And add them to git:
@@ -129,7 +131,7 @@ travisencrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recip
 [Our `esnextguardian.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/esnextguardian.js)
 
 ``` shell
-wget -N https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/esnextguardian.js
+download https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/esnextguardian.js
 ```
 
 Dropped in favour of [Editions](https://github.com/bevry/editions).
@@ -139,7 +141,7 @@ Dropped in favour of [Editions](https://github.com/bevry/editions).
 [Our `nakefile.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/nakefile.js)
 
 ``` shell
-wget -N https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/nakefile.js
+download https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/nakefile.js
 ```
 
 Dropped in favour of NPM Scripts.
@@ -149,7 +151,7 @@ Dropped in favour of NPM Scripts.
 [Our `coffeelint.json` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/coffeelint.json)
 
 ``` shell
-wget -N https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/coffeelint.json
+download https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/coffeelint.json
 ```
 
 Dropped in favour of ESNext.
@@ -159,7 +161,7 @@ Dropped in favour of ESNext.
 [Our `cyclic.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/cyclic.js)
 
 ``` shell
-wget -N https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/cyclic.js
+download https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/cyclic.js
 ```
 
 Dropped in favour of npm `>=2`.
@@ -168,7 +170,7 @@ Dropped in favour of npm `>=2`.
 [Our `.jshintrc` file.](https://github.com/bevry/base/blob/b1335ea16811d2870dbde87c3a1a606797db54a0/.jshintrc)
 
 ``` shell
-wget -N https://raw.githubusercontent.com/bevry/base/b1335ea16811d2870dbde87c3a1a606797db54a0/.jshintrc
+download https://raw.githubusercontent.com/bevry/base/b1335ea16811d2870dbde87c3a1a606797db54a0/.jshintrc
 ```
 
 Dropped in favour of [ESLint](http://eslint.org).
@@ -178,7 +180,7 @@ Dropped in favour of [ESLint](http://eslint.org).
 [Our `.jscrc` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/.jscrc)
 
 ``` shell
-wget -N https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/.jscrc
+download https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/.jscrc
 ```
 
 Dropped in favour of [ESLint](http://eslint.org).
@@ -192,3 +194,4 @@ Dropped in favour of [ESLint](http://eslint.org).
 ## License
 Licensed under the [Creative Commons Zero](http://creativecommons.org/publicdomain/zero/1.0/) making it [public domain](https://en.wikipedia.org/wiki/Public_domain) so you can do whatever you wish with it without worry (you can even remove this notice!)
 <br/>Copyright &copy; 2011+ [Benjamin Lupton](http://balupton.com)
+
