@@ -19,7 +19,7 @@ touch README.md
 Download the relevant files for your project:
 
 > - If you have wget, replace `download` with `wget -N`
-> - IF you have curl, replace `download` with `curl -OL`
+> - If you have curl, replace `download` with `curl -OL`
 
 ``` shell
 download https://raw.githubusercontent.com/bevry/base/master/.editorconfig
