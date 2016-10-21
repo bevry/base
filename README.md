@@ -83,15 +83,32 @@ Use the following inside your `README.md` file to have [projectz](https://github
 Add the appropriate development dependencies for what you want to do:
 
 ``` shell
-npm install --save-dev projectz  # for projectz meta+package file compilation
-npm install --save-dev eslint  # for eslint parsing and linting
-npm install --save-dev babel-cli babel-preset-es2015 # for babel es6+ to es5 compilation
-npm install --save editions # for esnext auto loading
-npm install --save-dev eslint-plugin-babel # for esnext linting
-npm install --save-dev assert-helpers joe joe-reporter-console  # for testing
-npm install --save-dev documentation  # for documentation
-npm install --save-dev flow-bin # for flow type
-npm install --save-dev eslint-plugin-react # for react linting
+# Meta Compilation
+npm install --save-dev projectz
+
+# Linting
+npm install --save-dev eslint
+
+# Babel Compilation
+npm install --save-dev babel-cli babel-preset-es2015
+
+# Edition Autoloading
+npm install --save editions
+
+# Babel Experimental Feature Linting
+npm install --save-dev eslint-plugin-babel
+
+# Testing
+npm install --save-dev assert-helpers joe joe-reporter-console
+
+# Documentation
+npm install --save-dev documentation
+
+# Flow Type
+npm install --save-dev flow-bin
+
+# React Linting
+npm install --save-dev eslint-plugin-react
 ```
 
 
