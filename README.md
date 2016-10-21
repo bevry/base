@@ -137,7 +137,7 @@ travis encrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.reci
 
 CoffeeScript scripts:
 
-```
+``` json
 {
   "scripts": {
     "our:compile:coffeescript": "coffee -bco ./es5 ./source",
