@@ -3,14 +3,14 @@
 // http://eslint.org
 // This code must be able to run on Node 0.10
 /* eslint no-warning-comments: 0 */
-var IGNORE = 0, WARN = 1, ERROR = 2, MAX_PARAMS = 4
+'use strict'
 
-var config = {
+const IGNORE = 0, WARN = 1, ERROR = 2, MAX_PARAMS = 4
+
+const config = {
 	extends: ['eslint:recommended'],
 	plugins: [],
-	parserOptions: {
-		ecmaFeatures: {}
-	},
+	parserOptions: {ecmaFeatures: {}},
 	env: {},
 	rules: {
 		// ----------------------------
@@ -98,7 +98,7 @@ var config = {
 		'no-obj-calls': ERROR,
 
 		// Not enough justification to change our existing use
-		"no-prototype-builtins": IGNORE,
+		'no-prototype-builtins': IGNORE,
 
 		// Seems like a good idea to error about this
 		// Instead of /  /  used / {ERROR}/ instead
@@ -108,7 +108,7 @@ var config = {
 		'no-sparse-arrays': ERROR,
 
 		// Probably an error on our part, so warn
-		"no-template-curly-in-string": WARN,
+		'no-template-curly-in-string': WARN,
 
 		// Seems like a good idea to error about this
 		'no-unexpected-multiline': ERROR,
@@ -117,7 +117,7 @@ var config = {
 		'no-unreachable': ERROR,
 
 		// Seems like a good idea to error about this
-		"no-unsafe-finally": ERROR,
+		'no-unsafe-finally': ERROR,
 
 		// Seems like a good idea to error about this
 		'no-unsafe-negation': ERROR,
@@ -127,8 +127,8 @@ var config = {
 
 		// We use JSDoc again
 		'valid-jsdoc': [ERROR, {
-			"requireParamDescription": false,
-			"requireReturnDescription": false
+			requireParamDescription: false,
+			requireReturnDescription: false
 		}],
 
 		// Seems like a good idea to error about this
@@ -151,7 +151,7 @@ var config = {
 		'block-scoped-var': IGNORE,
 
 		// Seems interesting, lets give it a go
-		"class-methods-use-this": WARN,
+		'class-methods-use-this': WARN,
 
 		// Disable complexity checks, they are annoying and not that useful in detecting actual complexity
 		'complexity': IGNORE,
@@ -292,7 +292,7 @@ var config = {
 		'no-redeclare': ERROR,
 
 		// No defaults for this that are useful
-		"no-restricted-properties": IGNORE,
+		'no-restricted-properties': IGNORE,
 
 		// We never use this, it seems silly to allow this
 		'no-return-assign': ERROR,
@@ -328,7 +328,7 @@ var config = {
 		'no-useless-concat': ERROR,
 
 		// Seems sensible
-		"no-useless-escape": ERROR,
+		'no-useless-escape': ERROR,
 
 		// We never use this, it seems silly to allow this
 		'no-void': ERROR,
@@ -380,7 +380,7 @@ var config = {
 		'no-label-var': ERROR,
 
 		// No useful defaults
-		"no-restricted-globals": IGNORE,
+		'no-restricted-globals': IGNORE,
 
 		// We never use this, it seems silly to allow this
 		'no-shadow-restricted-names': ERROR,
@@ -474,10 +474,10 @@ var config = {
 		'eol-last': ERROR,
 
 		// We never use this, it seems silly to allow this
-		'func-call-spacing': [ERROR, "never"],
+		'func-call-spacing': [ERROR, 'never'],
 
 		// This rule is not currently useful
-		"func-name-matching": IGNORE,
+		'func-name-matching': IGNORE,
 
 		// We like anonymous functions
 		'func-names': IGNORE,
@@ -508,7 +508,7 @@ var config = {
 			FunctionExpression: {
 				body: 1,
 				parameters: 0
-			},
+			}
 		}],
 		// ^ broken before, let us try again
 
@@ -559,9 +559,7 @@ var config = {
 		'max-params': [WARN, MAX_PARAMS],
 
 		// Let's give this a go and see what is appropriate for our usage
-		'max-statements-per-line': [WARN, {
-			max: 1
-		}],
+		'max-statements-per-line': [WARN, {max: 1}],
 
 		// We should be able to use whatever feels right
 		'max-statements': IGNORE,
@@ -642,9 +640,7 @@ var config = {
 		'no-whitespace-before-property': ERROR,
 
 		// Object indentation should be consistent within the object
-		'object-curly-newline': [ERROR, {
-			multiline: true
-		}],
+		'object-curly-newline': [ERROR, {multiline: true}],
 
 		// Desirable, but too many edge cases it turns out where it is actually preferred
 		'object-curly-spacing': IGNORE,
@@ -818,29 +814,29 @@ var config = {
 		// Plugins
 
 		// Not sure why, but okay
-	    'babel/no-await-in-loop': WARN,
-    	'flow-vars/define-flow-type': WARN,
-    	'flow-vars/use-flow-type': WARN
+		'babel/no-await-in-loop': WARN,
+		'flow-vars/define-flow-type': WARN,
+		'flow-vars/use-flow-type': WARN
 	}
 }
 
 // ------------------------------------
 // Enhancements
 
-// Load package.json file if it exists
-var rules = Object.keys(config.rules)
-var package = {}, devDeps = []
+// Load data.json file if it exists
+const rules = Object.keys(config.rules)
+let data = {}, devDeps = []
 try {
-	package = require('./package.json') || {}
-	devDeps = Object.keys(package.devDependencies || {})
+	data = require('./package.json') || {}
+	devDeps = Object.keys(data.devDependencies || {})
 }
 catch ( err ) {}
 
 // Set the parser options depending on our editions
-if ( package.editions ) {
-	var sourceEdition = package.editions[0]
-	for ( var syntaxIndex = 0; syntaxIndex < sourceEdition.syntaxes.length; ++syntaxIndex ) {
-		var syntax = sourceEdition.syntaxes[syntaxIndex]
+if ( data.editions ) {
+	const sourceEdition = data.editions[0]
+	for ( let syntaxIndex = 0; syntaxIndex < sourceEdition.syntaxes.length; ++syntaxIndex ) {
+		const syntax = sourceEdition.syntaxes[syntaxIndex]
 		if ( syntax === 'esnext' ) {
 			config.parserOptions.ecmaVersion = 8
 			break
@@ -855,14 +851,13 @@ if ( package.editions ) {
 }
 
 // Set the environments depending on whether we need them or not
-config.env.node = Boolean(package.engines && package.engines.node)
-config.env.browser = Boolean(package.browser)
-if ( config.env.node && config.env.browser ) {
-	config.env['shared-node-browser'] = true
-	config.env.browser = config.env.node = false
-}
-else if ( config.env.browser ) {
+config.env.node = Boolean(data.engines && data.engines.node)
+config.env.browser = Boolean(data.browser)
+if ( config.env.browser ) {
 	config.env.commonjs = true
+	if ( config.env.node ) {
+		config.env['shared-node-browser'] = true
+	}
 }
 
 // Add babel parsing if installed
@@ -879,7 +874,7 @@ if ( devDeps.indexOf('eslint-plugin-react') !== -1 ) {
 if ( devDeps.indexOf('eslint-plugin-babel') !== -1 ) {
 	// Remove rules that babel rules replace
 	config.plugins.push('babel')
-	var replacements = [
+	const replacements = [
 		'array-bracket-spacing',
 		'new-cap',
 		'object-curly-spacing',
