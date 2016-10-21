@@ -87,7 +87,7 @@
     "our:meta:docs": "documentation build -f html -o ./docs -g --shallow ./source/**.js",
     "our:meta:projectz": "projectz compile",
     "our:verify": "npm run our:verify:eslint && npm run our:verify:flow",
-    "our:verify:eslint": "eslint ./source",
+    "our:verify:eslint": "eslint --fix ./source",
     "our:verify:flow": "flow check",
     "our:test": "npm run our:verify && npm test",
     "our:release": "npm run our:release:prepare && npm run our:release:check && npm run our:release:publish && npm run our:release:tag && npm run our:release:push",
