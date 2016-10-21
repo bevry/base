@@ -48,7 +48,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/bevry/projectName.git"
+    "url": "https://github.com/bevry/projectName.git"
   },
   "engines": {
     "node": ">=0.12"
@@ -56,8 +56,8 @@
   "editions": [
     {
       "description": "Source + ESNext + Require",
-      "entry": "source/index.js",
       "directory": "source",
+      "entry": "index.js",
       "syntaxes": [
         "javascript",
         "esnext",
@@ -68,8 +68,8 @@
     },
     {
       "description": "Babel Compiled + ES2015 + Require",
-      "entry": "es2015/index.js",
       "directory": "es2015",
+      "entry": "index.js",
       "syntaxes": [
         "javascript",
         "es2015",
