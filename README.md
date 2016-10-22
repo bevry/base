@@ -83,8 +83,8 @@ Use the following inside your `README.md` file to have [projectz](https://github
 
 Add the appropriate development dependencies for what you want to do:
 
-> If you have yarn, replace `nid` with `yarn add --dev` and `ni` with `yarn add`
-> If you have npm, replace `nid` with `npm install --save-dev` and `ni` with `npm install --save`
+> - If you have yarn, replace `nid` with `yarn add --dev` and `ni` with `yarn add`
+> - If you have npm, replace `nid` with `npm install --save-dev` and `ni` with `npm install --save`
 
 ``` shell
 # Meta Compilation
