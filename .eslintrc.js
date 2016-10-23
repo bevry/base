@@ -1,4 +1,4 @@
-// 2016 October 21
+// 2016 October 23
 // https://github.com/bevry/base
 // http://eslint.org
 // This code must be able to run on Node 0.10
@@ -640,7 +640,8 @@ const config = {
 		'no-whitespace-before-property': ERROR,
 
 		// Object indentation should be consistent within the object
-		'object-curly-newline': [ERROR, {multiline: true}],
+		// Ignore until https://github.com/eslint/eslint/issues/7434 is done
+		'object-curly-newline': [IGNORE, {multiline: true}],
 
 		// Desirable, but too many edge cases it turns out where it is actually preferred
 		'object-curly-spacing': IGNORE,
