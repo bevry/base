@@ -7,11 +7,12 @@ sudo: false
 # We use node
 language: node_js
 node_js:
-  - "0.8"
-  - "0.10"
-  - "0.12"
-  - "4"
-  - "6"
+  - "0.8"   # legacy
+  - "0.10"  # maintenance
+  - "0.12"  # maintenance
+  - "4"     # lts
+  - "6"     # lts
+  - "7"     # stable
 cache:
   directories:
     - node_modules
