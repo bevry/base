@@ -1,4 +1,4 @@
-// 2016 October 23
+// 2016 October 29
 // https://github.com/bevry/base
 // http://eslint.org
 // This code must be able to run on Node 0.10
@@ -859,6 +859,12 @@ if ( config.env.browser ) {
 	if ( config.env.node ) {
 		config.env['shared-node-browser'] = true
 	}
+}
+
+// If not on legacy javascript, disable esnext rules
+if ( config.parserOptions.ecmaVersion && config.parserOptions.ecmaVersion <= 5 ) {
+	config.rules['no-var'] = IGNORE
+	config.rules['object-shorthand'] = [ERROR, 'never']
 }
 
 // Add babel parsing if installed
