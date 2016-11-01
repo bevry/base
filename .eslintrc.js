@@ -1,4 +1,4 @@
-// 2016 October 29
+// 2016 November 1
 // https://github.com/bevry/base
 // http://eslint.org
 // This code must be able to run on Node 0.10
@@ -852,6 +852,7 @@ if ( data.editions ) {
 }
 
 // Set the environments depending on whether we need them or not
+config.env.es6 = Boolean(config.parserOptions.ecmaVersion && config.parserOptions.ecmaVersion >= 6)
 config.env.node = Boolean(data.engines && data.engines.node)
 config.env.browser = Boolean(data.browser)
 if ( config.env.browser ) {
