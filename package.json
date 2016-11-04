@@ -80,6 +80,7 @@
   "main": "index.js",
   "browser": "es2015/index.js",
   "scripts": {
+    "our:setup": "npm install",
     "our:clean": "rm -Rf ./docs ./es2015",
     "our:compile": "npm run our:compile:es2015",
     "our:compile:es2015": "babel ./source --out-dir ./es2015 --presets es2015",
