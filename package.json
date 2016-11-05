@@ -96,7 +96,7 @@
     "our:release:publish": "npm publish",
     "our:release:tag": "git tag v$npm_package_version -a",
     "our:release:push": "git push origin master && git push origin --tags",
-    "test": "node --harmony ./test.js"
+    "test": "node --harmony ./test.js --joe-reporter=console"
   },
   "dependencies": {},
   "devDependencies": {}
