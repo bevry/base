@@ -140,6 +140,7 @@ CoffeeScript scripts:
 ``` json
 {
   "scripts": {
+    "our:verify:coffeelint": "coffeelint ./source",
     "our:compile:coffeescript": "coffee -bco ./es5 ./source",
     "our:meta:yuidoc": "yuidoc -o ./docs --syntaxtype coffee -e .coffee ./source",
     "our:meta:biscotto": "biscotto -n $npm_package_title --title \"$npm_package_title API Documentation\" -r README.md -o ./docs ./source - ./LICENSE.md ./HISTORY.md"
