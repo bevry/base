@@ -18,14 +18,15 @@
       "daviddm",
       "daviddmdev",
       "---",
-      "slackin",
       "patreon",
       "opencollective",
       "gratipay",
       "flattr",
       "paypal",
       "bitcoin",
-      "wishlist"
+      "wishlist",
+      "---",
+      "slackin"
     ],
     "config": {
       "patreonUsername": "bevry",
