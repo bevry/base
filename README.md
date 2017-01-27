@@ -123,11 +123,26 @@ Copy over the relevant parts from our [`package.json` template](https://github.c
 
 ### travis
 
-Run the following in the project to add notifications for the builds (requires the environment variables to be set):
+Full set of available customisations and their documentations is available over at [balupton/awesome-travis]9https://github.com/balupton/awesome-travis/).
+
+
+### configuration
 
 ``` shell
-travis encrypt --org "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack
-travis encrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recipients
+# https://github.com/balupton/awesome-travis/blob/master/README.md#release-to-npm
+npm owner add bevry
+travis encrypt "NPM_USERNAME=$BEVRY_NPM_USERNAME" --add env.global
+travis encrypt "NPM_PASSWORD=$BEVRY_NPM_PASSWORD" --add env.global
+travis encrypt "NPM_EMAIL=$BEVRY_NPM_EMAIL" --add env.global
+
+# https://github.com/balupton/awesome-travis#release-to-surge
+travis encrypt "SURGE_LOGIN=$BEVRY_SURGE_LOGIN" --add env.global
+travis encrypt "SURGE_TOKEN=$BEVRY_SURGE_TOKEN" --add env.global
+
+# https://github.com/balupton/awesome-travis/blob/master/README.md#slack
+# https://github.com/balupton/awesome-travis/blob/master/README.md#email
+travis encrypt "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack
+travis encrypt "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recipients
 ```
 
 
