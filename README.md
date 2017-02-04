@@ -123,7 +123,7 @@ Copy over the relevant parts from our [`package.json` template](https://github.c
 
 ### travis
 
-Full set of available customisations and their documentations is available over at [balupton/awesome-travis]9https://github.com/balupton/awesome-travis/).
+Full set of available customisations and their documentations is available over at [balupton/awesome-travis](https://github.com/balupton/awesome-travis/).
 
 
 ### configuration
