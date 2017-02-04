@@ -131,18 +131,18 @@ Full set of available customisations and their documentations is available over 
 ``` shell
 # https://github.com/balupton/awesome-travis/blob/master/README.md#release-to-npm
 npm owner add bevry
-travis encrypt "NPM_USERNAME=$BEVRY_NPM_USERNAME" --add env.global
-travis encrypt "NPM_PASSWORD=$BEVRY_NPM_PASSWORD" --add env.global
-travis encrypt "NPM_EMAIL=$BEVRY_NPM_EMAIL" --add env.global
+travis encrypt "NPM_USERNAME=$BEVRY_NPM_USERNAME" --add env.global --no-interactive
+travis encrypt "NPM_PASSWORD=$BEVRY_NPM_PASSWORD" --add env.global --no-interactive
+travis encrypt "NPM_EMAIL=$BEVRY_NPM_EMAIL" --add env.global --no-interactive
 
 # https://github.com/balupton/awesome-travis#release-to-surge
-travis encrypt "SURGE_LOGIN=$BEVRY_SURGE_LOGIN" --add env.global
-travis encrypt "SURGE_TOKEN=$BEVRY_SURGE_TOKEN" --add env.global
+travis encrypt "SURGE_LOGIN=$BEVRY_SURGE_LOGIN" --add env.global --no-interactive
+travis encrypt "SURGE_TOKEN=$BEVRY_SURGE_TOKEN" --add env.global --no-interactive
 
 # https://github.com/balupton/awesome-travis/blob/master/README.md#slack
 # https://github.com/balupton/awesome-travis/blob/master/README.md#email
-travis encrypt "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack
-travis encrypt "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recipients
+travis encrypt "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack --no-interactive
+travis encrypt "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recipients --no-interactive
 ```
 
 
