@@ -120,8 +120,10 @@ after_success: |
   fi
 
 
+# ========================================
 # Custom Configuration
 # https://github.com/bevry/base#configuration
+
 env:
   global:
   # Release to NPM
