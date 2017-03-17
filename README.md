@@ -131,13 +131,13 @@ Full set of available customisations and their documentations is available over 
 ``` shell
 # https://github.com/balupton/awesome-travis/blob/master/README.md#release-to-npm
 npm owner add $BEVRY_NPM_USERNAME
-travis encrypt "NPM_USERNAME=$BEVRY_NPM_USERNAME" --add env.global --no-interactive
-travis encrypt "NPM_PASSWORD=$BEVRY_NPM_PASSWORD" --add env.global --no-interactive
-travis encrypt "NPM_EMAIL=$BEVRY_NPM_EMAIL" --add env.global --no-interactive
+travis encrypt "NPM_USERNAME=$NPM_USERNAME" --add env.global --no-interactive
+travis encrypt "NPM_PASSWORD=$NPM_PASSWORD" --add env.global --no-interactive
+travis encrypt "NPM_EMAIL=$NPM_EMAIL" --add env.global --no-interactive
 
 # https://github.com/balupton/awesome-travis#release-to-surge
-travis encrypt "SURGE_LOGIN=$BEVRY_SURGE_LOGIN" --add env.global --no-interactive
-travis encrypt "SURGE_TOKEN=$BEVRY_SURGE_TOKEN" --add env.global --no-interactive
+travis encrypt "SURGE_LOGIN=$SURGE_LOGIN" --add env.global --no-interactive
+travis encrypt "SURGE_TOKEN=$SURGE_TOKEN" --add env.global --no-interactive
 
 # https://github.com/balupton/awesome-travis/blob/master/README.md#slack
 # https://github.com/balupton/awesome-travis/blob/master/README.md#email
