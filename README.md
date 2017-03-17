@@ -18,28 +18,28 @@ touch README.md
 
 Download the relevant files for your project:
 
-> - If you have wget, replace `download` with `wget -N`
-> - If you have curl, replace `download` with `curl -OL`
+> - If you have wget, replace `down` with `wget -N`
+> - If you have curl, replace `down` with `curl -OL`
 
 ``` shell
-download https://raw.githubusercontent.com/bevry/base/master/.editorconfig
-download https://raw.githubusercontent.com/bevry/base/master/.eslintrc.js
-download https://raw.githubusercontent.com/bevry/base/master/.gitignore
-download https://raw.githubusercontent.com/bevry/base/master/LICENSE.md
+down https://raw.githubusercontent.com/bevry/base/master/.editorconfig
+down https://raw.githubusercontent.com/bevry/base/master/.eslintrc.js
+down https://raw.githubusercontent.com/bevry/base/master/.gitignore
+down https://raw.githubusercontent.com/bevry/base/master/LICENSE.md
 
-download https://raw.githubusercontent.com/bevry/base/master/.npmignore
+down https://raw.githubusercontent.com/bevry/base/master/.npmignore
 
-download https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
+down https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
 
-download https://raw.githubusercontent.com/bevry/base/master/index.js
-download https://raw.githubusercontent.com/bevry/base/master/test.js
+down https://raw.githubusercontent.com/bevry/base/master/index.js
+down https://raw.githubusercontent.com/bevry/base/master/test.js
 
-download https://raw.githubusercontent.com/bevry/base/master/.flowconfig
+down https://raw.githubusercontent.com/bevry/base/master/.flowconfig
 
-download https://raw.githubusercontent.com/bevry/base/master/.travis.yml
+down https://raw.githubusercontent.com/bevry/base/master/.travis.yml
 
-download https://raw.githubusercontent.com/bevry/base/master/package.json
-download https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
+down https://raw.githubusercontent.com/bevry/base/master/package.json
+down https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
 ```
 
 And add them to git:
