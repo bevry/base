@@ -184,7 +184,7 @@ When specifying dependencies, we will use the `~` operator at the start of the v
 
 We don't allow new minor versions to be automatically installed because doing so could mean that things break when the project is re-installed. Re-installs often happen when doing a production deployment, a new person installs your project, or simply when you come back to you project after a period of inactivity.
 
-Though minor relases are supposed to be backwards compatible with previous minor releases in the major release, we found through experience that this is frequently not actually the case. See [npm issue #4587]((https://github.com/npm/npm/issues/4587) for further discussion of this.
+Though minor relases are supposed to be backwards compatible with previous minor releases in the major release, we found through experience that this is frequently not actually the case. See [npm issue #4587](https://github.com/npm/npm/issues/4587) for further discussion of this.
 
 
 ## Package Managers & Module Loaders
