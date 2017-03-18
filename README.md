@@ -139,6 +139,10 @@ travis encrypt "NPM_EMAIL=$NPM_EMAIL" --add env.global --no-interactive
 travis encrypt "SURGE_LOGIN=$SURGE_LOGIN" --add env.global --no-interactive
 travis encrypt "SURGE_TOKEN=$SURGE_TOKEN" --add env.global --no-interactive
 
+# github client details for rate limits
+travis encrypt "GITHUB_CLIENT_ID=$GITHUB_CLIENT_ID" --add env.global --no-interactive
+travis encrypt "GITHUB_CLIENT_SECRET=$GITHUB_CLIENT_SECRET" --add env.global --no-interactive
+  
 # https://github.com/balupton/awesome-travis/blob/master/README.md#slack
 # https://github.com/balupton/awesome-travis/blob/master/README.md#email
 travis encrypt "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack --no-interactive
