@@ -1,5 +1,8 @@
 # Coding Standards
 
+Short URL: `https://learn.bevry.me/community/coding-standards/`
+
+
 ## All languages
 
 
