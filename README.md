@@ -130,7 +130,7 @@ Full set of available customisations and their documentations is available over 
 
 ``` shell
 # https://github.com/balupton/awesome-travis/blob/master/README.md#release-to-npm
-npm owner add $BEVRY_NPM_USERNAME
+npm owner add $NPM_USERNAME
 travis encrypt "NPM_USERNAME=$NPM_USERNAME" --add env.global --no-interactive
 travis encrypt "NPM_PASSWORD=$NPM_PASSWORD" --add env.global --no-interactive
 travis encrypt "NPM_EMAIL=$NPM_EMAIL" --add env.global --no-interactive
