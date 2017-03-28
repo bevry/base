@@ -171,7 +171,7 @@ CoffeeScript scripts:
 [Our `esnextguardian.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/esnextguardian.js)
 
 ``` shell
-download https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/esnextguardian.js
+down https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/esnextguardian.js
 ```
 
 Dropped in favour of [Editions](https://github.com/bevry/editions).
@@ -181,7 +181,17 @@ Dropped in favour of [Editions](https://github.com/bevry/editions).
 [Our `nakefile.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/nakefile.js)
 
 ``` shell
-download https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/nakefile.js
+down https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/nakefile.js
+```
+
+Dropped in favour of NPM Scripts.
+
+
+### [Cakefile](http://coffeescript.org/#cake)
+[Our `Cakefile` file.](https://raw.githubusercontent.com/bevry/base/22bbd5999c420c4058fd54becb9b1cd3cd1d70dd/Cakefile)
+
+``` shell
+down https://raw.githubusercontent.com/bevry/base/22bbd5999c420c4058fd54becb9b1cd3cd1d70dd/Cakefile
 ```
 
 Dropped in favour of NPM Scripts.
@@ -191,7 +201,7 @@ Dropped in favour of NPM Scripts.
 [Our `coffeelint.json` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/coffeelint.json)
 
 ``` shell
-download https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/coffeelint.json
+down https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/coffeelint.json
 ```
 
 Dropped in favour of ESNext.
@@ -201,16 +211,17 @@ Dropped in favour of ESNext.
 [Our `cyclic.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/cyclic.js)
 
 ``` shell
-download https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/cyclic.js
+down https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/cyclic.js
 ```
 
 Dropped in favour of npm `>=2`.
+
 
 ### [JSHint](http://jshint.com)
 [Our `.jshintrc` file.](https://github.com/bevry/base/blob/b1335ea16811d2870dbde87c3a1a606797db54a0/.jshintrc)
 
 ``` shell
-download https://raw.githubusercontent.com/bevry/base/b1335ea16811d2870dbde87c3a1a606797db54a0/.jshintrc
+down https://raw.githubusercontent.com/bevry/base/b1335ea16811d2870dbde87c3a1a606797db54a0/.jshintrc
 ```
 
 Dropped in favour of [ESLint](http://eslint.org).
@@ -220,7 +231,7 @@ Dropped in favour of [ESLint](http://eslint.org).
 [Our `.jscrc` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/.jscrc)
 
 ``` shell
-download https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/.jscrc
+down https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/.jscrc
 ```
 
 Dropped in favour of [ESLint](http://eslint.org).
