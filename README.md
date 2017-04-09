@@ -131,17 +131,17 @@ Full set of available customisations and their documentations is available over 
 ``` shell
 # https://github.com/balupton/awesome-travis/blob/master/README.md#release-to-npm
 npm owner add $NPM_USERNAME
-travis encrypt "NPM_USERNAME=$NPM_USERNAME" --add env.global --no-interactive
-travis encrypt "NPM_PASSWORD=$NPM_PASSWORD" --add env.global --no-interactive
-travis encrypt "NPM_EMAIL=$NPM_EMAIL" --add env.global --no-interactive
+travis env set NPM_USERNAME "$NPM_USERNAME" --public --no-interactive
+travis env set NPM_PASSWORD "$NPM_PASSWORD" --no-interactive
+travis env set NPM_EMAIL "$NPM_EMAIL" --no-interactive
 
 # https://github.com/balupton/awesome-travis#release-to-surge
-travis encrypt "SURGE_LOGIN=$SURGE_LOGIN" --add env.global --no-interactive
-travis encrypt "SURGE_TOKEN=$SURGE_TOKEN" --add env.global --no-interactive
+travis env set SURGE_LOGIN "$SURGE_LOGIN" --public --no-interactive
+travis env set SURGE_TOKEN "$SURGE_TOKEN" --no-interactive
 
 # github client details for rate limits
-travis encrypt "GITHUB_CLIENT_ID=$GITHUB_CLIENT_ID" --add env.global --no-interactive
-travis encrypt "GITHUB_CLIENT_SECRET=$GITHUB_CLIENT_SECRET" --add env.global --no-interactive
+travis env set GITHUB_CLIENT_ID "$GITHUB_CLIENT_ID" --no-interactive
+travis env set GITHUB_CLIENT_SECRET "$GITHUB_CLIENT_SECRET" --no-interactive
   
 # https://github.com/balupton/awesome-travis/blob/master/README.md#slack
 # https://github.com/balupton/awesome-travis/blob/master/README.md#email
