@@ -165,12 +165,12 @@ Bevry uses [Babel](https://babeljs.io) to precompile ES6 to ES5 before publishin
 For historical reasons, we mention here our arguments for using CoffeeScript. These apply to some degree to using ES6 over ES5, as well.
 
 > The biggest complaint we hear about the use of CoffeeScript is it reduces contributors. We feel this is an artificial complaint, here's why.
-
-> - [Unix Philosophy](http://en.wikipedia.org/wiki/Unix_philosophy): Rule of Generation: Developers should avoid writing code by hand and instead write abstract high-level programs that generate code. This rule aims to reduce human error and save time.
-- CoffeeScript includes built-in high-level standard ways to do classes, for in loops, for of loops, bindings, etc.
-- In JavaScript you often find yourself writing  unnecessarily complex code that increases risk of error and decreases code readability and portability, or including a library like underscore that offers features similar to CoffeeScript (and has a similar learning curve).
-- The CoffeeScript community has fewer different commonly-used options for coding style as compared to JavaScript. This means fewer  arguments about which libaries and class systems to use, which coding standards to use for for semicolons, commas, etc. etc. Arguments such as these  add unnecessary noise in the community and reduce effectiveness, efficiency and contributions to the project.  CoffeeScript is easy to learn (half a day for the basics; a week for mastery) and avoids these JavaScript problems.
-- If we were to implement DocPad in JavaScript, we'd still be arguing to this day, which class system we should use
+>
+>- [Unix Philosophy](http://en.wikipedia.org/wiki/Unix_philosophy): Rule of Generation: Developers should avoid writing code by hand and instead write abstract high-level programs that generate code. This rule aims to reduce human error and save time.
+>- CoffeeScript includes built-in high-level standard ways to do classes, for in loops, for of loops, bindings, etc.
+>- In JavaScript you often find yourself writing  unnecessarily complex code that increases risk of error and decreases code readability and portability, or including a library like underscore that offers features similar to CoffeeScript (and has a similar learning curve).
+>- The CoffeeScript community has fewer different commonly-used options for coding style as compared to JavaScript. This means fewer  arguments about which libaries and class systems to use, which coding standards to use for for semicolons, commas, etc. etc. Arguments such as these  add unnecessary noise in the community and reduce effectiveness, efficiency and contributions to the project.  CoffeeScript is easy to learn (half a day for the basics; a week for mastery) and avoids these JavaScript problems.
+>- If we were to implement DocPad in JavaScript, we'd still be arguing to this day, which class system we should use
 
 [More information on our move from CoffeeScript to ES6 here.](https://discuss.bevry.me/t/move-from-coffeescript-to-es6/30?u=balupton)
 
