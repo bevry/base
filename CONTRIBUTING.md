@@ -12,7 +12,7 @@ We offer support through our [Official Support Channels](https://bevry.me/suppor
 
 ## Contribute
 
-Our [Contributing Guide](https://learn.bevry.me/community/contribute) contains useful tips and suggestions for how to contribute to this project, it's worth the read.
+Our [Contributing Guide](https://bevry.me/contribute) contains useful tips and suggestions for how to contribute to this project, it's worth the read.
 
 
 ## Development
