@@ -1,4 +1,4 @@
-// 2017 April 5
+// 2017 April 17
 // https://github.com/bevry/base
 // http://eslint.org
 // This code must be able to run on Node 0.10
@@ -815,7 +815,6 @@ const config = {
 		// Plugins
 
 		// Not sure why, but okay
-		'babel/no-await-in-loop': WARN,
 		'flow-vars/define-flow-type': WARN,
 		'flow-vars/use-flow-type': WARN
 	}
@@ -888,12 +887,8 @@ if ( devDeps.indexOf('eslint-plugin-babel') !== -1 ) {
 	// Remove rules that babel rules replace
 	config.plugins.push('babel')
 	const replacements = [
-		'array-bracket-spacing',
 		'new-cap',
-		'object-curly-spacing',
-		'arrow-parens',
-		'generator-star-spacing',
-		'object-shorthand'
+		'object-curly-spacing'
 	]
 	replacements.forEach(function (key) {
 		if ( rules.indexOf(key) !== -1 ) {
