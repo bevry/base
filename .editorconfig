@@ -13,10 +13,10 @@ indent_style = tab
 [*.mk]
 indent_style = tab
 
-[{*.json,*.yml}]
-indent_style = space
-indent_size = 2
-
 [*.md]
 indent_style = space
 indent_size = 4
+
+[{*.json,*.yml,*.bowerrc,*.babelrc}]
+indent_style = space
+indent_size = 2
