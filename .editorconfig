@@ -10,7 +10,7 @@ trim_trailing_whitespace = true
 insert_final_newline = false
 indent_style = tab
 
-[*.mk]
+[{*.mk,*.python}]
 indent_style = tab
 
 [*.md]
