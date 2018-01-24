@@ -8,7 +8,6 @@
 
 [options]
 module.ignore_non_literal_requires=true
-unsafe.enable_getters_and_setters=true
 esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable
 
