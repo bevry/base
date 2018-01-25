@@ -849,8 +849,9 @@ if (data.editions) {
 	config.parserOptions.sourceType = sourceEdition.syntaxes.indexOf('import') !== -1 ? 'module' : 'script'
 	config.parserOptions.ecmaFeatures.jsx = sourceEdition.syntaxes.indexOf('jsx') !== -1
 }
-else {
-	// node version
+
+// If editions failed to dtermine the ecmaVersion, try determining it from node, otherwise default to v5
+if (!config.parserOptions.ecmaVersion) {
 	const node = data.engines && data.engines.node && data.engines.node.replace('>=', '').replace(/ /g, '').replace(/\..+$/, '')
 	config.parserOptions.ecmaVersion = node >= 6 ? 6 : 5
 }
