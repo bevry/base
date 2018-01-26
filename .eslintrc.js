@@ -1,4 +1,4 @@
-// 2018 January 25
+// 2018 January 26
 // https://github.com/bevry/base
 // http://eslint.org
 // This code must be able to run on Node 0.10
@@ -871,6 +871,9 @@ if (config.env.browser) {
 if (config.parserOptions.ecmaVersion && config.parserOptions.ecmaVersion <= 5) {
 	config.rules['no-var'] = IGNORE
 	config.rules['object-shorthand'] = [ERROR, 'never']
+	config.rules['prefer-rest-params'] = IGNORE
+	config.rules['prefer-spread'] = IGNORE
+	config.rules['prefer-const'] = IGNORE
 }
 
 // Add babel parsing if installed
