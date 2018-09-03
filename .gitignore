@@ -20,15 +20,17 @@ yarn.lock
 .idea
 .cake_task_cache
 
-# Build Files
-**/out.*
-**/*.out.*
-**/out/
-**/output/
+# Build Caches
 build/
 components/
 bower_components/
 node_modules/
+
+# Build Outputs
+**/out.*
+**/*.out.*
+**/out/
+**/output/
 edition*/
 coffeejs/
 coffee/
