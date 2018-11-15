@@ -1,8 +1,8 @@
-# 2018 January 24
+# 2018 November 15
 # https://github.com/bevry/base
 [ignore]
 .*/docs/.*
-.*/es2015/.*
+.*/edition*/.*
 .*/test/.*
 .*/node_modules/documentation/.*
 .*/node_modules/projectz/.*
