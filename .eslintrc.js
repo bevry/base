@@ -1,7 +1,6 @@
 // 2018 November 21
 // https://github.com/bevry/base
 // http://eslint.org
-// @ts-nocheck
 /* eslint no-warning-comments: 0 */
 'use strict'
 
@@ -12,6 +11,7 @@ const config = {
 	plugins: [],
 	parserOptions: { ecmaFeatures: {} },
 	env: {},
+	/** @type {Object.<string, number | Array<any>>} */
 	rules: {
 		// ----------------------------
 		// Problems with these rules
@@ -827,13 +827,14 @@ const config = {
 const rules = Object.keys(config.rules)
 let data = {}, devDeps = []
 try {
+	// @ts-ignore
 	data = require('./package.json') || {}
 	devDeps = Object.keys(data.devDependencies || {})
 }
 catch (err) { }
 
 // Set our defaults
-let language = 'esnext', ecmaVersion = (new Date().getFullYear() + 1), sourceType = 'script'
+let parser, language = 'esnext', ecmaVersion = (new Date().getFullYear() + 1), sourceType = 'script'
 
 // If we have editions, then override our defaults
 if (data.editions) {
@@ -841,19 +842,11 @@ if (data.editions) {
 	const editionTags = (sourceEdition.tags || sourceEdition.syntaxes || [])
 	if (editionTags.length) {
 		language = editionTags[0]
-		switch (language) {
-			case 'typescript':
-				language = value
-				sourceType = 'module'
-				break
-			case 'esnext':
-				language = value
-				break
-			default:
-				if (language.startsWith('es')) {
-					ecmaVersion = Number(value.substr(2))
-					language = value
-				}
+		if (language === 'typescript') {
+			sourceType = 'module'
+		}
+		else if (language.startsWith('es') && language !== 'esnext') {
+			ecmaVersion = Number(language.substr(2))
 		}
 		if (editionTags.includes('import')) {
 			sourceType = 'module'
@@ -896,12 +889,17 @@ if (language === 'typescript') {
 
 // Custom Parser: TypeScript
 if (devDeps.includes('typescript-eslint-parser')) {
-	config.parser = 'typescript-eslint-parser'
+	parser = 'typescript-eslint-parser'
 }
 
 // Custom Parser: Babel
 else if (devDeps.includes('babel-eslint')) {
-	config.parser = 'babel-eslint'
+	parser = 'babel-eslint'
+}
+
+// Apply Parser
+if (parser) {
+	config.parser = parser
 }
 
 // Plugin: TypeScript
