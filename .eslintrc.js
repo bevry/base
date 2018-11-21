@@ -1,6 +1,7 @@
-// 2018 November 15
+// 2018 November 21
 // https://github.com/bevry/base
 // http://eslint.org
+// @ts-nocheck
 /* eslint no-warning-comments: 0 */
 'use strict'
 
@@ -831,34 +832,42 @@ try {
 }
 catch (err) { }
 
-// Set the parser options depending on our editions
+// Set our defaults
+let language = 'esnext', ecmaVersion = (new Date().getFullYear() + 1), sourceType = 'script'
+
+// If we have editions, then override our defaults
 if (data.editions) {
 	const sourceEdition = data.editions[0]
 	const editionTags = (sourceEdition.tags || sourceEdition.syntaxes || [])
-	for (let syntaxIndex = 0; syntaxIndex < editionTags.length; ++syntaxIndex) {
-		const syntax = editionTags[syntaxIndex]
-		if (syntax === 'esnext') {
-			// https://eslint.org/docs/user-guide/configuring#specifying-parser-options
-			config.parserOptions.ecmaVersion = (new Date().getFullYear() + 1)
-			break
+	if (editionTags.length) {
+		language = editionTags[0]
+		switch (language) {
+			case 'typescript':
+				language = value
+				sourceType = 'module'
+				break
+			case 'esnext':
+				language = value
+				break
+			default:
+				if (language.startsWith('es')) {
+					ecmaVersion = Number(value.substr(2))
+					language = value
+				}
 		}
-		else if (syntax.indexOf('es') === 0) {
-			config.parserOptions.ecmaVersion = Number(syntax.substr(2))
-			break
+		if (editionTags.includes('import')) {
+			sourceType = 'module'
 		}
+		config.parserOptions.ecmaFeatures.jsx = editionTags.includes('jsx') || editionTags.includes('tsx')
 	}
-	config.parserOptions.sourceType = editionTags.includes('import') ? 'module' : 'script'
-	config.parserOptions.ecmaFeatures.jsx = editionTags.includes('jsx')
 }
 
-// If editions failed to dtermine the ecmaVersion, try determining it from node, otherwise default to v5
-if (!config.parserOptions.ecmaVersion) {
-	const node = data.engines && data.engines.node && data.engines.node.replace('>=', '').replace(/ /g, '').replace(/\..+$/, '')
-	config.parserOptions.ecmaVersion = node >= 6 ? 6 : 5
-}
+// Apply our defaults to the configuration
+config.parserOptions.ecmaVersion = ecmaVersion
+config.parserOptions.sourceType = sourceType
 
-// Set the environments depending on whether we need them or not
-config.env.es6 = Boolean(config.parserOptions.ecmaVersion && config.parserOptions.ecmaVersion >= 6)
+// Set environments depending on whether we need them or not
+config.env.es6 = Boolean(config.parserOptions.ecmaVersion >= 6)
 config.env.node = Boolean(data.engines && data.engines.node)
 config.env.browser = Boolean(data.browser)
 if (config.env.browser) {
@@ -868,7 +877,7 @@ if (config.env.browser) {
 	}
 }
 
-// If not on legacy javascript, disable esnext rules
+// If on legacy javascript, disable esnext rules
 if (config.parserOptions.ecmaVersion && config.parserOptions.ecmaVersion <= 5) {
 	config.rules['no-var'] = IGNORE
 	config.rules['object-shorthand'] = [ERROR, 'never']
@@ -877,13 +886,35 @@ if (config.parserOptions.ecmaVersion && config.parserOptions.ecmaVersion <= 5) {
 	config.rules['prefer-const'] = IGNORE
 }
 
+// If on typescript, disable incompatible rules
+if (language === 'typescript') {
+	// https://github.com/eslint/typescript-eslint-parser/issues/557
+	config.rules['no-undef'] = IGNORE
+	// typedoc only uses a subset of jsdoc
+	config.rules['valid-jsdoc'] = IGNORE
+}
+
 // Custom Parser: TypeScript
 if (devDeps.includes('typescript-eslint-parser')) {
 	config.parser = 'typescript-eslint-parser'
 }
+
 // Custom Parser: Babel
 else if (devDeps.includes('babel-eslint')) {
 	config.parser = 'babel-eslint'
+}
+
+// Plugin: TypeScript
+if (devDeps.includes('eslint-plugin-typescript')) {
+	config.plugins.push('typescript')
+}
+else {
+	// Remove typescript rules if plugin not installed
+	rules.forEach(function (key) {
+		if (key.startsWith('typescript/')) {
+			delete config.rules[key]
+		}
+	})
 }
 
 // Plugin: React
@@ -910,7 +941,7 @@ if (devDeps.includes('eslint-plugin-babel')) {
 else {
 	// Remove babel rules if not using babel
 	rules.forEach(function (key) {
-		if (key.indexOf('babel/') === 0) {
+		if (key.startsWith('babel/')) {
 			delete config.rules[key]
 		}
 	})
@@ -924,7 +955,7 @@ if (devDeps.includes('eslint-plugin-flow-vars')) {
 else {
 	// Remove flow rules if plugin not installed
 	rules.forEach(function (key) {
-		if (key.indexOf('flow-vars/') === 0) {
+		if (key.startsWith('flow-vars/')) {
 			delete config.rules[key]
 		}
 	})
