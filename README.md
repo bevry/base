@@ -4,7 +4,7 @@ Files we use when scaffolding new projects.
 
 ## Automatic
 
-For complete automatic application of our base files, you can use [`boundation`](https://github.com/bevry/boundation). Eventually boundation will replace this entire repository.
+For complete automatic application of our base files, use [`boundation`](https://github.com/bevry/boundation). Eventually boundation will replace this entire repository.
 
 ## Manual
 
