@@ -24,10 +24,7 @@ down https://raw.githubusercontent.com/bevry/base/master/.gitignore
 down https://raw.githubusercontent.com/bevry/base/master/.npmignore
 down https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
 down https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
-down https://raw.githubusercontent.com/bevry/base/master/index.js
 down https://raw.githubusercontent.com/bevry/base/master/LICENSE.md
-down https://raw.githubusercontent.com/bevry/base/master/test.js
-down https://raw.githubusercontent.com/bevry/base/master/tsconfig.json
 ```
 
 ### Travis
