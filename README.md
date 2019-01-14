@@ -33,6 +33,16 @@ Refer to [bevry/awesome-travis](https://github.com/bevry/awesome-travis/) for ou
 
 ## Legacy
 
+### Stylelint Config File
+
+[Our `.stylelintrc.js` file.](https://github.com/bevry/base/blob/c9fed620552b3334e05de999eab7186ff91fbf2d/.stylelintrc.js)
+
+```shell
+down https://github.com/bevry/base/blob/c9fed620552b3334e05de999eab7186ff91fbf2d/.stylelintrc.js
+```
+
+Dropped in favour of [Boundation](https://github.com/bevry/boundation).
+
 ### TypeScript Config File
 
 [Our `tsconfig.json` file.](https://github.com/bevry/base/blob/01aac915b59c84251f9b5182704d05708ac1aa86/tsconfig.json)
