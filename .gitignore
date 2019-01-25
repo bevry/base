@@ -24,6 +24,8 @@ build/
 bower_components/
 node_modules/
 .next/
+.pnp/
+.pnp.js
 
 # Build Outputs
 **/out.*
