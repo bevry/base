@@ -61,7 +61,7 @@ Dropped in favour of [Boundation](https://github.com/bevry/boundation).
 down https://github.com/bevry/base/blob/01aac915b59c84251f9b5182704d05708ac1aa86/.travis.yml
 ```
 
-Dropped in favour of [Boundation](https://github.com/bevry/boundation).
+Dropped in favour of [Boundation](https://github.com/bevry/boundation) and [Awesome Travis](https://github.com/bevry/awesome-travis).
 
 ### DocPad Setup File
 
