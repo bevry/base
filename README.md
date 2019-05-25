@@ -14,6 +14,7 @@ For manual application of base files.
 
 Download the relevant files for your project:
 
+> -   If you have httpie, replace `down` with `http -d`
 > -   If you have wget, replace `down` with `wget -N`
 > -   If you have curl, replace `down` with `curl -OL`
 
