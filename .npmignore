@@ -5,7 +5,6 @@
 **/.DS_Store
 
 # Temp Files
-yarn.lock
 **/.docpad.db
 **/*.log
 **/*.cpuprofile
@@ -31,6 +30,9 @@ node_modules/
 # Ecosystem Files
 .dependabout
 .github
+
+# -------------------------------------
+# CDN Inclusions, Package Exclusions
 
 # Documentation Files
 docs/
