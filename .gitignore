@@ -14,6 +14,14 @@
 .c9/
 .vscode/
 
+# Yarn Files
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
 # Private Files
 .env
 .idea
